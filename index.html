@@ -175,33 +175,35 @@ body.lin .reveal{border-color:var(--gold)}
 /* ===== painted backgrounds ===== */
 body{
   --veil:rgba(250,243,230,.15);--veil2:rgba(250,243,230,.20);
-  --bgurl:url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Cole_Thomas_The_Course_of_Empire_Desolation_1836.jpg/1280px-Cole_Thomas_The_Course_of_Empire_Desolation_1836.jpg');
+  --bgurl:url('images/cole.jpg');
   background-color:#f2ead9;
   background-image:linear-gradient(180deg,var(--veil),var(--veil2)),var(--bgurl);
   background-size:cover;background-position:center;background-attachment:fixed;
 }
-body.bg-home{--bgurl:url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Caspar_David_Friedrich_-_Der_M%C3%B6nch_am_Meer_-_Google_Art_Project.jpg/1920px-Caspar_David_Friedrich_-_Der_M%C3%B6nch_am_Meer_-_Google_Art_Project.jpg');--accent:#5b6f80;--gold:#8a9aa8;--gold-dim:#c3ccd4}
-body.bg-lit{--bgurl:url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg/1280px-Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg');--accent:#4f6478;--gold:#94a4b2;--gold-dim:#c9d2da}
-body.bg-poetry{--bgurl:url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Joseph_Mallord_William_Turner_-_Snow_Storm_-_Steam-Boat_off_a_Harbour%27s_Mouth_-_WGA23178.jpg/1280px-Joseph_Mallord_William_Turner_-_Snow_Storm_-_Steam-Boat_off_a_Harbour%27s_Mouth_-_WGA23178.jpg')}
-body.bg-narrative{--bgurl:url('https://commons.wikimedia.org/wiki/Special:FilePath/Horace%20Vernet-Arab%20Tale%20Teller%201833.jpg?width=1280')}
-body.bg-film{--bgurl:url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Gustave_Caillebotte_-_Paris_Street%3B_Rainy_Day_-_Google_Art_Project.jpg/1280px-Gustave_Caillebotte_-_Paris_Street%3B_Rainy_Day_-_Google_Art_Project.jpg')}
+body.bg-home{--bgurl:url('images/monk.jpg');--accent:#5b6f80;--gold:#8a9aa8;--gold-dim:#c3ccd4}
+body.bg-lit{--bgurl:url('images/wanderer.jpg');--accent:#4f6478;--gold:#94a4b2;--gold-dim:#c9d2da}
+body.bg-poetry{--bgurl:url('images/turner.jpg')}
+body.bg-drama{--bgurl:url('images/dickseerj.jpg')}
+body.bg-narrative{--bgurl:url('images/vernet.jpg')}
+body.bg-film{--bgurl:url('images/caillebotte.jpg')}
 body.lin{
-  --bgurl:url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_%28Vienna%29_-_Google_Art_Project_-_edited.jpg/1280px-Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_%28Vienna%29_-_Google_Art_Project_-_edited.jpg');
+  --bgurl:url('images/bruegel.jpg');
   --veil:rgba(230,240,238,.15);--veil2:rgba(230,240,238,.20);
 }
 /* one painting per linguistics unit */
-body.lin[data-lu="lu1"]{--bgurl:url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Gerrit_van_Honthorst%2C_The_Concert%2C_1623%2C_NGA_163184.jpg/1920px-Gerrit_van_Honthorst%2C_The_Concert%2C_1623%2C_NGA_163184.jpg')}
-body.lin[data-lu="lu2"]{--bgurl:url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Joseph_Wright_-_An_Iron_Forge_-_Google_Art_Project.jpg/1920px-Joseph_Wright_-_An_Iron_Forge_-_Google_Art_Project.jpg')}
-body.lin[data-lu="lu3"]{--bgurl:url('https://upload.wikimedia.org/wikipedia/commons/5/5c/Fra_Carnevale_-_The_Ideal_City_-_Walters_37677.jpg')}
-body.lin[data-lu="lu4"]{--bgurl:url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Hans_Holbein_the_Younger_-_The_Ambassadors_-_Google_Art_Project.jpg/1920px-Hans_Holbein_the_Younger_-_The_Ambassadors_-_Google_Art_Project.jpg')}
-body.lin[data-lu="lu5"]{--bgurl:url('https://upload.wikimedia.org/wikipedia/commons/9/93/Nicolaes_Maes_-_Eavesdropper_with_a_Scolding_Woman_-_WGA13817.jpg')}
-body.lin[data-lu="lu6"]{--bgurl:url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Auguste_Renoir_-_Dance_at_Le_Moulin_de_la_Galette_-_Google_Art_Project.jpg/1920px-Auguste_Renoir_-_Dance_at_Le_Moulin_de_la_Galette_-_Google_Art_Project.jpg')}
-body.lin[data-lu="lu7"]{--bgurl:url('https://commons.wikimedia.org/wiki/Special:FilePath/Frank%20Bernard%20Dicksee%20(1853-1928)%20-%20The%20Funeral%20of%20a%20Viking%20-%201928.13%20-%20Manchester%20Art%20Gallery.jpg?width=1400')}
-body.lin[data-lu="lu8"]{--bgurl:url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Claude_Lorrain_-_Seaport_with_the_Embarkation_of_the_Queen_of_Sheba_-_WGA05002.jpg/1920px-Claude_Lorrain_-_Seaport_with_the_Embarkation_of_the_Queen_of_Sheba_-_WGA05002.jpg')}
-body.lin[data-lu="lu9"]{--bgurl:url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg/1920px-%22The_School_of_Athens%22_by_Raffaello_Sanzio_da_Urbino.jpg')}
+body.lin[data-lu="lu1"]{--bgurl:url('images/honthorst.jpg')}
+body.lin[data-lu="lu2"]{--bgurl:url('images/forge.jpg')}
+body.lin[data-lu="lu3"]{--bgurl:url('images/ideal-city.jpg')}
+body.lin[data-lu="lu4"]{--bgurl:url('images/ambassadors.jpg')}
+body.lin[data-lu="lu5"]{--bgurl:url('images/maes.jpg')}
+body.lin[data-lu="lu6"]{--bgurl:url('images/renoir.jpg')}
+body.lin[data-lu="lu7"]{--bgurl:url('images/viking.jpg')}
+body.lin[data-lu="lu8"]{--bgurl:url('images/lorrain.jpg')}
+body.lin[data-lu="lu9"]{--bgurl:url('images/athens.jpg')}
 /* palette tuned to each canvas */
 body:not(.lin){--accent:#b4562a;--gold:#c08b3c;--gold-dim:#d9bd8a}
 body.bg-poetry{--accent:#8c5a14;--gold:#6e8296;--gold-dim:#b9c4cf}
+body.bg-drama{--accent:#8a4a5a;--gold:#c99a55;--gold-dim:#e2c79a}
 body.bg-narrative{--accent:#a34a26;--gold:#c39a55;--gold-dim:#e0c99a}
 body.bg-film{--accent:#4a5f75;--gold:#8b98a8;--gold-dim:#c4ccd6}
 body.lin{--accent:#1d6b7d;--gold:#3b8f94;--gold-dim:#a3cbcd}
@@ -303,7 +305,7 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
   <div class="hub">
     <div class="course c-lit" data-goto="lit">
       <h3>LitCult II</h3>
-      <p>Poetry · Narrative · Film — close reading, Genette's narratology, film analysis. Four scored tests including the final exam.</p>
+      <p>Poetry · Drama · Narrative · Film — close reading, dramatic form, Genette's narratology, film analysis. Five scored tests including the final exam.</p>
       <div class="agg" id="agg-lit-label">Tests: none taken yet</div>
       <div class="bar"><i id="agg-lit"></i></div>
     </div>
@@ -344,6 +346,12 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
       <div class="prog" id="prog-poetry-label">Test: not taken</div>
       <div class="bar"><i id="prog-poetry"></i></div>
     </div>
+    <div class="mod" data-goto="drama">
+      <h3>Drama</h3>
+      <p>Dramatic speech, five-act structure, tragedy vs. comedy — with the R&amp;J prologue as interactive worked example and Kahn's feminist reading.</p>
+      <div class="prog" id="prog-drama-label">Test: not taken</div>
+      <div class="bar"><i id="prog-drama"></i></div>
+    </div>
     <div class="mod" data-goto="narrative">
       <h3>Narrative</h3>
       <p>Genette's narratology: narrators, levels, focalisation, time — applied to Nwapa's <i>Efuru</i>.</p>
@@ -358,7 +366,7 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
     </div>
     <div class="mod" data-goto="final">
       <h3>Final Exam</h3>
-      <p>54 questions covering the complete LitCult material. Exam conditions: no peeking.</p>
+      <p>62 questions covering the complete LitCult material — poetry, drama, narrative, film. Exam conditions: no peeking.</p>
       <div class="prog" id="prog-final-label">Not taken</div>
       <div class="bar"><i id="prog-final"></i></div>
     </div>
@@ -367,7 +375,7 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
     <h3>Set texts this covers</h3>
     <p>Claude McKay, "America" · Shakespeare, "Sonnet 116" · Flora Nwapa, <i>Efuru</i> · <i>Belle</i> (dir. Amma Asante) — plus the Nünning &amp; Nünning narratology chapter and Corrigan &amp; White on editing.</p>
     <div class="painting">
-      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/DickseeRomeoandJuliet.jpg?width=900" alt="Frank Dicksee, Romeo and Juliet" loading="lazy" style="max-height:360px">
+      <img src="images/dickseerj.jpg" alt="Frank Dicksee, Romeo and Juliet" loading="lazy" style="max-height:360px">
       <div class="pcap"><b>Frank Dicksee, Romeo and Juliet (1884)</b> — the balcony scene of your drama set text, painted in full Victorian sincerity. (Drama sessions 5–7 aren't in this coach yet — say the word.)</div>
     </div>
   </div>
@@ -516,7 +524,7 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
   <p>Other poem types from the handout: <span class="term">ballad</span> (Coleridge, "The Rime of the Ancient Mariner"), <span class="term">ode</span> (Keats, "Ode on a Grecian Urn"), <span class="term">elegy</span> (Gray; Whitman).</p>
   <div class="ex">Let me not to the marriage of true minds / Admit impediments; love is not love… <span class="src">— Sonnet 116: Shakespearean sonnet defining love as "an ever-fixèd mark"</span></div>
   <div class="painting">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Joseph_Mallord_William_Turner_-_Snow_Storm_-_Steam-Boat_off_a_Harbour%27s_Mouth_-_WGA23178.jpg/1280px-Joseph_Mallord_William_Turner_-_Snow_Storm_-_Steam-Boat_off_a_Harbour%27s_Mouth_-_WGA23178.jpg" alt="Turner, Snow Storm" loading="lazy">
+    <img src="images/turner.jpg" alt="Turner, Snow Storm" loading="lazy">
     <div class="pcap"><b>J. M. W. Turner, Snow Storm — Steam-Boat off a Harbour's Mouth (1842)</b> — Sonnet 116 in oil: the "wand'ring bark" swallowed by tempests, while love stays the "ever-fixèd mark" the storm cannot shake.</div>
   </div>
 </div>
@@ -553,7 +561,7 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
   </div>
   <div class="reveal" style="margin-top:16px"><div class="answer"><b>Synthesis (what your conclusion should say):</b> The sonnet stages an ambivalent love-hate relationship with America, personified as a cruel yet vitalising mother/lover. The speaker converts oppression into strength ("her hate" gives him "strength erect"), adopts the posture of a dignified rebel rather than a bitter victim, and in the final quatrain turns prophet: America's "granite wonders" will sink "like priceless treasures… in the sand" — an Ozymandias-style warning that empires built on injustice fall. The disciplined sonnet form performs the very self-control the speaker claims ("not a shred of terror, malice").</div></div>
   <div class="painting">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Cole_Thomas_The_Course_of_Empire_Desolation_1836.jpg/1280px-Cole_Thomas_The_Course_of_Empire_Desolation_1836.jpg" alt="Thomas Cole, Desolation" loading="lazy">
+    <img src="images/cole.jpg" alt="Thomas Cole, Desolation" loading="lazy">
     <div class="pcap"><b>Thomas Cole, The Course of Empire: Desolation (1836)</b> — painted 85 years before McKay wrote, and already showing his final image: imperial "granite wonders" sinking beneath "Time's unerring hand".</div>
   </div>
 </div>
@@ -573,7 +581,7 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
 <div class="card">
   <h3>B. Name that trope — flashcards</h3>
   <div class="painting">
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Street%20after%20the%20Rain%20in%20the%20Moonlight%20by%20John%20Atkinson%20Grimshaw.jpg?width=1100" alt="Grimshaw, Street after the Rain in the Moonlight" loading="lazy">
+    <img src="images/grimshaw.jpg" alt="Grimshaw, Street after the Rain in the Moonlight" loading="lazy">
     <div class="pcap"><b>John Atkinson Grimshaw, Street after the Rain in the Moonlight (c. 1880s)</b> — the atmosphere of Eliot's Prufrock: damp streets, haloed lamps, and fog that could rub its back upon the window-panes any second.</div>
   </div>
   <p>Classic short quotations, one device each. Identify it, then <b>click to flip</b>.</p>
@@ -592,6 +600,131 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
 <div class="card"><h3>Poetry Test — 10 questions</h3><p class="hint">Instant feedback per question. Score appears at the end.</p></div>
 <div id="quiz-poetry"></div>
 <div class="scorebar" id="score-poetry"></div>
+</section>
+
+<!-- ============ DRAMA ============ -->
+<section id="page-drama" class="page">
+<button class="back" data-goto="lit">← LitCult modules</button>
+<h2 class="ptitle">Analysing Drama</h2>
+<p class="psub">Dramatic communication, speech forms, structure and genre — anchored in <i>Romeo and Juliet</i> (Arden 3, ed. Weis) and Meyer's "Drama" chapter.</p>
+
+<div class="phase">Phase 1 · Learn</div>
+
+<div class="card">
+  <h3>1. Dramatic text vs. theatrical performance</h3>
+  <p>The <span class="term">dramatic text</span> is only a verbal sign-system; the <span class="term">theatrical performance</span> deploys a far broader set of sign systems — bodies, space, light, sound, costume (Meyer 115–16). Drama therefore has TWO communication levels: <b>internal</b> (character ↔ character) and <b>external</b> (stage → audience).</p>
+  <ul>
+    <li><span class="term">Discrepant awareness</span> — audience and characters know different things; <span class="term">congruent awareness</span> — they know the same.</li>
+    <li><span class="term">Dramatic irony</span> — the audience knows MORE than the characters: Romeo believes Juliet dead and kills himself — we know she is about to wake. <span class="term">Intentional irony</span> operates among the characters themselves.</li>
+    <li><span class="term">Exposition</span>: <b>isolated/initial</b> (context given outside the action, e.g. a prologue) vs. <b>integrated</b> (context revealed within the unfolding play). R&amp;J's prologue even tells us the ending — the whole play runs under dramatic irony.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>2. Forms of dramatic speech</h3>
+  <table class="mini">
+    <tr><th>Form</th><th>Who hears it?</th><th>Reliability</th></tr>
+    <tr><td class="term">Dialogue</td><td>Characters on stage</td><td>Strategic — watch reply length, speaker share, interruptions (troubled communication). Dialogue IS verbal action: it initiates and furthers the plot.</td></tr>
+    <tr><td class="term">Monologue</td><td>One speaker; others CAN hear</td><td>Subjective, unmediated — but not necessarily reliable.</td></tr>
+    <tr><td class="term">Soliloquy</td><td>Nobody — the character is alone on stage</td><td>High subjectivity AND honesty: reliable access to the character's mind. Plays with discrepant awareness.</td></tr>
+    <tr><td class="term">Aside</td><td>Not the other characters, though present</td><td>Monological (to self), dialogical (to one character), or directed to the audience.</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h3>3. Character &amp; characterisation</h3>
+  <p>Analyse the <span class="term">dramatis personae</span> along four axes: major/minor · <span class="term">flat/round</span> · <span class="term">static/dynamic</span> · transparent/opaque. Characters appear in a structural <span class="term">constellation</span> and in scene-specific <span class="term">configurations</span> — look for contrasts and correspondences:</p>
+  <ul>
+    <li><span class="term">Foil</span> — a contrast figure sharpening a protagonist's profile: Juliet (romantic) vs. the Nurse (pragmatic); Romeo (sentimental) vs. Mercutio (light-hearted); Juliet (passionate, rebellious) vs. Rosaline (chaste, obedient).</li>
+    <li><span class="term">Confidant(e)</span> — the trusted listener who motivates self-revelation: Friar Laurence for both Romeo and Juliet.</li>
+    <li><span class="term">Explicit figural characterisation</span> — what characters say about themselves or others (present or absent!); <span class="term">implicit</span> — entrances/exits, appearance, body language, vocal quality.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>4. Structure, time &amp; space</h3>
+  <h4>The five-act structure (and R&amp;J's textbook run through it)</h4>
+  <table class="mini">
+    <tr><th>Act</th><th>Function</th><th>Romeo and Juliet</th></tr>
+    <tr><td>1</td><td class="term">Exposition</td><td>Feud established; love at first sight</td></tr>
+    <tr><td>2</td><td class="term">Complication</td><td>Balcony scene; secret marriage; Tybalt's challenge</td></tr>
+    <tr><td>3</td><td class="term">Climax</td><td>Tybalt kills Mercutio; Romeo kills Tybalt → exile</td></tr>
+    <tr><td>4</td><td class="term">Reversal</td><td>Friar's plan; Juliet's potion — found "dead"</td></tr>
+    <tr><td>5</td><td class="term">Catastrophe</td><td>Romeo's poison; Juliet's dagger</td></tr>
+  </table>
+  <p>The model is idealtypical — when a play departs from it, ask: for what reason, to what effect?</p>
+  <h4>Three unities &amp; theatrical space</h4>
+  <p>The neoclassical <span class="term">three unities</span>: <b>action</b> (connection and continuity), <b>place</b> (single location), <b>time</b> (represented time = playing time); the <span class="term">open form</span> violates them. Spatial analysis: on-stage vs. <span class="term">off-stage</span>, boundaries and thresholds between locales, <span class="term">word scenery</span> (verbal description instead of set design — Elizabethan standard).</p>
+  <h4>Venues &amp; textual transmission</h4>
+  <p>Shakespeare's Globe (built 1597–99, burnt 1613, closed by the Puritans 1642, reconstructed 1997): an open-air <span class="term">apron stage</span>, audience on three sides — versus the modern <span class="term">picture-frame stage</span> with its <span class="term">fourth wall</span>. Texts survive in <span class="term">quartos</span> (Q1 1597 = "bad quarto" of R&amp;J) and the <span class="term">First Folio</span> (1623). Boy actors played the women's parts; roles were doubled.</p>
+</div>
+
+<div class="card">
+  <h3>5. Genres: tragedy and comedy</h3>
+  <div class="grid2">
+    <div>
+      <h4>Tragedy (via Aristotle)</h4>
+      <p>From prosperity to adversity. Mimesis of a serious, complete action; a noble character transgresses against established order through a <span class="term">tragic flaw</span> (e.g. hubris) or an error of judgment (<span class="term">hamartia</span>) → <span class="term">anagnorisis</span> (tragic recognition) → fall. The audience feels pity and fear, discharged as <span class="term">catharsis</span>. Sub-genre: domestic tragedy (middle-class protagonists).</p>
+    </div>
+    <div>
+      <h4>Comedy</h4>
+      <p>From adversity to prosperity; ordinary people, flat types, mirror held up to society; quarrels settled without serious harm (battle of wits, battle of the sexes). Sub-genres: romantic comedy, satiric comedy, comedy of manners, <span class="term">tragicomedy</span>, epic drama (narrative elements on stage — Wilder's stage manager; Brecht).</p>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>6. Worked example — the Prologue as sonnet &amp; exposition</h3>
+  <p><b>Click any line.</b> The prologue is a Shakespearean sonnet doing dramaturgical work — poetry module and drama module shake hands here.</p>
+  <div class="poem-wrap">
+    <div class="poem" id="prol-poem"></div>
+    <div class="notebox" id="prol-note">
+      <h4>Click a line to start</h4>
+      <p class="hint">Big picture: 14 lines, abab cdcd efef gg — a Shakespearean sonnet as <b>isolated exposition</b>. It spoils the ending on purpose: from line 6 onwards the entire play runs under dramatic irony.</p>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>7. Worked example — Kahn's feminist reading</h3>
+  <p>Coppélia Kahn, "Coming of Age in Verona" (1977/78): a feminist rethinking of the play's tragedy — <b>fate vs. feud</b>.</p>
+  <div class="ex">"the feud in a realistic social sense is the primary tragic force in the play — not the feud as an agent of fate, but the feud as an extreme and peculiar expression of patriarchal society, which Shakespeare shows to be tragically self-destructive." <span class="src">(Kahn 5)</span></div>
+  <ul>
+    <li>Not "star-crossed" destiny but a <b>man-made social structure</b>: growing up in Verona means socialisation into patriarchy — sons prove manhood through "phallic violence on behalf of their fathers" (6), not courtship (hence the puns on "stand").</li>
+    <li>Romeo and Juliet have <b>no Aristotelian tragic flaw</b> — they build new adult identities apart from the feud, and the feud "blocks their every attempt" (6).</li>
+    <li>Structure supports the argument: the feud opens, centres and closes the play (I.1, III.1, V.3). <b>Tybalt is Romeo's foil</b>: two models of becoming a man. Act 3 forces Romeo's choice — sanctioned public manhood (draw the sword) vs. private new identity (Juliet's husband). Mercutio's death shames him back into the feud: "Romeo's hard choice is also ours." (8)</li>
+  </ul>
+  <p class="hint">Exam-ready move: pit Kahn against Aristotle. If the tragedy is structural (patriarchy), hamartia becomes systemic, not personal — that contrast is a full essay paragraph.</p>
+</div>
+
+<div class="card">
+  <h3>8. Listen — Oxford lecture on Romeo and Juliet</h3>
+  <p>Emma Smith (University of Oxford, <i>Approaching Shakespeare</i>) on the play — including the question of whether the tragedy is fate, feud or genre. Perfect second opinion next to Kahn.</p>
+  <div style="position:relative;max-width:640px;margin:10px auto">
+    <iframe title="Romeo and Juliet — Approaching Shakespeare (Emma Smith, University of Oxford)" width="100%" height="400" frameborder="0" scrolling="no" src="https://podcasts.ox.ac.uk/embed/972eb234-61a0-4be5-8a8f-6d3ac853ce43" allowfullscreen allow="fullscreen" loading="lazy" style="border-radius:12px;border:1px solid rgba(255,255,255,.6)"></iframe>
+  </div>
+  <p class="hint">Source: <a href="https://podcasts.ox.ac.uk/romeo-and-juliet" target="_blank" rel="noopener">podcasts.ox.ac.uk</a> (official Oxford embed) · <a href="https://media.podcasts.ox.ac.uk/engfac/approachingshakespeare/2015-05-04-engfac-approaching_shakespeare-romeo_juliet-smith.srt" target="_blank" rel="noopener">transcript (.srt)</a>. Note: the player loads from Oxford's servers.</p>
+</div>
+
+<div class="phase practice">Phase 2 · Practice</div>
+
+<div class="card">
+  <h3>A. Diagnose the speech situation</h3>
+  <div class="reveal"><p><b>Scene:</b> Juliet, alone on the balcony, believes herself unheard: "O Romeo, Romeo, wherefore art thou Romeo?"</p><div class="answer"><b>Soliloquy</b> — alone on stage (so she thinks), unmediated and reliable access to her feelings. Bonus: Romeo IS listening — discrepant awareness inside the scene, and the audience knows more than Juliet.</div></div>
+  <div class="reveal"><p><b>Scene:</b> A villain turns from his interlocutor and mutters his true plan so that only the audience hears it.</p><div class="answer"><b>Aside</b> (directed to the audience) — others are on stage but cannot hear. If he addressed it to himself, monological aside; to a single ally, dialogical.</div></div>
+  <div class="reveal"><p><b>Scene:</b> The audience watches Romeo poison himself beside a Juliet it knows is alive.</p><div class="answer"><b>Dramatic irony</b> at maximum voltage — discrepant awareness between stage and audience, prepared by the prologue's isolated exposition.</div></div>
+  <div class="reveal"><p><b>Q:</b> Whose death converts R&amp;J's comedy-like first half into tragedy — and which structural position does that scene occupy?</p><div class="answer"><b>Mercutio's</b> (killed by Tybalt), Act 3 Scene 1 — the climax at the play's exact centre, one of Kahn's three feud scenes (I.1, III.1, V.3).</div></div>
+</div>
+
+<div class="card">
+  <h3>B. Term ↔ definition flashcards</h3>
+  <div class="fc-grid" id="drama-cards"></div>
+</div>
+
+<div class="phase test">Phase 3 · Test</div>
+<div class="card"><h3>Drama Test — 12 questions</h3><p class="hint">From soliloquy to catharsis to Kahn.</p></div>
+<div id="quiz-drama"></div>
+<div class="scorebar" id="score-drama"></div>
 </section>
 
 <!-- ============ NARRATIVE ============ -->
@@ -732,7 +865,7 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
   <p><span class="term">Setting</span>: fictional places that give "topological determination" to the storyworld. Analytical angles: semantics/functions of space, <b>spatial opposites</b>, space ↔ characterisation, space ↔ plot, atmosphere. Concepts: <span class="term">paths</span> (literal &amp; metaphorical), <span class="term">portals</span> (windows, doors, gates — transitions), <span class="term">containers</span> (inside/outside — rooms, compounds, nations).</p>
   <div class="ex"><i>Efuru</i>'s spatial map: village vs. "far away" farm; the Great River as the path connecting farms, markets (Agbor, Onicha, Ndoni…) and towns; church &amp; school as spaces of colonisation; lake and rivers as spiritual spaces of Uhamiri and Okita; the compound gate as a portal where courtship scenes (Efuru &amp; Gilbert) are staged — and where gendered rules of mobility ("Men and women don't go out at night") become visible.</div>
   <div class="painting">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Leighton-The_Fisherman_and_the_Syren-c._1856-1858.jpg/1280px-Leighton-The_Fisherman_and_the_Syren-c._1856-1858.jpg" alt="Leighton, The Fisherman and the Syren" loading="lazy">
+    <img src="images/leighton.jpg" alt="Leighton, The Fisherman and the Syren" loading="lazy">
     <div class="pcap"><b>Frederic Leighton, The Fisherman and the Syren (c. 1856–58)</b> — water as a spiritual, dangerous, seductive space. A European cousin of Uhamiri's lake: in both traditions the water spirit offers wealth and demands a price.</div>
   </div>
 </div>
@@ -750,7 +883,7 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
   <div class="reveal"><div class="answer"><b>External focalisation:</b> only what can be observed from outside; access to thoughts exists solely through quoted direct speech. Narrator &lt; character.</div></div>
   <p class="hint">Full verdict for the exam: <i>Efuru</i> has an extradiegetic, heterodiegetic narrator narrating subsequently, with focalisation shifting per passage (zero ↔ internal ↔ external) — plus the metadiegetic folktale told by Eneke, which mirrors the novel's themes (female disobedience, wit, solidarity) in Igbo oral-storytelling form.</p>
   <div class="painting">
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Horace%20Vernet-Arab%20Tale%20Teller%201833.jpg?width=1100" alt="Vernet, The Arab Tale-Teller" loading="lazy">
+    <img src="images/vernet.jpg" alt="Vernet, The Arab Tale-Teller" loading="lazy">
     <div class="pcap"><b>Horace Vernet, The Arab Tale-Teller (1833)</b> — a narrator on the intradiegetic level, mid-metadiegesis: the audience leans into a story within the story, exactly Eneke's situation in <i>Efuru</i>.</div>
   </div>
 </div>
@@ -936,7 +1069,7 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
   <h3>5. Context for <i>Belle</i></h3>
   <p>Amma Asante's <i>Belle</i> (2013) reimagines Dido Elizabeth Belle, starting from David Martin's c. 1778 double portrait with Lady Elizabeth Murray. Two critical anchors from the course: Kehinde Andrews reads the film (with <i>Amazing Grace</i>) as symptomatic of a "psychosis of whiteness" — celluloid hallucinations that centre white saviours in abolition narratives; and Lawrence Scott's novel <i>Dangerous Freedom</i> imagines Dido appalled by the portrait's exoticising "artifice" (the turban, the feather). Exam-ready move: connect a formal observation (framing, blocking, costume in a scene) to these debates about representation.</p>
   <div class="painting">
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Dido%20Elizabeth%20Belle.jpg?width=900" alt="David Martin, Dido Elizabeth Belle and Lady Elizabeth Murray" loading="lazy">
+    <img src="images/dido.jpg" alt="David Martin, Dido Elizabeth Belle and Lady Elizabeth Murray" loading="lazy">
     <div class="pcap"><b>David Martin (attr.), Dido Elizabeth Belle and Lady Elizabeth Murray (c. 1778)</b> — THE painting the whole debate orbits. Read it like a film frame: blocking (who is central, who moves?), costume (the turban and feather Scott's Dido calls "artifice"), the pointed finger, the direct gaze.</div>
   </div>
 </div>
@@ -1256,7 +1389,7 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
     <li>AAVE features: copula deletion (<i>He crazy</i>), multiple negation (<i>We never had no trouble</i>).</li>
   </ul>
   <div class="painting">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Gustave_Caillebotte_-_Paris_Street%3B_Rainy_Day_-_Google_Art_Project.jpg/1280px-Gustave_Caillebotte_-_Paris_Street%3B_Rainy_Day_-_Google_Art_Project.jpg" alt="Caillebotte, Paris Street; Rainy Day" loading="lazy">
+    <img src="images/caillebotte.jpg" alt="Caillebotte, Paris Street; Rainy Day" loading="lazy">
     <div class="pcap"><b>Gustave Caillebotte, Paris Street; Rainy Day (1877)</b> — the sociolinguist's habitat: the modern city, where class, fashion and anonymity meet. Every figure here would score differently on Labov's class index — and sound like it.</div>
   </div>
 </div>
@@ -1318,7 +1451,7 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
   <div class="figcap">Ongoing change in progress: /ʊə/ gives way to /ɔː/ — <i>poor</i> → "pour", <i>sure</i> → "shore" — generation by generation. Change is not decay; it never stopped. Schematic redrawing; findings reported in Mair 2022: 216 (after J. Wells).</div>
   </div>
   <div class="painting">
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Frank%20Bernard%20Dicksee%20(1853-1928)%20-%20The%20Funeral%20of%20a%20Viking%20-%201928.13%20-%20Manchester%20Art%20Gallery.jpg?width=1100" alt="Dicksee, The Funeral of a Viking" loading="lazy">
+    <img src="images/viking.jpg" alt="Dicksee, The Funeral of a Viking" loading="lazy">
     <div class="pcap"><b>Frank Dicksee, The Funeral of a Viking (1893)</b> — the Danelaw made visible. Viking settlement gave English everyday Norse words (<i>sky, egg, they</i>) and helped grind down Old English inflections — external language change, burning on the shore.</div>
   </div>
 </div>
@@ -1371,11 +1504,11 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
 <section id="page-final" class="page">
   <button class="back" data-goto="lit">← LitCult modules</button>
   <h2 class="ptitle">Final Exam</h2>
-  <p class="psub">54 questions — every concept collected from the poetry, narrative and film material is tested at least once: all feet and rhyme types, every trope, Genette's full toolkit, the complete film vocabulary, and the Belle debate. Treat it like the real thing.</p>
+  <p class="psub">62 questions — every concept from the poetry, drama, narrative and film material is tested at least once: all feet and rhyme types, every trope, dramatic form from soliloquy to catharsis, Genette's full toolkit, the complete film vocabulary, and the Belle debate. Treat it like the real thing.</p>
   <div class="facts" style="grid-template-columns:repeat(2,1fr)">
     <div class="card fact">
       <h4>Pacing</h4>
-      <p>54 questions ≈ 25–30 minutes at exam speed. If a question takes you more than a minute, flag the concept and revisit its Learn phase afterwards.</p>
+      <p>62 questions ≈ 30–35 minutes at exam speed. If a question takes you more than a minute, flag the concept and revisit its Learn phase afterwards.</p>
     </div>
     <div class="card fact">
       <h4>Read the why — always</h4>
@@ -1395,7 +1528,7 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
 <script>
 /* ---------- navigation ---------- */
 const tabs=document.querySelectorAll('nav.tabs button');
-const navMap={home:'home',lit:'lit',poetry:'lit',narrative:'lit',film:'lit',final:'lit',lingu:'lingu'};
+const navMap={home:'home',lit:'lit',poetry:'lit',drama:'lit',narrative:'lit',film:'lit',final:'lit',lingu:'lingu'};
 function goTo(page){
   tabs.forEach(b=>b.classList.toggle('active',b.dataset.page===(navMap[page]||'home')));
   document.querySelectorAll('section.page').forEach(s=>s.classList.toggle('active',s.id==='page-'+page));
@@ -1403,6 +1536,7 @@ function goTo(page){
   document.body.classList.toggle('bg-home',page==='home');
   document.body.classList.toggle('bg-lit',page==='lit');
   document.body.classList.toggle('bg-poetry',page==='poetry');
+  document.body.classList.toggle('bg-drama',page==='drama');
   document.body.classList.toggle('bg-narrative',page==='narrative');
   document.body.classList.toggle('bg-film',page==='film');
   window.scrollTo({top:0,behavior:'smooth'});
@@ -1437,7 +1571,7 @@ function stepperize(root){
     bar.appendChild(btn);
   });
 }
-['page-poetry','page-narrative','page-film'].forEach(id=>stepperize(document.getElementById(id)));
+['page-poetry','page-drama','page-narrative','page-film'].forEach(id=>stepperize(document.getElementById(id)));
 document.querySelectorAll('.lu-panel').forEach(p=>stepperize(p));
 
 /* ---------- reveal blocks ---------- */
@@ -1471,6 +1605,37 @@ mckay.forEach((l,i)=>{
   });
   poemEl.appendChild(d);
 });
+
+/* ---------- R&J prologue explorer ---------- */
+const prol=[
+ ["Two households, both alike in dignity,","Exposition opens with symmetry: 'both alike' — the feud has no righteous side. Clean iambic pentameter from the first breath.",["exposition","meter"]],
+ ["In fair Verona, where we lay our scene,","Setting named — and meta-theatre begins: 'we lay our scene' is the stage talking about itself, external communication made audible.",["setting","meta-theatre"]],
+ ["From ancient grudge break to new mutiny,","The feud: old hatred breeding new violence. Antithesis ancient/new compresses generations of history into one line.",["feud","antithesis"]],
+ ["Where civil blood makes civil hands unclean.","Pun on 'civil': of citizens AND civilised — civility undone by citizens' blood. The wordplay carries the moral diagnosis.",["pun","imagery"]],
+ ["From forth the fatal loins of these two foes","'Fatal loins': birth and death fused in one image — the lovers are doomed from conception. Heavy f-alliteration slows the line.",["foreshadowing","alliteration"]],
+ ["A pair of star-crossed lovers take their life,","THE spoiler. 'Star-crossed' frames the tragedy as fate — exactly the reading Kahn attacks (feud, not stars). From here on the whole play runs under dramatic irony.",["dramatic irony","fate vs. feud"]],
+ ["Whose misadventured piteous overthrows","'Piteous' names Aristotle's tragic emotion directly — the prologue tells the audience what to feel before showing why.",["tragedy","pathos"]],
+ ["Doth with their death bury their parents' strife.","Paradox: death buries strife; the children's end heals the parents. The plot's terrible arithmetic, announced in advance.",["paradox"]],
+ ["The fearful passage of their death-marked love,","Third quatrain: 'death-marked' echoes 'star-crossed' — and adds Aristotle's second emotion, fear, to line 7's pity.",["tragedy"]],
+ ["And the continuance of their parents' rage,","The feud again — it opens, centres and closes the prologue just as it does the play (I.1, III.1, V.3). Structure IS Kahn's argument.",["feud","structure"]],
+ ["Which but their children's end naught could remove,","Only the children's death can end the feud: the price is stated as a grim conditional. Inverted syntax delays 'remove' for emphasis.",["foreshadowing"]],
+ ["Is now the two hours' traffic of our stage;","Meta-theatre at full volume: the play knows its own running time. 'Traffic' — the business of the stage, commerce and motion at once.",["meta-theatre"]],
+ ["The which, if you with patient ears attend,","Direct audience address: the external communication level surfaces — drama's contract with its hearers made explicit.",["audience address"]],
+ ["What here shall miss, our toil shall strive to mend.","The couplet seals the deal: where the text falls short, performance ('our toil') will mend it — dramatic text vs. theatrical performance in one line.",["couplet","performance"]]
+];
+const prolRhyme=["a","b","a","b","c","d","c","d","e","f","e","f","g","g"];
+const prolEl=document.getElementById('prol-poem'),prolNote=document.getElementById('prol-note');
+if(prolEl){
+  prol.forEach((l,i)=>{
+    const d=document.createElement('div');d.className='pl';
+    d.innerHTML='<span class="n">'+(i+1)+'</span><span style="flex:1">'+l[0]+'</span><span class="n" style="width:auto">'+prolRhyme[i]+'</span>';
+    d.addEventListener('click',()=>{
+      prolEl.querySelectorAll('.pl').forEach(x=>x.classList.remove('sel'));d.classList.add('sel');
+      prolNote.innerHTML='<h4>Line '+(i+1)+' · rhyme: '+prolRhyme[i]+'</h4><div>'+l[2].map(t=>'<span class="tag">'+t+'</span>').join('')+'</div><p style="margin-top:8px;font-size:.9rem">'+l[1]+'</p>';
+    });
+    prolEl.appendChild(d);
+  });
+}
 
 /* ---------- scansion trainer ---------- */
 const scanData={scan1:{syl:["Her","vi","gor","flows","like","tides","in","to","my","blood"],stress:[1,3,5,7,9]}};
@@ -1546,6 +1711,16 @@ buildCards('film-cards',[
  ["Frame pivots side to side; the camera itself doesn't move","Pan","","Camera moves = tracking shot · lens adjusts = zoom."],
  ["Score, voice-over, themes no character can hear","Extradiegetic sound","","Inside the storyworld (dialogue, room noise, diegetic music) = intradiegetic."]
 ]);
+buildCards('drama-cards',[
+ ["A character alone on stage speaks; nobody in the play can hear","Soliloquy","","High subjectivity AND honesty — reliable access to the mind. Monologue = others CAN hear, not necessarily reliable."],
+ ["A line delivered past the other characters on stage — only the audience (or one ally) hears","Aside","","Monological, dialogical, or directed to the audience."],
+ ["The audience knows more than the characters","Dramatic irony","","Romeo dies beside a Juliet the audience knows is alive — primed by the prologue."],
+ ["Contrast figure who sharpens a protagonist's profile","Foil","","Mercutio and Tybalt for Romeo; the Nurse and Rosaline for Juliet."],
+ ["Context delivered OUTSIDE the action, e.g. in a prologue","Isolated exposition","","Integrated exposition reveals context within the unfolding play."],
+ ["Action · place · time","The three unities","Neoclassical doctrine","The open form violates them — ask: to what effect?"],
+ ["The error of judgment that triggers the tragic fall","Hamartia","Aristotle","Followed by anagnorisis (recognition); the audience's pity and fear discharge as catharsis."],
+ ["The invisible boundary between stage and audience","Fourth wall","","A picture-frame-stage concept — Shakespeare's apron stage, open on three sides, barely had one."]
+]);
 
 /* ---------- quizzes ---------- */
 const quizzes={
@@ -1560,6 +1735,20 @@ poetry:[
  ["Lines 3–4 of 'America' ('…I will confess / I love this cultured hell…') demonstrate…",["End-stopped lines","Caesura only","Enjambment","Internal rhyme"],2,"The syntax runs over the line break: enjambment (run-on line)."],
  ["In Sonnet 116, 'the star to every wand'ring bark' describes love via…",["Simile","Personification","Metaphor","Hyperbole"],2,"Love IS the guiding star — implicit comparison, no 'like'/'as' = metaphor."],
  ["McKay's 'jeer' / 'there' (ll. 10/12) is best described as…",["Eye-rhyme","Identical rhyme","Feminine rhyme","Half-rhyme"],3,"Similar sound, no full rhyme = half-rhyme. Eye-rhyme looks identical on the page but sounds different."]
+],
+drama:[
+ ["A speech no other character can hear because the speaker is ALONE on stage:",["Monologue","Soliloquy","Aside","Dialogue"],1,"Soliloquy — and because nobody is listening, it is honest: reliable information. A monologue can be heard by others."],
+ ["An aside is defined by…",["The speaker being alone on stage","Other characters being present but unable to hear it","Being always addressed to the audience","Its length"],1,"Present-but-deaf bystanders are the point. It can go to self, to one character, or to the audience."],
+ ["Romeo kills himself because he believes Juliet dead — the audience knows better. This is…",["Intentional irony","Dramatic irony","Congruent awareness","An aside"],1,"Discrepant awareness between stage and audience = dramatic irony, prepared by the prologue."],
+ ["The R&J prologue is a case of…",["Integrated exposition","Isolated exposition in sonnet form","A soliloquy","Epic drama"],1,"Context delivered outside the action — and in a Shakespearean sonnet (abab cdcd efef gg)."],
+ ["In the five-act model, Act 3 of R&J (Mercutio and Tybalt die, Romeo exiled) is the…",["Exposition","Complication","Climax","Reversal"],2,"The turning point at dead centre. Act 4 (potion) = reversal, Act 5 = catastrophe."],
+ ["The neoclassical three unities are…",["Plot, character, spectacle","Action, place, time","Beginning, middle, end","Text, stage, audience"],1,"Connection of action, single location, represented time ≈ playing time. The open form breaks them."],
+ ["Light-hearted Mercutio set against sentimental Romeo — Mercutio functions as…",["Confidant","Antagonist","Foil","Chorus"],2,"A contrast figure sharpening the protagonist's profile. The confidant is Friar Laurence."],
+ ["Hamartia means…",["The tragic fall itself","An error of judgment","The purging of emotions","The recognition scene"],1,"Error of judgment (linked to flaws like hubris). Recognition = anagnorisis; purging = catharsis."],
+ ["Catharsis is…",["The audience's purging of pity and fear","The hero's death","The restoration of order","The play's final couplet"],0,"Aristotle: tragedy arouses pity and fear and discharges them — the emotional payoff of the genre."],
+ ["The 1597 first printing of R&J (Q1) is known as…",["The First Folio","A bad quarto","An octavo","The Arden text"],1,"Q1 = 'bad quarto'; the First Folio collected the plays in 1623."],
+ ["Elizabethan open-air theatres replaced painted sets with…",["The fourth wall","Word scenery","Picture frames","Projections"],1,"Verbal descriptions did the work of design — on an apron stage surrounded by spectators on three sides."],
+ ["Kahn's central claim about the tragedy of R&J:",["The lovers' hubris causes their fall","Fate ('star-crossed') is inescapable","The feud, as an expression of patriarchal society, is the primary tragic force","The Friar is to blame"],2,"Fate vs. feud: no Aristotelian flaw in the lovers — a self-destructive patriarchal structure blocks 'their every attempt' (Kahn 5–6)."]
 ],
 narrative:[
  ["Genette's term for a narrator who does NOT exist within the storyworld:",["Homodiegetic","Extradiegetic","Heterodiegetic","Autodiegetic"],2,"Heterodiegetic = absent from the story told. (Extradiegetic describes the LEVEL of narrating, not the relation to the story — trap answer!)"],
@@ -1681,7 +1870,15 @@ final:[
  ["Shots of the present followed by shots of the past constitute a…",["Flashforward","Flashback","Crosscut","Match cut"],1,"Flashback — nonlinear temporality editing; flashforward reverses the direction."],
  ["In Scott's Dangerous Freedom, Dido reacts to the portrait's turban and feather as…",["Accurate documentation","Exoticising 'artifice'","Her own fashion choice","A tribute to her mother"],1,"'Where on earth had that turban… come from?' — she sees staging, possibly ridicule, not reality."],
  ["The painting Belle departs from shows Dido Elizabeth Belle together with…",["Queen Charlotte","Lady Elizabeth Murray","Lord Mansfield","Her mother"],1,"David Martin (attr.), c. 1778 — the double portrait the whole representation debate orbits."],
- ["(Re-)establishing shots and inserts serve to…",["Break the 180-degree rule","Create clarity: context first, then detail","Mark dream sequences","Add extradiegetic sound"],1,"Continuity editing's clarity toolkit: re-orient the viewer, then show what matters."]
+ ["(Re-)establishing shots and inserts serve to…",["Break the 180-degree rule","Create clarity: context first, then detail","Mark dream sequences","Add extradiegetic sound"],1,"Continuity editing's clarity toolkit: re-orient the viewer, then show what matters."],
+ ["A plot moving from adversity to prosperity is the basic definition of…",["Tragedy","Comedy","Tragicomedy","Epic drama"],1,"Comedy; tragedy runs the other way. Tragicomedy mixes serious conflict with light-hearted elements."],
+ ["Juliet (romantic) set against the pragmatic Nurse — the Nurse is her…",["Confidante only","Foil","Antagonist","Chorus"],1,"A contrast figure sharpening Juliet's profile — she happens to be a confidante too, but the CONTRAST makes her a foil."],
+ ["Friar Laurence, trusted with the lovers' secrets, functions as…",["Foil","Antagonist","Confidant","Narrator"],2,"The confidant motivates self-revelation on stage — drama's substitute for a narrator's inside view."],
+ ["'The two hours' traffic of our stage' is an example of…",["The fourth wall","Meta-theatrical audience address","Integrated exposition","An aside"],1,"The prologue names the play's own running time and speaks straight past the storyworld to the audience."],
+ ["In the five-act model, Juliet's sleeping potion belongs to the…",["Complication","Climax","Reversal","Catastrophe"],2,"Act 4 = reversal: the counterfeit death that sets up the real one. Act 5 delivers the catastrophe."],
+ ["Shakespeare's Globe had a(n) ___ stage; modern theatres a ___ stage.",["picture-frame / apron","apron / picture-frame","thrust / apron","round / frame"],1,"Apron stage: audience on three sides, barely a fourth wall. The picture-frame stage builds that wall in."],
+ ["A character's nervous pacing and shabby costume characterise them…",["Explicitly","Implicitly","Through exposition","Unreliably"],1,"Implicit figural characterisation: appearance, body language, entrances. Explicit = what is SAID about them (or by them)."],
+ ["Kahn contrasts Tybalt and Romeo as…",["Two models of coming of age as a man under the feud","Fate vs. free will","Comedy vs. tragedy","Foil vs. confidant"],0,"Sanctioned manhood by the sword vs. a private new identity as Juliet's husband — Act 3 forces the choice, and 'Romeo's hard choice is also ours' (Kahn 8)."]
 ]};
 
 function renderQuiz(key){
@@ -1723,7 +1920,7 @@ function retakeQuiz(key){
   renderQuiz(key);
   document.getElementById('quiz-'+key).scrollIntoView({behavior:'smooth'});
 }
-['poetry','narrative','film','lingu','final'].forEach(renderQuiz);
+['poetry','drama','narrative','film','lingu','final'].forEach(renderQuiz);
 
 /* ---------- linguistics unit sub-navigation ---------- */
 document.querySelectorAll('#lu-nav button').forEach(b=>b.addEventListener('click',()=>{
@@ -1773,19 +1970,19 @@ function saveScore(key,pct){
 }
 function paintProgress(){
   let s={};try{s=JSON.parse(localStorage.getItem('gk2scores')||'{}');}catch(e){}
-  ['poetry','narrative','film','lingu','final'].forEach(k=>{
+  ['poetry','drama','narrative','film','lingu','final'].forEach(k=>{
     const bar=document.getElementById('prog-'+k),lab=document.getElementById('prog-'+k+'-label');
     if(!bar)return;
     if(s[k]!==undefined){bar.style.width=s[k]+'%';lab.textContent=(k==='final'?'Best: ':'Test best: ')+s[k]+'%';}
   });
   /* course aggregates on the hub */
-  const litKeys=['poetry','narrative','film','final'];
+  const litKeys=['poetry','drama','narrative','film','final'];
   const taken=litKeys.filter(k=>s[k]!==undefined);
   const aggLit=document.getElementById('agg-lit'),aggLitLab=document.getElementById('agg-lit-label');
   if(aggLit){
     const avg=taken.length?Math.round(taken.reduce((a,k)=>a+s[k],0)/litKeys.length):0;
     aggLit.style.width=avg+'%';
-    aggLitLab.textContent=taken.length?('Tests: '+taken.length+'/4 taken · combined '+avg+'%'):'Tests: none taken yet';
+    aggLitLab.textContent=taken.length?('Tests: '+taken.length+'/5 taken · combined '+avg+'%'):'Tests: none taken yet';
   }
   const aggLin=document.getElementById('agg-lin'),aggLinLab=document.getElementById('agg-lin-label');
   if(aggLin&&s.lingu!==undefined){aggLin.style.width=s.lingu+'%';aggLinLab.textContent='Test best: '+s.lingu+'%';}
