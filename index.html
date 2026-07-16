@@ -177,8 +177,11 @@ body{
   --veil:rgba(250,243,230,.15);--veil2:rgba(250,243,230,.20);
   --bgurl:url('images/cole.jpg');
   background-color:#f2ead9;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
   background-image:linear-gradient(180deg,var(--veil),var(--veil2)),var(--bgurl);
-  background-size:cover;background-position:center;background-attachment:fixed;
+  background-size:cover;background-position:center;
 }
 body.bg-home{--bgurl:url('images/monk.jpg');--accent:#5b6f80;--gold:#8a9aa8;--gold-dim:#c3ccd4}
 body.bg-lit{--bgurl:url('images/wanderer.jpg');--accent:#4f6478;--gold:#94a4b2;--gold-dim:#c9d2da}
