@@ -131,6 +131,23 @@ table.mini th{color:var(--accent);text-align:left;padding:6px 10px;border-bottom
 table.mini td{padding:6px 10px;border-bottom:1px solid var(--line)}
 .stress-x{color:var(--muted)}
 .stress-s{color:var(--accent);font-weight:700}
+/* ===== pomodoro timer ===== */
+.pomo{position:fixed;top:64px;right:14px;z-index:120;font-family:var(--sans)}
+.pomo-pill{display:flex;align-items:center;gap:10px;background:rgba(255,253,246,.94);border:1px solid rgba(255,255,255,.75);border-radius:999px;padding:5px 16px 5px 5px;box-shadow:0 4px 16px rgba(60,40,15,.18)}
+.pomo-btn{width:36px;height:36px;border-radius:50%;border:none;background:var(--accent);color:#fff;font-size:.85rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s}
+.pomo-btn:hover{transform:scale(1.07)}
+.pomo-time{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:#2f2418;letter-spacing:.02em;min-width:66px;text-align:center}
+.pomo-label{font-size:.64rem;letter-spacing:.18em;color:var(--muted);font-weight:700;padding-right:8px}
+.pomo-menu{display:none;position:absolute;right:0;top:calc(100% + 8px);background:rgba(253,249,241,.98);color:var(--ink);border:1px solid rgba(255,255,255,.85);border-radius:14px;padding:14px;width:232px;box-shadow:0 14px 40px rgba(60,40,15,.28)}
+.pomo-menu::before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px}
+.pomo:hover .pomo-menu,.pomo-menu:hover{display:block}
+.pm-title{font-size:.78rem;margin-bottom:4px;color:#6b5844;line-height:1.4}
+.pm-sec{font-size:.62rem;letter-spacing:.16em;color:#a08a6c;margin:11px 0 6px;font-weight:700}
+.pomo-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pomo-grid button{border:1px solid rgba(90,60,25,.14);border-radius:10px;padding:11px 0;font-size:.98rem;font-weight:600;background:#fff;color:#2f2418;cursor:pointer;transition:.15s}
+.pomo-grid button:hover{border-color:var(--accent)}
+.pomo-grid button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+@media(max-width:760px){.pomo{top:auto;bottom:14px}.pomo-menu{top:auto;bottom:calc(100% + 8px)}.pomo-menu::before{top:auto;bottom:-12px}}
 /* ===== glossary ===== */
 .gsearch{width:100%;max-width:420px;padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.7);background:rgba(255,255,255,.65);font-family:var(--sans);font-size:.95rem;color:var(--ink);margin:6px 0 14px}
 .gsearch:focus{outline:none;border-color:var(--accent)}
@@ -329,6 +346,21 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
   <button data-page="gloss">Glossary</button>
 </nav>
 
+<div class="pomo" id="pomo">
+  <div class="pomo-pill">
+    <button class="pomo-btn" id="pomo-btn" aria-label="Start / Pause">&#9654;</button>
+    <span class="pomo-time" id="pomo-time">25:00</span>
+    <span class="pomo-label" id="pomo-label">FOCUS</span>
+  </div>
+  <div class="pomo-menu">
+    <div class="pm-title">Pomodoro · hover to open, click a preset to set</div>
+    <div class="pm-sec">Focus</div>
+    <div class="pomo-grid" id="pomo-f"></div>
+    <div class="pm-sec">Break</div>
+    <div class="pomo-grid" id="pomo-b"></div>
+  </div>
+</div>
+
 <!-- ============ HOME ============ -->
 <section id="page-home" class="page active">
   <div class="hub">
@@ -395,7 +427,7 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
     </div>
     <div class="mod" data-goto="final">
       <h3>Final Exam</h3>
-      <p>62 questions covering the complete LitCult material — poetry, drama, narrative, film. Exam conditions: no peeking.</p>
+      <p>ExamWeb-format mock: type-the-term, true/false, multi &amp; matching, plus analysis MC — 122 points, 60–90 minutes.</p>
       <div class="prog" id="prog-final-label">Not taken</div>
       <div class="bar"><i id="prog-final"></i></div>
     </div>
@@ -1762,11 +1794,11 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
 <section id="page-final" class="page">
   <button class="back" data-goto="lit">← LitCult modules</button>
   <h2 class="ptitle">Final Exam</h2>
-  <p class="psub">62 questions — every concept from the poetry, drama, narrative and film material is tested at least once: all feet and rhyme types, every trope, dramatic form from soliloquy to catharsis, Genette's full toolkit, the complete film vocabulary, and the Belle debate. Treat it like the real thing.</p>
+  <p class="psub">Built in the ExamWeb format: Part A — read the definition, TYPE the term (24 pts) · Part B — true/false (12 pts) · Part C — multiple answers &amp; matching with fake distractors (24 pts) · Part D — analysis multiple choice (62 pts). 122 points total; plan 60–90 minutes. Start the Pomodoro timer, answer in order, no peeking.</p>
   <div class="facts" style="grid-template-columns:repeat(2,1fr)">
     <div class="card fact">
       <h4>Pacing</h4>
-      <p>62 questions ≈ 30–35 minutes at exam speed. If a question takes you more than a minute, flag the concept and revisit its Learn phase afterwards.</p>
+      <p>122 points across four parts ≈ 60–90 minutes at exam speed. The typed answers in Part A are the real difficulty spike — that is deliberate, because it is the ExamWeb direction.</p>
     </div>
     <div class="card fact">
       <h4>Read the why — always</h4>
@@ -2074,6 +2106,45 @@ buildCards('drama-cards',[
  ["Small early single-play printings vs. the great 1623 collection","Quartos vs. First Folio","","R&J's Q1 (1597) is a 'bad quarto' — textual transmission matters for what we read today."],
  ["Narrative elements invade the stage: a narrator figure addresses us directly","Epic drama","","Wilder's stage manager; Brecht's theatre — against the illusion of the fourth wall."]
 ]);
+
+/* ---------- pomodoro ---------- */
+const PO={mode:'focus',focus:25,brk:5,left:25*60,run:false};
+function poPaint(){
+  const m=Math.floor(PO.left/60),s=PO.left%60;
+  document.getElementById('pomo-time').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+  document.getElementById('pomo-label').textContent=PO.mode==='focus'?'FOCUS':'BREAK';
+  document.getElementById('pomo-btn').innerHTML=PO.run?'&#10074;&#10074;':'&#9654;';
+  document.getElementById('pomo-btn').style.background=PO.mode==='focus'?'var(--accent)':'var(--green)';
+}
+function poBuild(id,vals,key){
+  const g=document.getElementById(id);
+  vals.forEach(v=>{
+    const b=document.createElement('button');b.textContent=v;
+    if(PO[key]===v)b.classList.add('on');
+    b.addEventListener('click',()=>{
+      PO[key]=v;
+      g.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
+      if((key==='focus'&&PO.mode==='focus')||(key==='brk'&&PO.mode==='break')){PO.left=v*60;PO.run=false;}
+      poPaint();
+    });
+    g.appendChild(b);
+  });
+}
+poBuild('pomo-f',[15,25,45,50],'focus');
+poBuild('pomo-b',[5,10],'brk');
+document.getElementById('pomo-btn').addEventListener('click',()=>{PO.run=!PO.run;poPaint();});
+setInterval(()=>{
+  if(!PO.run)return;
+  PO.left--;
+  if(PO.left<=0){
+    PO.mode=PO.mode==='focus'?'break':'focus';
+    PO.left=(PO.mode==='focus'?PO.focus:PO.brk)*60;
+    PO.run=false;
+    document.title=(PO.mode==='break'?'Break time — ':'Back to focus — ')+'GK2 Study Coach';
+  }
+  poPaint();
+},1000);
+poPaint();
 
 /* ---------- glossary ---------- */
 const GLOSS=[
@@ -2631,7 +2702,167 @@ function retakeQuiz(key){
   renderQuiz(key);
   document.getElementById('quiz-'+key).scrollIntoView({behavior:'smooth'});
 }
-['poetry','drama','narrative','film','lingu','final'].forEach(renderQuiz);
+['poetry','drama','narrative','film','lingu'].forEach(renderQuiz);
+
+/* ---------- final exam: ExamWeb-style mixed engine ---------- */
+const EXAMX=[
+{s:"Part A — Terminology: read the definition, TYPE the term (the exam direction)"},
+{t:"short",q:"The pattern of stressed and unstressed syllables in verse, defined by the kind and number of feet, is called…",a:["meter","metre"],why:"Meter. Rhythm = meter + its realisation."},
+{t:"short",q:"A verse line of five iambic feet is written in… (two words)",a:["iambicpentameter"],why:"Iambic pentameter — blank verse when unrhymed."},
+{t:"short",q:"Blake's line 'O Rose, thou art sick' addresses something that cannot answer. The figure is called…",a:["apostrophe"],why:"Apostrophe — direct address to an absent or non-answering addressee."},
+{t:"short",q:"A 19-line poem of five tercets plus a quatrain, built on two rhymes with two alternating refrains, is a…",a:["villanelle"],why:"Villanelle."},
+{t:"short",q:"When the syntax runs over the line break, the device is called…",a:["enjambment","enjambement","runonline"],why:"Enjambment (run-on line)."},
+{t:"short",q:"The rhyme scheme abba is called… (name, not letters)",a:["enclosingrhyme","embracingrhyme","enclosedrhyme"],why:"Enclosing/embracing rhyme."},
+{t:"short",q:"A speech delivered by a character ALONE on stage, heard by no one in the play, is a…",a:["soliloquy"],why:"Soliloquy — and therefore reliable."},
+{t:"short",q:"The audience knows Juliet lives; Romeo does not. This discrepancy is called…",a:["dramaticirony"],why:"Dramatic irony — audience > characters."},
+{t:"short",q:"Aristotle's term for the hero's error of judgment:",a:["hamartia"],why:"Hamartia — with anagnorisis and catharsis completing the trio."},
+{t:"short",q:"A story told by a character who is inside the narrated world sits on the … level.",a:["metadiegetic"],why:"Metadiegetic — narrative within the narrative."},
+{t:"short",q:"Stanzel's narrative situation with an omniscient AND omnipresent narrator is the … narrative situation.",a:["authorial"],why:"Authorial — nothing to do with the real author."},
+{t:"short",q:"Everything visible on screen, arranged before filming begins:",a:["miseenscene","misenscene"],why:"Mise-en-scène."},
+{t:"short",q:"The smallest sound unit that can distinguish meaning is the…",a:["phoneme"],why:"Phoneme — established via minimal pairs."},
+{t:"short",q:"The contextual or free realisational variants of one phoneme are its…",a:["allophones","allophone"],why:"Allophones."},
+{t:"short",q:"The smallest MEANINGFUL unit of language is the…",a:["morpheme"],why:"Morpheme — phonemes distinguish, morphemes carry meaning."},
+{t:"short",q:"'Brunch' from breakfast + lunch is formed by…",a:["blending","blend"],why:"Blending."},
+{t:"short",q:"Replacing a word sequence with a pro-form to prove it is a phrase is the … test.",a:["substitution"],why:"Substitution — one of four phrase tests."},
+{t:"short",q:"One word-form with two or more UNRELATED meanings shows…",a:["homonymy"],why:"Homonymy (mole) vs. polysemy (beam)."},
+{t:"short",q:"The effect an utterance produces in the listener is its…",a:["perlocution"],why:"Perlocution — vs. illocution (intention)."},
+{t:"short",q:"Grice's fourth maxim — avoid obscurity, be brief and orderly — is the maxim of…",a:["manner"],why:"Manner. 'Clarity' is the classic fake distractor."},
+{t:"short",q:"Prestige attaching to stigmatised non-standard speech is called … prestige.",a:["covert","hidden"],why:"Covert prestige."},
+{t:"short",q:"The EModE chain shift that raised or diphthongised all ME long vowels:",a:["greatvowelshift","gvs","tudorvowelshift"],why:"The Great Vowel Shift."},
+{t:"short",q:"In Kachru's model, norm-developing varieties like Nigerian English belong to the … Circle.",a:["outer"],why:"Outer Circle — the New Englishes."},
+{t:"short",q:"The pronunciation of post-vocalic /r/ (AmE arm vs. BrE arm) is called…",a:["rhoticity"],why:"Rhoticity — Labov's NYC variable."},
+{s:"Part B — True or false"},
+{t:"tf",q:"All homodiegetic narrators are first-person narrators.",a:true,why:"True — but not all first-person narrators are homodiegetic."},
+{t:"tf",q:"The Great Vowel Shift also affected the short vowels of Middle English.",a:false,why:"False — long vowels only."},
+{t:"tf",q:"A soliloquy provides reliable access to a character's mind.",a:true,why:"True — nobody to perform for."},
+{t:"tf",q:"A monologue exclusively conveys reliable information.",a:false,why:"False — others can hear it; the speaker may perform."},
+{t:"tf",q:"Exchanging one allophone for another changes word meaning.",a:false,why:"False — that would make them phonemes."},
+{t:"tf",q:"NATO is an alphabetism.",a:false,why:"False — pronounced as a word: acronym. FBI is the alphabetism."},
+{t:"tf",q:"Passivisation is a test for identifying objects.",a:true,why:"True — objects become passive subjects; adverbials fail."},
+{t:"tf",q:"An accent differs from the standard in pronunciation, vocabulary and grammar.",a:false,why:"False — pronunciation only; the triple defines a dialect."},
+{t:"tf",q:"Extradiegetic sound originates inside the storyworld.",a:false,why:"False — that is intradiegetic sound."},
+{t:"tf",q:"The volta of a Petrarchan sonnet typically falls at line 9.",a:true,why:"True — octave to sestet."},
+{t:"tf",q:"The word 'but' carries a conventional implicature of contrast.",a:true,why:"True — glued to the word, context-independent."},
+{t:"tf",q:"Chaucer wrote in Early Modern English.",a:false,why:"False — Middle English."},
+{s:"Part C — Multiple answers & matching (fake distractors included)"},
+{t:"multi",q:"Which of these are Genette's times of narration? (Select all that apply.)",opts:["subsequent","prior","circular","simultaneous","interpolated"],a:[0,1,3,4],why:"Four types — 'circular' is invented."},
+{t:"multi",q:"Which elements belong to mise-en-scène?",opts:["blocking","costume","crosscutting","lighting","props"],a:[0,1,3,4],why:"Crosscutting is editing."},
+{t:"multi",q:"Which are Searle's speech act classes?",opts:["representative","directive","interrogative","commissive","declaration"],a:[0,1,3,4],why:"'Interrogative' is a sentence form, not a speech act class."},
+{t:"multi",q:"Which characterise ESL contexts?",opts:["societal multilingualism","norm-developing","second diaspora","norm-providing"],a:[0,1,2],why:"Norm-providing is the Inner Circle."},
+{t:"multi",q:"Which are INTERNAL causes of language change?",opts:["analogy","reanalysis","language contact","ease of articulation"],a:[0,1,3],why:"Contact is external."},
+{t:"multi",q:"Which are tests for phrase status?",opts:["substitution","movement","passivisation","coordination"],a:[0,1,3],why:"Passivisation tests objects, not phrases."},
+{t:"multi",q:"Which statements describe comedy?",opts:["ordinary people of middle and lower classes","flat character types","movement from prosperity to adversity","mirror held up to society"],a:[0,1,3],why:"Prosperity → adversity is tragedy's arc."},
+{t:"multi",q:"Which devices belong to continuity editing?",opts:["eyeline match","shot-reverse-shot","jump cut","180-degree rule"],a:[0,1,3],why:"The jump cut is disjunctive."},
+{t:"match",q:"Match each foot to its pattern.",pairs:[["iamb","x / (be-LOW)"],["trochee","/ x (GAR-den)"],["dactyl","/ x x (MER-ri-ly)"],["anapest","x x / (in-ter-VENE)"]]},
+{t:"match",q:"Match each focalisation/situation to its description.",pairs:[["zero focalisation","narrator says more than any character knows"],["internal focalisation","restricted to one character's perception"],["external focalisation","surfaces only, no access to minds"],["figural narrative situation","events filtered through a reflector character"]]},
+{t:"match",q:"Match each film term to its definition.",pairs:[["pan","frame swivels, camera fixed"],["tracking shot","camera itself travels"],["zoom","lens adjusts, no movement"],["dissolve","shots superimposed in transition"]]},
+{t:"match",q:"Match each notation to what it encloses.",pairs:[["/ /","phonemes"],["[ ]","phones"],["{ }","morphemes"],["< >","graphemes"]]},
+{s:"Part D — Analysis & application (multiple choice)"}
+];
+quizzes.final.forEach(x=>EXAMX.push({t:"mc",q:x[0],opts:x[1],a:x[2],why:x[3]}));
+
+function normS(x){return (x||"").toLowerCase().replace(/[^a-z0-9]/g,"");}
+function renderExam(){
+  const host=document.getElementById('quiz-final');if(!host)return;
+  let possible=0,score=0,answeredP=0,started=null,timerEl=null;
+  const head=document.createElement('div');head.className='card';
+  head.innerHTML='<h3>Exam running</h3><p class="hint">Timer starts with your first answer. Points update as you go.</p><p><b><span id="ex-time">00:00</span></b> · <span id="ex-pts">0 points banked</span></p>';
+  host.appendChild(head);
+  function tick(){if(!started)return;const s=Math.floor((Date.now()-started)/1000);document.getElementById('ex-time').textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');}
+  setInterval(tick,1000);
+  function bank(p){if(!started)started=Date.now();score+=p;answeredP++;document.getElementById('ex-pts').textContent=score+' points banked';checkDone();}
+  let answerUnits=0;
+  function checkDone(){
+    if(answeredP<answerUnits)return;
+    const pct=Math.round(score/possible*100);
+    const bar=document.getElementById('score-final');
+    const mins=started?Math.round((Date.now()-started)/60000):0;
+    let verdict=pct>=80?'Exam-ready. Polish the misses.':pct>=60?'Solid — rework the explanations of what you missed.':'Back to the modules. The ladder exists for a reason.';
+    bar.innerHTML='<div class="big">'+score+' / '+possible+' points ('+pct+'%)</div><p>'+mins+' minutes · '+verdict+'</p><button class="action" onclick="location.reload()">Restart exam (reloads page)</button>';
+    bar.classList.add('show');bar.scrollIntoView({behavior:'smooth',block:'center'});
+    saveScore('final',pct);
+  }
+  let qn=0;
+  EXAMX.forEach(item=>{
+    if(item.s){const h=document.createElement('div');h.className='phase test';h.textContent=item.s;host.appendChild(h);return;}
+    qn++;
+    const b=document.createElement('div');b.className='q-block';
+    const why=document.createElement('div');why.className='why';why.innerHTML=item.why||'';
+    if(item.t==='mc'||item.t==='tf'){
+      possible++;answerUnits++;
+      const opts=item.t==='tf'?['True','False']:item.opts;
+      const correct=item.t==='tf'?(item.a?0:1):item.a;
+      b.innerHTML='<div class="qq"><span class="num">'+qn+'.</span>'+item.q+'</div>';
+      opts.forEach((o,oi)=>{
+        const btn=document.createElement('button');btn.className='opt';btn.textContent=o;
+        btn.addEventListener('click',()=>{
+          b.querySelectorAll('.opt').forEach(x=>x.disabled=true);
+          if(oi===correct){btn.classList.add('correct');bank(1);}else{btn.classList.add('wrong');b.querySelectorAll('.opt')[correct].classList.add('correct');bank(0);}
+          why.classList.add('show');
+        });
+        b.appendChild(btn);
+      });
+    }else if(item.t==='short'){
+      possible++;answerUnits++;
+      b.innerHTML='<div class="qq"><span class="num">'+qn+'.</span>'+item.q+'</div>';
+      const inp=document.createElement('input');inp.type='text';inp.className='gsearch';inp.placeholder='Type your answer…';inp.style.maxWidth='340px';
+      const btn=document.createElement('button');btn.className='action';btn.textContent='Check';
+      btn.addEventListener('click',()=>{
+        if(btn.disabled)return;btn.disabled=true;inp.disabled=true;
+        const ok=item.a.some(x=>normS(inp.value)===normS(x));
+        inp.style.borderColor=ok?'var(--green)':'var(--red)';
+        why.innerHTML=(ok?'Correct. ':'Expected: <b>'+item.a[0]+'</b>. ')+(item.why||'');why.classList.add('show');
+        bank(ok?1:0);
+      });
+      inp.addEventListener('keydown',e=>{if(e.key==='Enter')btn.click();});
+      b.appendChild(inp);b.appendChild(btn);
+    }else if(item.t==='multi'){
+      possible++;answerUnits++;
+      b.innerHTML='<div class="qq"><span class="num">'+qn+'.</span>'+item.q+'</div>';
+      const boxes=[];
+      item.opts.forEach((o,oi)=>{
+        const lab=document.createElement('label');lab.className='opt';lab.style.display='block';
+        const cb=document.createElement('input');cb.type='checkbox';cb.style.marginRight='8px';
+        lab.appendChild(cb);lab.appendChild(document.createTextNode(o));boxes.push(cb);b.appendChild(lab);
+      });
+      const btn=document.createElement('button');btn.className='action';btn.textContent='Check';
+      btn.addEventListener('click',()=>{
+        if(btn.disabled)return;btn.disabled=true;
+        const sel=boxes.map((c,i)=>c.checked?i:-1).filter(i=>i>=0);
+        const ok=sel.length===item.a.length&&item.a.every(i=>sel.includes(i));
+        b.querySelectorAll('label.opt').forEach((lab,i)=>{
+          boxes[i].disabled=true;
+          if(item.a.includes(i))lab.classList.add('correct');else if(boxes[i].checked)lab.classList.add('wrong');
+        });
+        why.classList.add('show');bank(ok?1:0);
+      });
+      b.appendChild(btn);
+    }else if(item.t==='match'){
+      possible+=item.pairs.length;answerUnits++;
+      b.innerHTML='<div class="qq"><span class="num">'+qn+'.</span>'+item.q+' <span class="hint">('+item.pairs.length+' points)</span></div>';
+      const shuffled=item.pairs.map(p=>p[1]).sort(()=>Math.random()-.5);
+      const sels=[];
+      item.pairs.forEach(p=>{
+        const row=document.createElement('div');row.style.margin='6px 0';
+        const sel=document.createElement('select');sel.className='gsearch';sel.style.maxWidth='420px';sel.style.borderRadius='10px';
+        sel.innerHTML='<option value="">Choose…</option>'+shuffled.map(o=>'<option>'+o+'</option>').join('');
+        row.innerHTML='<b style="color:var(--accent)">'+p[0]+'</b> → ';
+        row.appendChild(sel);sels.push([sel,p[1]]);b.appendChild(row);
+      });
+      const btn=document.createElement('button');btn.className='action';btn.textContent='Check';
+      btn.addEventListener('click',()=>{
+        if(btn.disabled)return;btn.disabled=true;
+        let pts=0;
+        sels.forEach(([sel,right])=>{sel.disabled=true;const ok=sel.value===right;sel.style.borderColor=ok?'var(--green)':'var(--red)';if(ok)pts++;else sel.title='Correct: '+right;});
+        why.innerHTML='Correct pairs: '+sels.map(([s,r])=>'<b>'+r+'</b>').join(' · ');why.classList.add('show');
+        bank(pts);
+      });
+      b.appendChild(btn);
+    }
+    b.appendChild(why);host.appendChild(b);
+  });
+}
+renderExam();
 
 /* ---------- linguistics unit sub-navigation ---------- */
 document.querySelectorAll('#lu-nav button').forEach(b=>b.addEventListener('click',()=>{
