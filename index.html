@@ -131,6 +131,31 @@ table.mini th{color:var(--accent);text-align:left;padding:6px 10px;border-bottom
 table.mini td{padding:6px 10px;border-bottom:1px solid var(--line)}
 .stress-x{color:var(--muted)}
 .stress-s{color:var(--accent);font-weight:700}
+/* ===== glossary ===== */
+.gsearch{width:100%;max-width:420px;padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.7);background:rgba(255,255,255,.65);font-family:var(--sans);font-size:.95rem;color:var(--ink);margin:6px 0 14px}
+.gsearch:focus{outline:none;border-color:var(--accent)}
+.gcat{font-family:var(--sans);font-weight:800;letter-spacing:-.01em;color:var(--accent);font-size:1.05rem;margin:18px 0 6px}
+.gitem{padding:7px 0;border-bottom:1px solid rgba(150,115,60,.16);font-size:.9rem}
+.gitem b{color:var(--accent)}
+.gcount{color:var(--muted);font-size:.8rem}
+/* ===== graded exercises: match + classify ===== */
+.lvl{display:inline-block;font-size:.66rem;letter-spacing:.14em;font-weight:800;color:#fff;background:var(--muted);padding:2px 9px;border-radius:5px;text-transform:uppercase;margin:2px 0 8px}
+.lvl.l1{background:var(--green)}
+.lvl.l2{background:var(--blue)}
+.match{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+@media(max-width:640px){.match{grid-template-columns:1fr}}
+.match button{background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.65);border-radius:10px;padding:8px 12px;text-align:left;font-size:.85rem;cursor:pointer;color:var(--ink);transition:.15s;font-family:var(--sans)}
+.match button:hover{border-color:var(--gold)}
+.match button.sel{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent) inset}
+.match button.done{background:rgba(95,154,85,.22);border-color:var(--green);pointer-events:none;opacity:.85}
+.match button.err{border-color:var(--red);background:rgba(192,80,63,.2)}
+.match-msg{font-size:.82rem;color:var(--green);font-weight:600;min-height:1.2em}
+.sortwrap{margin:10px 0}
+.sortwrap .chip{display:inline-block;background:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.65);border-radius:999px;padding:6px 12px;margin:4px 5px 4px 0;font-size:.85rem;cursor:pointer;user-select:none;transition:.15s}
+.sortwrap .chip b{color:var(--accent);font-weight:700}
+.sortwrap .chip .cat{font-size:.7rem;letter-spacing:.05em;color:#fff;background:var(--muted);border-radius:99px;padding:1px 8px;margin-left:7px}
+.sortwrap .chip.c-ok{border-color:var(--green);background:rgba(95,154,85,.2)}
+.sortwrap .chip.c-no{border-color:var(--red);background:rgba(192,80,63,.16)}
 /* ===== paintings ===== */
 .painting{margin:18px 0 6px;text-align:center;perspective:900px}
 .painting img{will-change:transform;transform-style:preserve-3d}
@@ -301,6 +326,7 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
   <button data-page="home" class="active">Home</button>
   <button data-page="lit">LitCult II</button>
   <button data-page="lingu">Linguistics</button>
+  <button data-page="gloss">Glossary</button>
 </nav>
 
 <!-- ============ HOME ============ -->
@@ -524,7 +550,7 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
   </svg>
   <div class="figcap">Two sonnet blueprints: same colour = same rhyme. McKay's "America" uses the left one — then fills it with rebellion.</div>
   </div>
-  <p>Other poem types from the handout: <span class="term">ballad</span> (Coleridge, "The Rime of the Ancient Mariner"), <span class="term">ode</span> (Keats, "Ode on a Grecian Urn"), <span class="term">elegy</span> (Gray; Whitman).</p>
+  <p>Other poem types: <span class="term">ballad</span> (Coleridge, "The Rime of the Ancient Mariner"), <span class="term">ode</span> (Keats, "Ode on a Grecian Urn"), <span class="term">elegy</span> (Gray; Whitman) — and the <span class="term">villanelle</span>: 19 lines, five tercets + one quatrain, only two rhymes, with lines 1 and 3 returning as alternating refrains (Bishop's "One Art", Thomas's "Do not go gentle into that good night"). Exams love asking you to IDENTIFY the form of an unseen poem — count lines, spot refrains, check the rhyme inventory.</p>
   <div class="ex">Let me not to the marriage of true minds / Admit impediments; love is not love… <span class="src">— Sonnet 116: Shakespearean sonnet defining love as "an ever-fixèd mark"</span></div>
   <div class="painting">
     <img src="images/turner.jpg" alt="Turner, Snow Storm" loading="lazy">
@@ -549,7 +575,12 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
     <tr><td class="term">Ellipsis</td><td>Words omitted, meaning survives</td><td>"But are not Critics [partial] to their judgment too?"</td></tr>
     <tr><td class="term">Pun</td><td>Play upon words</td><td>"I <i>lie</i> with her, and she with me" (Sonnet 138)</td></tr>
   </table>
-  <p class="hint">Plus: <span class="term">allegory</span> — a story with a double (surface + hidden) meaning readable on two levels — and <span class="term">personification</span>, giving human traits to non-human things (McKay's America as a fierce woman).</p>
+  <p class="hint">Plus: <span class="term">allegory</span> — a story with a double (surface + hidden) meaning readable on two levels — and <span class="term">personification</span>, giving human traits to non-human things (McKay's America as a fierce woman). Two more that exam distractor lists love: the <span class="term">conceit</span> — an extended, elaborate metaphor sustained across a whole passage or poem (Donne's compass legs for two lovers), and the <span class="term">symbol</span> — a concrete thing standing for an abstract idea beyond itself (Burns's rose for love). And beware fake terms in option lists ("fallacy" is an argument error, not a trope).</p>
+</div>
+
+<div class="card">
+  <h3>5b. The speech situation of a poem</h3>
+  <p>Exam favourite: WHO speaks TO WHOM? The <span class="term">speaker</span> (persona, lyric I) is never simply the poet — analyse it as a constructed voice. The addressee can be explicit ("you") or implicit. Special case, asked constantly: <span class="term">apostrophe</span> — the speaker directly addresses an absent person, an abstraction or a thing that cannot answer: "O Rose, thou art sick" (Blake), "Death, be not proud" (Donne), a mother addressing balloons. If the poem says "you" to something that can't talk back, the term you want is apostrophe.</p>
 </div>
 
 <div class="card">
@@ -572,6 +603,15 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
 <div class="phase practice">Phase 2 · Practice</div>
 
 <div class="card">
+  <h3>Warm-up ladder</h3>
+  <p class="hint">Level 1: match terms. Level 2: classify. Then the open tasks below — easy to hard, exactly how memory likes it.</p>
+  <div class="lvl l1">Level 1 · Match</div>
+  <div id="match-poetry"></div>
+  <div class="lvl l2">Level 2 · Classify the foot</div>
+  <p class="hint">Tap a chip to cycle through the categories, then check.</p>
+  <div id="sort-poetry"></div>
+</div>
+<div class="card">
   <h3>A. Scansion trainer — mark the stresses</h3>
   <p>Sonnet 116, line 12: <i>"But bears it out even to the edge of doom"</i> is a trap — so let's drill the clean one first. <b>Click syllables to mark them stressed</b>, then check.</p>
   <p style="font-family:var(--serif);font-style:italic;margin-top:10px">"Her vigor flows like tides into my blood" (McKay, l. 5)</p>
@@ -579,6 +619,16 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
   <button class="action" onclick="checkScan('scan1')">Check my scansion</button>
   <button class="action ghost" onclick="resetScan('scan1')">Reset</button>
   <p class="hint" id="scan1-msg"></p>
+  <p style="font-family:var(--serif);font-style:italic;margin-top:18px">"I love this cultured hell that tests my youth" (McKay, l. 4)</p>
+  <div class="scan-line" id="scan2"></div>
+  <button class="action" onclick="checkScan('scan2')">Check</button>
+  <button class="action ghost" onclick="resetScan('scan2')">Reset</button>
+  <p class="hint" id="scan2-msg"></p>
+  <p style="font-family:var(--serif);font-style:italic;margin-top:18px">"Stealing my breath of life, I will confess" (McKay, l. 3) — careful with this one.</p>
+  <div class="scan-line" id="scan3"></div>
+  <button class="action" onclick="checkScan('scan3')">Check</button>
+  <button class="action ghost" onclick="resetScan('scan3')">Reset</button>
+  <p class="hint" id="scan3-msg"></p>
 </div>
 
 <div class="card">
@@ -597,6 +647,12 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
   <div class="reveal"><p><b>Q:</b> Where is the volta in "America", and what changes there?</p><div class="answer"><b>A:</b> Line 8/9 ("Yet, as a rebel fronts a king in state, / I stand within her walls…"): the speaker shifts from describing what America does <i>to</i> him to asserting his own defiant stance. A second turn comes in ll. 11–14, from present defiance to dark prophecy of America's decline.</div></div>
   <div class="reveal"><p><b>Q:</b> "Sonnet 116" argues love is constant. Name the two central images of constancy.</p><div class="answer"><b>A:</b> The "ever-fixèd mark" (a sea-mark/beacon unshaken by tempests) and "the star to every wand'ring bark" (the North Star guiding lost ships) — both navigation metaphors: love as fixed point amid chaos. Then the personification of Time with his "bending sickle," whose reach love outlasts "even to the edge of doom."</div></div>
   <div class="reveal"><p><b>Q:</b> What is the logical structure of Sonnet 116's couplet?</p><div class="answer"><b>A:</b> A mock-legal proof: "If this be error and upon me proved, / I never writ, nor no man ever loved." Since he obviously <i>did</i> write, the definition must stand — the couplet stakes the whole argument on an impossible condition (and echoes the legal register of "impediments" from the marriage service in l. 2).</div></div>
+  <div class="reveal"><p><b>Q:</b> Brontë: "…above <i>thee</i> / …dreary <i>grave</i> / …to love <i>thee</i> / …severing <i>wave</i>" — name the rhyme scheme AND the special rhyme in lines 1/3.</p><div class="answer"><b>A:</b> abab = alternate/cross rhyme; <i>thee/thee</i> is an <b>identical rhyme</b> (same word). Bonus: <i>above thee / love thee</i> rhymes on two syllables with unstressed ending = feminine rhyme.</div></div>
+  <div class="reveal"><p><b>Q:</b> Blake: "Tyger Tyger, burning bright / In the forests of the night" — scan it.</p><div class="answer"><b>A:</b> TY-ger TY-ger BUR-ning BRIGHT: trochaic tetrameter (with the final unstressed syllable clipped — catalexis). The inverted heartbeat of the iamb: / x instead of x /.</div></div>
+  <div class="reveal"><p><b>Q:</b> Milton's <i>Paradise Lost</i>: unrhymed iambic pentameter. Whitman's "Song of Myself": no meter, no rhyme, no fixed stanza. Name both forms.</p><div class="answer"><b>A:</b> Milton = <b>blank verse</b> (the meter stays!); Whitman = <b>free verse</b> (liberated from rhyme, meter AND traditional stanza). Confusing the two is a classic exam error.</div></div>
+  <div class="reveal"><p><b>Q:</b> A stanza of six lines? Of eight? A rhyming pair in iambic pentameter?</p><div class="answer"><b>A:</b> Sestet · octave · heroic couplet. And the four-liner that builds Shakespearean sonnets: the quatrain.</div></div>
+  <div class="reveal"><p><b>Q:</b> Where does Sonnet 116 turn — and why is that debatable?</p><div class="answer"><b>A:</b> Candidates: l. 9 ("Love's not Time's fool" — the Petrarchan position, where Time enters as adversary) or the couplet (the legal wager). Arguing BOTH with evidence earns more points than picking one.</div></div>
+  <div class="reveal"><p><b>Q:</b> Find two enjambments in the R&J prologue (yes, cross-module thinking is allowed).</p><div class="answer"><b>A:</b> Ll. 5–6 "From forth the fatal loins of these two foes / A pair of star-crossed lovers…" and ll. 9–10ff., where the syntax of "The fearful passage… / And the continuance…" spills across lines. The sonnet machinery is the same everywhere — that's the point.</div></div>
 </div>
 
 <div class="phase test">Phase 3 · Test</div>
@@ -615,7 +671,7 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
 
 <div class="card">
   <h3>1. Dramatic text vs. theatrical performance</h3>
-  <p>The <span class="term">dramatic text</span> is only a verbal sign-system; the <span class="term">theatrical performance</span> deploys a far broader set of sign systems — bodies, space, light, sound, costume (Meyer 115–16). Drama therefore has TWO communication levels: <b>internal</b> (character ↔ character) and <b>external</b> (stage → audience).</p>
+  <p>The <span class="term">dramatic text</span> is only a verbal sign-system; the <span class="term">theatrical performance</span> deploys a far broader set of sign systems — bodies, space, light, sound, costume (Meyer 115–16). Drama therefore has TWO communication levels, and exams ask for the AGENTS of each, separately for text and performance: <b>internal communication</b> = character ↔ character (identical for text and stage). <b>External communication</b> = for the dramatic TEXT: author → reader; for the PERFORMANCE: the production/ensemble → spectator/audience. No narrator mediates between the levels — that absence is drama's defining feature, and everything below (irony, awareness, asides) exploits the gap between the two levels.</p>
   <ul>
     <li><span class="term">Discrepant awareness</span> — audience and characters know different things; <span class="term">congruent awareness</span> — they know the same.</li>
     <li><span class="term">Dramatic irony</span> — the audience knows MORE than the characters: Romeo believes Juliet dead and kills himself — we know she is about to wake. <span class="term">Intentional irony</span> operates among the characters themselves.</li>
@@ -712,11 +768,25 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
 <div class="phase practice">Phase 2 · Practice</div>
 
 <div class="card">
+  <h3>Warm-up ladder</h3>
+  <div class="lvl l1">Level 1 · Match</div>
+  <div id="match-drama"></div>
+  <div class="lvl l2">Level 2 · Classify the speech form</div>
+  <p class="hint">Tap to cycle, then check.</p>
+  <div id="sort-drama"></div>
+</div>
+<div class="card">
   <h3>A. Diagnose the speech situation</h3>
   <div class="reveal"><p><b>Scene:</b> Juliet, alone on the balcony, believes herself unheard: "O Romeo, Romeo, wherefore art thou Romeo?"</p><div class="answer"><b>Soliloquy</b> — alone on stage (so she thinks), unmediated and reliable access to her feelings. Bonus: Romeo IS listening — discrepant awareness inside the scene, and the audience knows more than Juliet.</div></div>
   <div class="reveal"><p><b>Scene:</b> A villain turns from his interlocutor and mutters his true plan so that only the audience hears it.</p><div class="answer"><b>Aside</b> (directed to the audience) — others are on stage but cannot hear. If he addressed it to himself, monological aside; to a single ally, dialogical.</div></div>
   <div class="reveal"><p><b>Scene:</b> The audience watches Romeo poison himself beside a Juliet it knows is alive.</p><div class="answer"><b>Dramatic irony</b> at maximum voltage — discrepant awareness between stage and audience, prepared by the prologue's isolated exposition.</div></div>
   <div class="reveal"><p><b>Q:</b> Whose death converts R&amp;J's comedy-like first half into tragedy — and which structural position does that scene occupy?</p><div class="answer"><b>Mercutio's</b> (killed by Tybalt), Act 3 Scene 1 — the climax at the play's exact centre, one of Kahn's three feud scenes (I.1, III.1, V.3).</div></div>
+  <div class="reveal"><p><b>Scene:</b> A general addresses his assembled troops at length about honour; they all hear him.</p><div class="answer"><b>Monologue</b> — one long speech, audible to others on stage. Subjective and unmediated, yet NOT automatically reliable (he may be performing for his men). Honesty is the soliloquy's privilege.</div></div>
+  <div class="reveal"><p><b>Q:</b> Check the three unities against R&amp;J: which hold, which break?</p><div class="answer"><b>A:</b> Place: broken (Verona AND Mantua). Time: broken by the strict standard (about four days, not one). Action: largely unified — one plot line. Verdict: open-form tendencies inside a tightly built play; discuss the EFFECT (compression — courtship, marriage and death within days).</div></div>
+  <div class="reveal"><p><b>Q:</b> The play opens with Capulet and Montague servants brawling. Which exposition type — and how does it differ from the prologue?</p><div class="answer"><b>A:</b> <b>Integrated exposition</b>: we learn the feud from inside the action. The prologue is isolated exposition. R&amp;J uses both — belt and braces.</div></div>
+  <div class="reveal"><p><b>Scene:</b> A character always arrives late, overdressed, and speaks in rushed, breathless rhythm. Nobody comments on it.</p><div class="answer"><b>Implicit figural characterisation</b> — entrance timing, costume, vocal quality. It turns EXPLICIT the moment another character says "He's always late and overdressed."</div></div>
+  <div class="reveal"><p><b>Q:</b> Acts 1–2 of R&amp;J (banter, masks, a balcony, a wedding) feel like which genre — and what does that make the overall design?</p><div class="answer"><b>A:</b> Romantic comedy — lovers removing impediments. Mercutio's death snaps the play into tragedy: a designed genre switch that makes the audience FEEL the fall from the comic world into the tragic one.</div></div>
+  <div class="reveal"><p><b>Q:</b> Constellation vs. configuration — apply both to Juliet.</p><div class="answer"><b>A:</b> Constellation = her structural position across the whole play (Capulet daughter, Montague wife, foil-pairs with Nurse and Rosaline). Configuration = who shares the stage in a specific scene (balcony: Juliet + Romeo — plus our privileged awareness).</div></div>
 </div>
 
 <div class="card">
@@ -751,6 +821,8 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
     </div>
   </div>
   <p class="hint">Exam reflex: any narratology question is really asking "story level or discourse level?" first.</p>
+  <h4>Three definitions of narrativity (Nünning &amp; Nünning)</h4>
+  <p>Self-assessment favourite: what MAKES a text a narrative? Three answers — <span class="term">story-oriented</span>: a sequence of connected events with characters; <span class="term">discourse-oriented</span>: the presence of a mediating narrator (a "narrative agent tells a story"); <span class="term">narrativity as experientiality</span> (Fludernik): the representation of lived, felt experience — consciousness, not plot, is the core. Know all three AND which focus each one privileges.</p>
 </div>
 
 <div class="card">
@@ -760,7 +832,9 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
     <li><span class="term">Homodiegetic narrator</span> — present as a character in the story; exists within the storyworld (not necessarily the protagonist).</li>
     <li><span class="term">Autodiegetic narrator</span> — sub-type of homodiegetic: tells <b>their own</b> story, i.e. is the protagonist.</li>
   </ul>
-  <p>Memorise this line from the slides: <b>"All homodiegetic narrators are first-person narrators, but not all first-person narrators are homodiegetic."</b> (A narrator can say "I" on the extradiegetic level without being a character in the story they tell.)</p>
+  <p>Memorise this line: <b>"All homodiegetic narrators are first-person narrators, but not all first-person narrators are homodiegetic."</b> (A narrator can say "I" on the extradiegetic level without being a character in the story they tell.)</p>
+  <h4>The older typology: Stanzel's narrative situations</h4>
+  <p>Exams use BOTH systems, so map them: <span class="term">authorial narrative situation</span> — an omniscient AND omnipresent narrator hovering above the storyworld, free to comment (≈ heterodiegetic + zero focalisation); <span class="term">first-person narrative situation</span> — a narrator who exists in the world they narrate (≈ homodiegetic); <span class="term">figural narrative situation</span> — the narrator withdraws, events are filtered through a reflector character's mind, no audible narrating voice (≈ heterodiegetic + internal focalisation). Trap: "authorial" describes omniscience/omnipresence — NOT the real author.</p>
 </div>
 
 <div class="card">
@@ -770,6 +844,8 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
     <li><span class="term">Intradiegetic level</span> — everything that is narrated: all characters, all events.</li>
     <li><span class="term">Metadiegetic level</span> — a narrative <i>within</i> the narrative, told by a character on the intradiegetic level.</li>
   </ul>
+  <h4>The communication model of narrative texts</h4>
+  <p>Layered like an onion, and exams love fill-the-blank versions of it: OUTSIDE the text, the real author addresses the real reader. INSIDE, level 1 = <span class="term">narrative transmission</span>: a fictive <span class="term">narrator</span> recounts the story to a fictive <span class="term">addressee/narratee</span> (the "you" built into the text — not you on your sofa). Level 2 = the <span class="term">characters</span> communicating with each other inside the fictional story. Every instance exists only on its own level; confusing real author with narrator is the cardinal sin of narratology exams.</p>
   <div class="fig">
   <svg viewBox="0 0 660 250" xmlns="http://www.w3.org/2000/svg" font-family="Georgia,serif">
     <rect x="8" y="8" width="644" height="234" rx="14" fill="#fdf1da" stroke="#c17f24" stroke-width="1.5"/>
@@ -894,6 +970,14 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
 <div class="phase practice">Phase 2 · Practice</div>
 
 <div class="card">
+  <h3>Warm-up ladder</h3>
+  <div class="lvl l1">Level 1 · Match</div>
+  <div id="match-narrative"></div>
+  <div class="lvl l2">Level 2 · Classify the focalisation</div>
+  <p class="hint">Tap to cycle, then check.</p>
+  <div id="sort-narrative"></div>
+</div>
+<div class="card">
   <h3>A. Diagnose the passage</h3>
   <p>Classic exam format: passage → "identify narrator type and focalisation, with evidence." Diagnose first, then reveal.</p>
   <div class="ex">"How shall I ever forget that dreadful vigil? I could not hear a sound… and yet I knew that my companion sat open-eyed, within a few feet of me, in the same state of nervous tension in which I was myself." <span class="src">— Doyle, "The Adventure of the Speckled Band"</span></div>
@@ -904,6 +988,14 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
   <div class="reveal"><div class="answer"><b>Homodiegetic — more precisely autodiegetic — narrator</b> (tells her own story), mostly <b>subsequent</b> narration with simultaneous/interpolated elements ("Nor <i>am</i> I apologising" = present-tense commentary). The direct address ("as you may define it") creates engagement; the retrospective, highly subjective account from memory flags possible <b>unreliability</b>.</div></div>
   <div class="ex">"'Tell us about the woman whose daughter disobeyed her and as a result was married to a spirit.' … 'One day in the land of Idu-na-oba there lived a woman and her daughter…'" <span class="src">— Nwapa, <i>Efuru</i> 137–38</span></div>
   <div class="reveal"><div class="answer"><b>Eneke = intradiegetic narrator telling a metadiegetic narrative</b> (a story within the story). Function: the embedded Igbo folktale — with its stock opening, call-and-response ("Mbadee" – "de"), and moral about disobedience — mirrors the frame novel's themes of female non-conformity, wit and solidarity, and anchors the novel in oral storytelling tradition.</div></div>
+  <div class="ex">"TRUE! — nervous — very, very dreadfully nervous I had been and am; but why will you say that I am mad? … Hearken! and observe how healthily — how calmly I can tell you the whole story." <span class="src">— Poe, "The Tell-Tale Heart"</span></div>
+  <div class="reveal"><div class="answer"><b>Autodiegetic narrator, textbook UNRELIABILITY.</b> He tells his own story (homodiegetic + protagonist), addresses a "you" (a narratee!), and the very insistence on his sanity undermines it. Internal focalisation locked inside a mind we cannot trust — evidence: exclamation marks, defensive questions, obsessive repetition.</div></div>
+  <div class="ex">"It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife." <span class="src">— Austen, <i>Pride and Prejudice</i></span></div>
+  <div class="reveal"><div class="answer"><b>Extradiegetic heterodiegetic narrator with zero focalisation — plus heavy narratorial irony.</b> The "universal truth" is no truth at all but the mothers' wishful thinking; the narrator mimics society's voice to mock it. Compare the Efuru frog simile: the 'invisible' narrator editorialising.</div></div>
+  <div class="ex">"Call me Ishmael. Some years ago — never mind how long precisely — having little or no money in my purse… I thought I would sail about a little and see the watery part of the world." <span class="src">— Melville, <i>Moby-Dick</i></span></div>
+  <div class="reveal"><div class="answer"><b>Homodiegetic narrator, subsequent narration</b> — present in the story he tells, but is he autodiegetic? Debatable: Ishmael narrates, yet Ahab's tragedy is arguably the centre. Perfect example that homodiegetic ≠ automatically protagonist. The imperative "Call me" also constructs a narratee.</div></div>
+  <div class="ex">An anonymous sailor describes an evening on a yawl on the Thames; then: "…Marlow began: 'I was thinking of very old times, when the Romans first came here…'" and Marlow's tale fills the rest of the book. <span class="src">— after Conrad, <i>Heart of Darkness</i></span></div>
+  <div class="reveal"><div class="answer"><b>Frame narrative:</b> the anonymous narrator is extradiegetic-homodiegetic (he sits on that boat); Marlow is an <b>intradiegetic narrator</b>, and his Congo story is <b>metadiegetic</b> — same architecture as Eneke's folktale in <i>Efuru</i>, scaled up to novel length.</div></div>
 </div>
 
 <div class="card">
@@ -915,6 +1007,9 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
   <h3>C. Build the levels diagram</h3>
   <div class="reveal"><p><b>Q:</b> Sort for <i>Efuru</i>: (1) Eneke's folk story about the spirit-husband, (2) the heterodiegetic narrating voice, (3) Efuru, Adizua, Gilbert and all events. Which level is which?</p><div class="answer"><b>A:</b> (2) = extradiegetic level (the narrating instance) · (3) = intradiegetic level (all characters and events) · (1) = metadiegetic level (a narrative told by an intradiegetic character). Think Russian dolls: each narrator "contains" the level below.</div></div>
   <div class="reveal"><p><b>Q:</b> Genette's teacher example: "Today I saw a teacher come up to a group of children… she spoke: 'Listen, children, I'm going to tell you an amazing story… This is the story of Marguerite Bourgeois…'" — map the levels.</p><div class="answer"><b>A:</b> Main plot ("I saw…") = extradiegetic homodiegetic narration → the story about teacher &amp; children = intradiegetic → the teacher's act of speaking = second-level narrative act (intradiegetic) → the story of Marguerite Bourgeois = metadiegetic.</div></div>
+  <div class="reveal"><p><b>Q:</b> <i>One Thousand and One Nights</i>: a narrator tells of King Shahryar; Scheherazade tells him stories nightly; inside one, a fisherman tells a genie a tale. Count the levels.</p><div class="answer"><b>A:</b> Four: extradiegetic voice (level 1) → Scheherazade &amp; the king as characters (intradiegetic) → her tales (metadiegetic) → the fisherman's tale inside a tale (meta-metadiegetic). The levels stack as long as characters keep telling stories — Genette's Russian dolls have no bottom.</div></div>
+  <div class="reveal"><p><b>Q:</b> A novel written as diary entries — the heroine records each day's events every evening. Time of narration?</p><div class="answer"><b>A:</b> <b>Interpolated</b> — narration slotted between the moments of action, part retrospect ("today X happened"), part present ("I am still shaking"). The classic case for letter and journal novels (Wuthering Heights' journal sections).</div></div>
+  <div class="reveal"><p><b>Q:</b> Trap check: "The narrator says 'I', so the narration is homodiegetic." Where's the error?</p><div class="answer"><b>A:</b> First person marks the narrating instance, not the relation to the story. A narrator can say "I" while telling a story they take no part in (Genette's teacher example, frame narrators introducing others' tales). Homodiegetic requires presence IN the told story.</div></div>
 </div>
 
 <div class="phase test">Phase 3 · Test</div>
@@ -1065,7 +1160,9 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
       <p>Originates <b>outside</b> the storyworld: score, musical character themes, <span class="term">voice-over</span>.</p>
     </div>
   </div>
-  <p class="hint">Notice the vocabulary transfer: "diegesis" does the same conceptual work as in narratology — inside vs. outside the storyworld. Same system, different medium.</p>
+  <p class="hint">Notice the vocabulary transfer: "diegesis" does the same conceptual work as in narratology — inside vs. outside the storyworld. Same system, different medium. Exam trap: the only two diegetic sound levels are intra- and extradiegetic — options like "hyperdiegetic" or "autodiegetic" (a narratology term!) are distractors.</p>
+  <h4>Film genre</h4>
+  <p>A <span class="term">genre</span> is identified by its <span class="term">conventions</span>: recurring settings, typical character types, iconography (props, costumes, tropes) and plot patterns that audiences recognise and filmmakers vary. The course's example: the <span class="term">period drama / heritage film</span> — country estates, costume as class semantics, literary sources, national past as spectacle. <i>Belle</i> works INSIDE these conventions while contesting whose past gets displayed — which is exactly where Andrews' critique docks on. Genre analysis = name the convention, then ask what the film DOES with it.</p>
 </div>
 
 <div class="card">
@@ -1080,6 +1177,14 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
 <div class="phase practice">Phase 2 · Practice</div>
 
 <div class="card">
+  <h3>Warm-up ladder</h3>
+  <div class="lvl l1">Level 1 · Match</div>
+  <div id="match-film"></div>
+  <div class="lvl l2">Level 2 · Classify the sound</div>
+  <p class="hint">Intradiegetic or extradiegetic? Tap to cycle, then check.</p>
+  <div id="sort-film"></div>
+</div>
+<div class="card">
   <h3>A. You're the editor — name the technique</h3>
   <p>Each scenario describes something you'd see on screen. Diagnose the term, then reveal.</p>
   <div class="reveal"><p><b>Scene:</b> The heroine glances up at something beyond the frame; cut: a portrait hanging on the wall.</p><div class="answer"><b>Eyeline match</b> — look offscreen, then cut to the object of the look. (Also uses offscreen space.)</div></div>
@@ -1089,6 +1194,12 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
   <div class="reveal"><p><b>Scene:</b> A sweeping view of a Georgian estate opens the sequence before we cut inside to the drawing room.</p><div class="answer"><b>(Extreme) long shot used as an establishing shot</b> — context first, then detail.</div></div>
   <div class="reveal"><p><b>Scene:</b> Melancholy strings swell as Dido reads the letter. Nobody in the room can hear the music.</p><div class="answer"><b>Extradiegetic sound</b> — the score originates outside the storyworld. If she then sat at the piano and played, <i>that</i> would be intradiegetic.</div></div>
   <div class="reveal"><p><b>Scene:</b> Without the camera moving from its spot, the frame slowly swivels from the door across the ballroom to the staircase.</p><div class="answer"><b>Pan</b> — frame moves side to side, camera placement unchanged. (Camera physically moving = tracking shot; lens adjusting = zoom.)</div></div>
+  <div class="reveal"><p><b>Scene:</b> The image slowly darkens to black; when it brightens again, the characters are older and the house has changed.</p><div class="answer"><b>Fade-out / fade-in</b> — the classic marker for a major time ellipsis. A dissolve would OVERLAP the two shots; a cut would join them instantly.</div></div>
+  <div class="reveal"><p><b>Scene:</b> Mid-conversation, we briefly see a tight shot of a hand crumpling a letter under the table, then return to the wide view.</p><div class="answer"><b>Insert</b> — a detail shot for clarity (or secret knowledge). Combined with the return to the wider view, that's re-establishing at work.</div></div>
+  <div class="reveal"><p><b>Scene:</b> A young bride looks at her wedding ring; suddenly three quick shots: an empty house, a hospital bed, a gravestone. Then back to the wedding.</p><div class="answer"><b>Flashforward</b> — shots of the future interrupting the present. The reverse order (present → past) would be a flashback; both are nonlinear temporality editing.</div></div>
+  <div class="reveal"><p><b>Scene:</b> We see the corridor exactly as the staggering, drunken character sees it: tilting, blurred at the edges.</p><div class="answer"><b>Subjective point of view</b> — the camera recreates a character's perception. The 'neutral' alternative is the objective POV — which, the course insists, is still culturally shaped (male gaze).</div></div>
+  <div class="reveal"><p><b>Scene:</b> A three-minute conversation plays out in one unbroken take; the next scene fires twenty shots in thirty seconds.</p><div class="answer"><b>Pace</b> — the length of takes before each cut. Slow pace = weight, tension, observation; fast pace = urgency, chaos. Editing rhythm is meaning.</div></div>
+  <div class="reveal"><p><b>Scene:</b> The heroine hums a melody in her kitchen; as she steps outside, a full orchestra picks up the same melody under the scene.</p><div class="answer"><b>Sound bridge from intradiegetic to extradiegetic</b> — the hummed tune exists in the storyworld, the orchestral version only for us. Films love smuggling music across the diegesis border; name BOTH sides to earn the point.</div></div>
 </div>
 
 <div class="card">
@@ -1141,15 +1252,28 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
     <tr><td class="term">descriptive vs. prescriptive</td><td>Objective description of what speakers do vs. judging what they <i>should</i> do.</td></tr>
     <tr><td class="term">langage</td><td>The inborn human capacity for language (third Saussurean term — don't confuse with langue!).</td></tr>
   </table>
+  <h4>How linguistics became a science</h4>
+  <p>Before linguistics proper: millennia of <i>precursors</i> — philosophical debate (Plato's question whether words fit things by nature or convention), practical language teaching, and textual criticism of sacred and classical texts. The <b>birth of the discipline</b>: Sir William Jones observes (1786) that Sanskrit, Greek and Latin are too similar to be accidental → <span class="term">historical-comparative (Indo-European) linguistics</span> dominates the 19th century, reconstructing family trees. Saussure's structuralism then shifts the focus from history to system — the synchronic turn that founds modern linguistics.</p>
   <h4>The bracket code (learn it cold)</h4>
   <p>{ } morphemes · [ ] phones (phonetic) · / / phonemes (phonemic) · &lt; &gt; graphemes</p>
   <p class="hint">The levels of linguistics = the course plan: phonetics/phonology → morphology → syntax → semantics → pragmatics (+ socio, historical, variation).</p>
 </div>
 <div class="phase practice">Practice</div>
 <div class="card">
+  <div class="lvl l1">Level 1 · Match</div>
+  <div id="match-lu0"></div>
+  <div class="lvl l2">Level 2 · Classify the brackets</div>
+  <p class="hint">Tap to cycle, then check.</p>
+  <div id="sort-lu0"></div>
+</div>
+<div class="card">
   <div class="reveal"><p><b>Q:</b> Which brackets enclose <i>walked</i> analysed as {walk} + {-ed}, and which enclose its pronunciation [wɔːkt]?</p><div class="answer"><b>A:</b> Morphemes take braces { }, phones take square brackets [ ]. If you wrote /wɔːkt/ you'd be claiming a phonemic (systemic) transcription — slashes are for phonemes only.</div></div>
   <div class="reveal"><p><b>Q:</b> German <i>Gift</i> (poison) and English <i>gift</i> (present) sound identical. What does this prove about the linguistic sign?</p><div class="answer"><b>A:</b> Arbitrariness: the same signifier /gɪft/ is conventionally linked to entirely different signifieds in the two speech communities. No natural bond exists between sound and concept.</div></div>
   <div class="reveal"><p><b>Q:</b> A student says "I know English grammar but I made a slip of the tongue." Translate into Saussure AND Chomsky.</p><div class="answer"><b>A:</b> The knowledge is langue/competence; the slip happens in parole/performance. Errors in performance don't disprove competence.</div></div>
+  <div class="reveal"><p><b>Q:</b> "Cuckoo, bow-wow and hiss prove the linguistic sign isn't arbitrary." Attack that claim.</p><div class="answer"><b>A:</b> Onomatopoeia is the marginal, motivated exception — and even it is conventionalised (German dogs say "wau-wau", English ones "woof"). A handful of imitative words doesn't overturn arbitrariness as the DEFAULT relation.</div></div>
+  <div class="reveal"><p><b>Q:</b> Classify: (a) "In 1600, English had thou AND you" (b) "Today, 'whom' is rare in speech" (c) "People SHOULD say whom" — which perspectives?</p><div class="answer"><b>A:</b> (a) synchronic statement about a past stage (b) synchronic, present-day, descriptive (c) prescriptive. Diachronic would be: "thou was LOST between 1500 and 1750." Linguistics does (a), (b) and the diachronic — never (c).</div></div>
+  <div class="reveal"><p><b>Q:</b> Sort into the semiotic triangle (Ogden/Richards): the word <i>dog</i>, your mental idea of a dog, the actual animal.</p><div class="answer"><b>A:</b> symbol = the word form · thought/reference = the concept · referent = the real animal. The dotted base line matters: symbol and referent connect only THROUGH thought — no direct natural bond.</div></div>
+  <div class="reveal"><p><b>Q:</b> Which bracket set for each: the plural morpheme · the aspirated t-sound in <i>top</i> · the spelling of <i>ough</i> · the t-phoneme?</p><div class="answer"><b>A:</b> {plural -s} · [tʰ] · &lt;ough&gt; · /t/. If you can do this cold, you've already dodged the most common notation errors in the exam.</div></div>
 </div>
 <div class="facts">
   <div class="card fact">
@@ -1193,6 +1317,13 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
     <li><span class="term">Stress</span> distinguishes word class (<i>OBject/obJECT</i>) and compounds from phrases (<i>GREENhouse / green HOUSE</i>). Unstressed vowels reduce to /ə/ or /ɪ/.</li>
     <li><span class="term">Intonation</span>: falling (statements, wh-questions), rising (yes/no questions), rise-fall (certainty), fall-rise (hesitation). <span class="term">Tonic syllable</span> = where the tone falls.</li>
   </ul>
+  <h4>Connected speech (the margin notes examiners love)</h4>
+  <ul>
+    <li><span class="term">Phonotactics</span> — language-specific rules for sound combinations: German allows initial /kn-/ (<i>Knie</i>), English lost it (<i>knee</i>); English /str-/ is fine, initial /ŋ/ is impossible.</li>
+    <li><span class="term">Full and weak forms</span> — grammatical words shrink in connected speech: <i>and</i> /ænd/ → /ən/, <i>of</i> /ɒv/ → /əv/, <i>can</i> → /kən/. The schwa is English's favourite vowel for a reason.</li>
+    <li><span class="term">Assimilation</span> — neighbouring sounds merge: <i>he's your</i> → [hiːʒə], <i>ten pounds</i> → [tem paʊndz]. Ease of articulation in real time — the same force that drives historical change (Unit 7!).</li>
+    <li><span class="term">Contrastive English–German</span> (the foreign-accent problem): German lacks /θ, ð/ (→ "sink" for <i>think</i>) and /w/ (→ /v/), and has <b>final devoicing</b> (Auslautverhärtung): <i>Rad/Rat</i> merge — which is why German learners say "hunt" for <i>hund</i>… and <i>bet</i> for <i>bed</i>.</li>
+  </ul>
   <div class="fig">
   <svg viewBox="0 0 460 130" xmlns="http://www.w3.org/2000/svg" font-family="Georgia,serif">
     <path d="M40,45 L160,42 Q200,40 215,44 C240,52 255,75 285,82 L420,86" fill="none" stroke="#b4562a" stroke-width="2.5" stroke-linecap="round"/>
@@ -1223,11 +1354,21 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
     <tr><td>bat – bad</td><td>/t/ – /d/ — contrasts hold in final position too</td></tr>
   </table>
   <p class="hint">Swap exactly one segment and the meaning changes — the minimal pair test, phonology's basic proof of phonemic status (method: cf. Mair 2022: 28).</p>
+  <div class="lvl l1">Level 1 · Match sound and description</div>
+  <div id="match-lu1"></div>
+  <div class="lvl l2">Level 2 · Classify the manner</div>
+  <p class="hint">Tap to cycle, then check.</p>
+  <div id="sort-lu1"></div>
+  <div class="lvl" style="background:var(--accent)">Level 3 · Open drills</div>
   <p class="hint">Drill — exam-style, check yourself:</p>
   <div class="reveal"><p><b>Q:</b> Allophones… (a) change meaning (b) are realisational variants of one phoneme (c) show up in minimal pairs (d) can stand in complementary distribution. Which statements hold?</p><div class="answer"><b>A:</b> (b) and (d). Meaning-changing units found via minimal pairs are <b>phonemes</b>; allophones never change meaning — they vary freely or by context.</div></div>
   <div class="reveal"><p><b>Q:</b> Odd one out: /p, t, k, m/ — and /uː, ɔː, e, w/?</p><div class="answer"><b>A:</b> /m/ — a nasal among plosives. /w/ — a consonant (semi-vowel) among vowels.</div></div>
   <div class="reveal"><p><b>Q:</b> From <i>yes, chin, boil, mouse, little</i>: find a semi-vowel, an affricate, all diphthongs, a lateral.</p><div class="answer"><b>A:</b> Semi-vowel: <i>yes</i> /j/. Affricate: <i>chin</i> /tʃ/. Diphthongs: <i>boil</i> /ɔɪ/, <i>mouse</i> /aʊ/. Lateral: <i>little</i> /l/ (twice, the second one syllabic).</div></div>
   <div class="reveal"><p><b>Q:</b> Openness, voicing, roundness, stress — which of these describe English VOWELS?</p><div class="answer"><b>A:</b> Openness and roundness (plus place of tongue and length). Voicing distinguishes nothing — all vowels are voiced — and stress belongs to syllables, not to vowel description.</div></div>
+  <div class="reveal"><p><b>Q:</b> Describe /f/, /ŋ/ and /d/ with the three consonant parameters.</p><div class="answer"><b>A:</b> /f/ = voiceless labiodental fricative · /ŋ/ = voiced velar nasal (the <i>sing</i>-sound) · /d/ = voiced alveolar plosive. Formula: voicing → place → manner. The IPA chart above is your cheat sheet.</div></div>
+  <div class="reveal"><p><b>Q:</b> Split <i>strengths</i> /streŋkθs/ into syllable constituents. What's remarkable?</p><div class="answer"><b>A:</b> Onset /str/ (the maximal English onset: 3 C), nucleus /e/, coda /ŋkθs/ (4 C — the maximum, with plural -s as the fourth). One syllable, CCCVCCCC — about as heavy as English phonotactics allows.</div></div>
+  <div class="reveal"><p><b>Q:</b> "I want to reCORD a new RECord." What does stress do here — and what happens to the unstressed vowels?</p><div class="answer"><b>A:</b> Stress distinguishes word class: re<b>CORD</b> (verb) vs. <b>REC</b>ord (noun). The unstressed syllables reduce towards /ə/ (or /ɪ/) — vowel reduction, the fate of every unstressed English syllable.</div></div>
+  <div class="reveal"><p><b>Q:</b> Match the tones: yes/no question · plain statement · confident assertion · polite hesitation.</p><div class="answer"><b>A:</b> Rising · falling · rise-fall · fall-rise. And the tonic syllable is wherever the tone movement lands — shift it and you shift the meaning ("I have PLANS to leave" vs. "I have plans to LEAVE").</div></div>
 </div>
 </div>
 
@@ -1258,10 +1399,20 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
 </div>
 <div class="phase practice">Practice</div>
 <div class="card">
+  <div class="lvl l1">Level 1 · Match the process</div>
+  <div id="match-lu2"></div>
+  <div class="lvl l2">Level 2 · Classify the plural allomorph</div>
+  <p class="hint">Tap to cycle, then check.</p>
+  <div id="sort-lu2"></div>
+  <div class="lvl" style="background:var(--accent)">Level 3 · Open drills</div>
   <p class="hint">Drill — classify, then check:</p>
   <div class="reveal"><p><b>Q:</b> Classify: <i>brunch</i> · <i>paleface</i> (the person) · <i>FBI</i> · <i>gym</i> &lt; gymnasium · <i>apple pie</i>.</p><div class="answer"><b>A:</b> brunch = blend (breakfast + lunch) · paleface = exocentric compound (the person isn't a face!) · FBI = alphabetism (not acronym — you spell it out; NASA, pronounced as a word, would be one) · gym = clipping · apple pie = endocentric compound (a kind of pie, head on the right).</div></div>
   <div class="reveal"><p><b>Q:</b> From <i>butter, hammer, played, darken, smaller, undo, the, walks, kindness</i>: find an inflectional suffix, a derivational suffix, a derivational prefix, and a word with NO bound morpheme despite appearances.</p><div class="answer"><b>A:</b> Inflectional: play<u>ed</u>, walk<u>s</u>, small<u>er</u> (comparative) · derivational suffix: dark<u>en</u>, kind<u>ness</u> · derivational prefix: <u>un</u>do · trap words: <i>butter, hammer</i> are monomorphemic — that <i>-er</i> is not a suffix.</div></div>
   <div class="reveal"><p><b>Q:</b> Why is <i>blackboard</i> a compound but <i>black board</i> a phrase? Give two tests.</p><div class="answer"><b>A:</b> Stress: <i>BLACKboard</i> vs. <i>black BOARD</i>; variability: a very black board works, *a very blackboard doesn't; also compositionality — a blackboard can be green.</div></div>
+  <div class="reveal"><p><b>Q:</b> Sort the plural allomorphs: <i>maps, beds, boxes, cliffs, cars, judges</i>.</p><div class="answer"><b>A:</b> [s] after voiceless non-sibilants: maps, cliffs · [z] after voiced non-sibilants: beds, cars · [ɪz] after sibilants: boxes, judges. Phonologically conditioned — the context decides, not the speaker.</div></div>
+  <div class="reveal"><p><b>Q:</b> Compound types: <i>bittersweet</i> · <i>blackbird</i> · <i>skinhead</i> · <i>actor-director</i>.</p><div class="answer"><b>A:</b> bittersweet = copulative (A+B, both apply) · blackbird = endocentric (a kind of bird) · skinhead = exocentric (the person is no head) · actor-director = appositional (two descriptions, one referent).</div></div>
+  <div class="reveal"><p><b>Q:</b> <i>edit</i> from <i>editor</i>, <i>lab</i> from <i>laboratory</i> — same process?</p><div class="answer"><b>A:</b> No. <i>edit</i> = back-formation (a supposed affix is REMOVED, creating a new word class); <i>lab</i> = clipping (material deleted, class unchanged). The class-change is the tell.</div></div>
+  <div class="reveal"><p><b>Q:</b> Which is more productive, {-ness} or {-th} (as in <i>warmth</i>)? How do you know?</p><div class="answer"><b>A:</b> {-ness}: it freely attaches to new bases (<i>wokeness, cringeness</i>), while {-th} is frozen in a handful of relics (<i>warmth, depth, width</i>) — *coolth is a joke, not a word. Productivity = extension to NEW cases.</div></div>
 </div>
 </div>
 <!-- ~~~~~~ UNIT 3 ~~~~~~ -->
@@ -1272,6 +1423,8 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
   <p>Word → <span class="term">phrase</span> (words united around a <b>head</b>: NP, VP, PP, AdjP, AdvP) → <span class="term">clause</span> (usually contains a verb) → <span class="term">sentence</span> (largest unit, contained in nothing larger).</p>
   <h4>Four tests to identify a phrase</h4>
   <p>(1) <span class="term">Substitution</span> — replace with a pro-form · (2) <span class="term">movement</span> — can it move as a block? · (3) <span class="term">coordination</span> — with a similar phrase · (4) <span class="term">stand-alone</span> — can it answer a question?</p>
+  <h4>Constituent analysis, ambiguity &amp; the verb as nucleus</h4>
+  <p>Structure is made visible through <span class="term">bracketing</span> or <span class="term">tree diagrams</span> — and it matters, because strings can be <span class="term">structurally ambiguous</span>: <i>a book about medieval sculpture in Ireland</i> = a book about [sculpture in Ireland] OR [a book about sculpture] in Ireland; <i>old men and women</i> = [old men] and women OR old [men and women]. Same words, two trees, two meanings. An alternative to subject–predicate thinking treats the <span class="term">verb as the nucleus</span> of the clause (valency): the verb dictates how many and which slots must be filled — which is exactly why the seven clause patterns exist.</p>
   <h4>Form vs. function — the crucial double bookkeeping</h4>
   <p>Every constituent has a <b>form</b> (NP, PP…) and a <b>function</b>: S (subject), P/V (predicator), O<sub>d</sub> (direct object), O<sub>i</sub> (indirect object), C<sub>S</sub> (subject complement), C<sub>O</sub> (object complement), A (adverbial).</p>
   <h4>The seven basic clause patterns (Mair, Unit 5)</h4>
@@ -1293,11 +1446,21 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
 </div>
 <div class="phase practice">Practice</div>
 <div class="card">
+  <div class="lvl l1">Level 1 · Match pattern and example</div>
+  <div id="match-lu3"></div>
+  <div class="lvl l2">Level 2 · Classify the function</div>
+  <p class="hint">Tap to cycle, then check.</p>
+  <div id="sort-lu3"></div>
+  <div class="lvl" style="background:var(--accent)">Level 3 · Open drills</div>
   <p class="hint">Drill — parse, then check:</p>
   <div class="reveal"><p><b>Q:</b> <i>Everyone hopes that the exam will be easy</i> — comparative, compound, imperative or complex?</p><div class="answer"><b>A:</b> Complex: main clause + nominal <i>that</i>-clause as object. Compound would need two coordinated MAIN clauses.</div></div>
   <div class="reveal"><p><b>Q:</b> <i>The jury considers him a genius. In the morning, several students in the library sent their tutor a long email.</i> — give phrase type + function of <i>a genius</i>, <i>In the morning</i>, <i>several students in the library</i>.</p><div class="answer"><b>A:</b> a genius = NP, object complement (C<sub>O</sub>: "considers him a genius" = SPOC<sub>O</sub>) · In the morning = PP, adverbial (A) · several students in the library = NP, subject.</div></div>
   <div class="reveal"><p><b>Q:</b> Label: [They] [gladly] [told] [us] [the results].</p><div class="answer"><b>A:</b> S · A · V/P · O<sub>i</sub> · O<sub>d</sub> — the SPOO pattern with an optional adverbial: SP(A)OO if you're being fancy.</div></div>
   <div class="reveal"><p><b>Q:</b> <i>We finally arrived at the railway station</i> — is <i>at the railway station</i> an object or adverbial? Prove it.</p><div class="answer"><b>A:</b> Adverbial: you ask <i>Where did we arrive?</i> (not *What did we arrive?), and *The railway station was arrived at fails the passive test. (Mair's own textbook example.)</div></div>
+  <div class="reveal"><p><b>Q:</b> Clause patterns, rapid fire: <i>The baby slept. · She became a doctor. · He put the cup on the shelf. · They elected her president. · The dog chased the cat.</i></p><div class="answer"><b>A:</b> SP · SPC<sub>S</sub> · SPOA (the adverbial is obligatory — *He put the cup) · SPOC<sub>O</sub> · SPO. Five sentences, five different patterns — that's the whole inventory minus SPA and SPOO.</div></div>
+  <div class="reveal"><p><b>Q:</b> Prove that <i>the old man next door</i> is one phrase in "The old man next door waved."</p><div class="answer"><b>A:</b> Substitution: HE waved. Movement: as a block it fronts in questions. Coordination: "the old man next door and his dog waved." Stand-alone: "Who waved?" — "The old man next door." All four tests pass = one NP.</div></div>
+  <div class="reveal"><p><b>Q:</b> Same form, different function: find the NP <i>my sister</i> working as S, O<sub>i</sub> and C<sub>S</sub> in three sentences of your own.</p><div class="answer"><b>A:</b> E.g.: <i>My sister laughs</i> (S) · <i>I gave my sister the keys</i> (O<sub>i</sub>) · <i>The winner is my sister</i> (C<sub>S</sub>). Moral: form (NP) never dictates function — analyse both, always.</div></div>
+  <div class="reveal"><p><b>Q:</b> Classify: Latin <i>amavisset</i> (one word = 'he would have loved') · Mandarin (invariant words + order) · Turkish <i>ev-ler-im-de</i> ('in my houses', one morpheme per meaning).</p><div class="answer"><b>A:</b> Latin = synthetic-inflectional (functions fused in endings) · Mandarin = analytic/isolating · Turkish = synthetic-agglutinating (transparent morpheme chain). English drifts towards the analytic pole — that's the whole plot of Unit 7.</div></div>
 </div>
 </div>
 
@@ -1310,7 +1473,8 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
   <ul>
     <li><span class="term">Lexeme</span> — abstract dictionary unit (includes all inflected forms); <span class="term">lemma</span> — the headword of the entry. <span class="term">Lexicology</span> studies vocabulary structure; <span class="term">lexicography</span> writes dictionaries.</li>
     <li><span class="term">Frege's principle of compositionality</span>: complex meaning = sum of the parts. Exception: <span class="term">idioms</span> (<i>pull someone's leg</i>).</li>
-    <li><span class="term">Componential analysis</span>: meaning as feature bundles — boy = [+human] [−female] [−adult]. Alternative: <span class="term">prototype</span> semantics (the ideal representative).</li>
+    <li><span class="term">Componential analysis</span>: meaning as feature bundles — boy = [+human] [−female] [−adult]. Its limits show in Mair's cup/mug/bowl problem: real categories have fuzzy edges, so <span class="term">prototype semantics</span> proposes an ideal representative with better and worse members instead of hard feature borders.</li>
+    <li><span class="term">Stylistic synonymy</span>: <i>buy/purchase, begin/commence, hide/conceal</i> — same sense, different register. One of the reasons total synonymy barely exists.</li>
     <li>Meaning relations of the sign: <span class="term">reference</span> (word ↔ entity in the world) vs. <span class="term">sense</span> (context-independent defining features). <span class="term">Extension</span> = class of all referents (cat = all cats); <span class="term">intension</span> = set of defining properties. <span class="term">Denotation</span> (objective core) vs. <span class="term">connotation</span> (subjective, emotional: night = romantic/scary).</li>
   </ul>
   <h4>Sense relations — the exam's favourite zoo</h4>
@@ -1328,10 +1492,20 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
 </div>
 <div class="phase practice">Practice</div>
 <div class="card">
+  <div class="lvl l1">Level 1 · Match term and example</div>
+  <div id="match-lu4"></div>
+  <div class="lvl l2">Level 2 · Classify the antonymy</div>
+  <p class="hint">Tap to cycle, then check.</p>
+  <div id="sort-lu4"></div>
+  <div class="lvl" style="background:var(--accent)">Level 3 · Open drills</div>
   <p class="hint">Drill — name it, then check:</p>
   <div class="reveal"><p><b>Q:</b> Name the term: (a) the headword that opens a dictionary entry (b) an expression whose meaning isn't the sum of its parts (c) the discipline that studies vocabulary structure (d) the method that splits meaning into feature bundles like [+human] (e) the class of everything a word can refer to.</p><div class="answer"><b>A:</b> (a) lemma (b) idiom (c) lexicology (d) componential analysis (e) extension.</div></div>
   <div class="reveal"><p><b>Q:</b> Sense relations: <i>to walk / to stroll</i> · <i>to lend / to borrow</i> · <i>wide / narrow</i> · <i>tree / branch</i>.</p><div class="answer"><b>A:</b> walk/stroll = hyponymy (walk is the hyperonym, strolling a specific way of walking) · lend/borrow = relational (converse) antonymy · wide/narrow = gradable antonymy · tree/branch = holonymy/meronymy (tree = holonym); branch &amp; root are co-meronyms.</div></div>
   <div class="reveal"><p><b>Q:</b> <i>night</i> means "time between sunset and sunrise" but also feels romantic or scary. Which term covers which part?</p><div class="answer"><b>A:</b> Denotation = the objective core meaning; connotation = the subjective-emotional layer. Denotation pairs with extension, connotation with intension.</div></div>
+  <div class="reveal"><p><b>Q:</b> Polysemy or homonymy? <i>head</i> (of a person / of a department) · <i>bat</i> (animal / cricket bat) · <i>bank</i> (river / money).</p><div class="answer"><b>A:</b> head = polysemy (related senses: 'top/leading part') · bat = homonymy (unrelated origins) · bank = the classic exam fight — historically related (Italian banca), synchronically felt as unrelated: argue your criterion and you win either way.</div></div>
+  <div class="reveal"><p><b>Q:</b> Antonymy types: <i>dead/alive</i> · <i>hot/cold</i> · <i>above/below</i> · <i>buy/sell</i>.</p><div class="answer"><b>A:</b> complementary (no middle ground) · gradable (lukewarm exists) · relational-converse (spatial perspective flip) · relational-converse (one transaction, two viewpoints).</div></div>
+  <div class="reveal"><p><b>Q:</b> Do a componential analysis of <i>bachelor</i> — and name the classic problem with it.</p><div class="answer"><b>A:</b> [+human] [+male] [+adult] [−married]. Problem: is the Pope a bachelor? Technically yes, intuitively no — feature bundles miss prototype effects, which is exactly why cognitive semantics offers prototypes instead.</div></div>
+  <div class="reveal"><p><b>Q:</b> Spot the collocation violations: <i>make homework · strong rain · do a mistake · heavy smoker</i>.</p><div class="answer"><b>A:</b> *make homework (→ do) · *strong rain (→ heavy) · *do a mistake (→ make) · heavy smoker ✓. Collocations are arbitrary co-occurrence habits — the part of vocabulary dictionaries teach worst and exams love most.</div></div>
 </div>
 </div>
 
@@ -1342,7 +1516,7 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
   <h3>Pragmatics — meaning in context</h3>
   <p>Studies <span class="term">utterances</span> in real communication. Three theory blocks: communication models, speech act theory, Grice's maxims.</p>
   <h4>Communication models</h4>
-  <p>Bühler's Organon model (expression – representation – appeal) extended by <span class="term">Jakobson</span> with three constituents: <b>message, channel/contact, code</b>.</p>
+  <p>Bühler's Organon model (expression – representation – appeal) extended by <span class="term">Jakobson</span> with three constituents: <b>message, channel/contact, code</b> — yielding <b>six communicative functions</b>, one per constituent: emotive (speaker), conative (addressee: "Put that cigarette out!"), referential (context), <span class="term">phatic</span> (channel: "Can you hear me?"), <span class="term">metalinguistic</span> (code: "The verb <i>purchase</i> sounds too formal"), <span class="term">poetic</span> (the message itself: "the tough get going"). Background idea, via Wittgenstein: meaning is USE — which is the whole licence for pragmatics.</p>
   <h4>Speech act theory (Austin 1962 → Searle 1969)</h4>
   <ul>
     <li>Austin's parts of the locution: <span class="term">phonetic act</span> (producing sounds), <span class="term">phatic act</span> (words in grammatical order), <span class="term">rhetic act</span> (using them with specific meaning). Beware the classic typo trap: it's <b>rhetic</b>, not "rhotic" — that one is an /r/-term from phonology.</li>
@@ -1350,7 +1524,7 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
     <li>Classification: <span class="term">representatives</span>/assertives (claim truth), <span class="term">directives</span> (get hearer to act — can be <b>indirect</b>: "Can you pass the salt?"), <span class="term">commissives</span> (speaker commits: promise, swear), <span class="term">expressives</span> (attitude: apologise), <span class="term">declarations</span> (change the world: "I hereby declare you husband and wife").</li>
   </ul>
   <h4>Deixis</h4>
-  <p>Expressions anchoring utterances in context: time (<i>today, tomorrow</i>), space (<i>here, over there</i>), person (<i>he, my</i>). Plus <span class="term">discourse markers</span> (boundary signals) and <span class="term">theme/rheme</span> (given vs. new information).</p>
+  <p>Expressions anchoring utterances in context: time (<i>today, tomorrow</i>), space (<i>here, over there</i>), person (<i>he, my</i>). Plus <span class="term">discourse markers</span> (boundary signals) and <span class="term">theme/rheme</span> (given vs. new information — the Prague School's functional sentence perspective). English tends towards <span class="term">end focus</span> and <span class="term">end weight</span>: new and heavy material gravitates to the clause's end — which is why "I gave the keys to the man who fixed my ancient rattling bicycle" beats the reverse order.</p>
   <h4>Grice: cooperative principle &amp; the four maxims</h4>
   <table class="mini">
     <tr><th>Maxim</th><th>Rule</th></tr>
@@ -1359,14 +1533,24 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
     <tr><td class="term">Relevance</td><td>Be relevant.</td></tr>
     <tr><td class="term">Manner</td><td>Avoid obscurity/ambiguity; be brief and orderly.</td></tr>
   </table>
-  <p><b>Classic mix-up:</b> Quality and Quantity get swapped constantly — "as informative as required" is QUANTITY, "don't say what you believe false" is QUALITY. Flouting a maxim generates a <span class="term">conversational implicature</span>.</p>
+  <p><b>Classic mix-up:</b> Quality and Quantity get swapped constantly — "as informative as required" is QUANTITY, "don't say what you believe false" is QUALITY. Flouting a maxim generates a <span class="term">conversational implicature</span> — context-dependent and cancellable. Distinguish it from the <span class="term">conventional implicature</span>, which sticks to a word itself: <i>but</i> always implies contrast, <i>even</i> always implies unexpectedness, no context needed. And note the politeness angle: <b>indirectness</b> ("Could you possibly…?") is a strategy for softening directives.</p>
 </div>
 <div class="phase practice">Practice</div>
 <div class="card">
+  <div class="lvl l1">Level 1 · Match</div>
+  <div id="match-lu5"></div>
+  <div class="lvl l2">Level 2 · Classify the speech act</div>
+  <p class="hint">Tap to cycle, then check.</p>
+  <div id="sort-lu5"></div>
+  <div class="lvl" style="background:var(--accent)">Level 3 · Open drills</div>
   <p class="hint">Drill — term check, then Searle, then Grice:</p>
   <div class="reveal"><p><b>Q:</b> Term check: (a) the effect an utterance has on the listener (b) the unstated meaning a hearer must infer (c) the act of producing words in grammatical order (d) the new information that follows the theme (e) expressions that anchor an utterance in its context.</p><div class="answer"><b>A:</b> (a) perlocution (b) conversational implicature (c) phatic act (d) rheme (e) deictic expressions.</div></div>
   <div class="reveal"><p><b>Q:</b> Searle-classify: "I promise to call you tonight." · "I hereby open the conference." · "The forecast promised sunshine for the weekend."</p><div class="answer"><b>A:</b> commissive · declaration · representative/assertive — the third one REPORTS a promise (claims its truth), nobody is promising anything. Classic trap.</div></div>
   <div class="reveal"><p><b>Q:</b> A: "How did your exam go?" — B: "Lovely weather today." Which maxim is flouted, and what is implicated?</p><div class="answer"><b>A:</b> Relevance — the answer ignores the question, implicating "I don't want to talk about it" (probably: badly). Compare under-informative answers ("It went."), which flout quantity instead.</div></div>
+  <div class="reveal"><p><b>Q:</b> Maxim rapid fire: (a) "This essay is… not entirely without merit." (b) "I've told you a MILLION times." (c) A menu described for ten minutes when asked "Is the soup good?"</p><div class="answer"><b>A:</b> (a) manner flouted (deliberate obscurity → faint praise implicature) (b) quality flouted (obvious untruth → hyperbole, no deception) (c) quantity flouted (far too much). Flouting is VISIBLE violation — that visibility is what generates the implicature.</div></div>
+  <div class="reveal"><p><b>Q:</b> "Can you pass the salt?" — analyse literally and pragmatically.</p><div class="answer"><b>A:</b> Literally a yes/no question about ability (representative territory); pragmatically an <b>indirect directive</b>. Answering "Yes" and not moving obeys the semantics and fails the pragmatics — the joke that explains the whole unit.</div></div>
+  <div class="reveal"><p><b>Q:</b> Sort the deixis: <i>tomorrow · over there · we · now · this one · you</i>.</p><div class="answer"><b>A:</b> Time: tomorrow, now · Space: over there, this one · Person: we, you. None of them mean anything without the utterance context — that's what makes them deictic (synsemantic anchors).</div></div>
+  <div class="reveal"><p><b>Q:</b> Which of these is a performative — and what's the test? "I promise to come." · "I promised to come." · "She promises to come."</p><div class="answer"><b>A:</b> Only the first: present tense, 1st person, and the <b>hereby-test</b> works ("I hereby promise…"). The others REPORT promising. Performatives DO the act in saying it — Austin's founding observation.</div></div>
 </div>
 </div>
 
@@ -1389,7 +1573,8 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
     <li>The standard is itself just a dialect that won — used in writing, media, education; carries <span class="term">overt prestige</span>. Non-standard varieties are linguistically equal, often stigmatised, may carry <span class="term">covert prestige</span>. The <span class="term">vernacular</span> = variety furthest from the educated standard.</li>
     <li><span class="term">Accommodation theory</span> (Giles): <b>convergence</b> — adapting towards a group (up or down); <b>divergence</b> — emphasising difference to dissociate.</li>
     <li><span class="term">Labov's NYC /r/ study</span>: the higher the class index AND the more formal the situation, the closer to the (rhotic) standard; <b>hypercorrection</b> is typical of the <b>lower middle class</b> — anxious overshooting in formal styles.</li>
-    <li>AAVE features: copula deletion (<i>He crazy</i>), multiple negation (<i>We never had no trouble</i>).</li>
+    <li>AAVE features: copula deletion (<i>He crazy</i>), multiple negation (<i>We never had no trouble</i>) — structurally systematic rules, not errors. The political dimension: the 1996 Oakland <span class="term">"Ebonics" controversy</span> over recognising AAVE in schools showed how linguistic facts collide with language ideology.</li>
+    <li><span class="term">Variation and change</span>: today's social variation is often tomorrow's change in progress — Labov's stratified /r/ shows a shift moving through the community in "apparent time" (younger vs. older speakers = before/after snapshots). Sociolinguistics and historical linguistics are the same subject at different shutter speeds.</li>
   </ul>
   <div class="painting">
     <img src="images/caillebotte.jpg" alt="Caillebotte, Paris Street; Rainy Day" loading="lazy">
@@ -1398,10 +1583,20 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
 </div>
 <div class="phase practice">Practice</div>
 <div class="card">
+  <div class="lvl l1">Level 1 · Match</div>
+  <div id="match-lu6"></div>
+  <div class="lvl l2">Level 2 · Classify the variety</div>
+  <p class="hint">Tap to cycle, then check.</p>
+  <div id="sort-lu6"></div>
+  <div class="lvl" style="background:var(--accent)">Level 3 · Open drills</div>
   <p class="hint">Drill — sociolinguistic toolkit:</p>
   <div class="reveal"><p><b>Q:</b> Fill in: (a) diatopic, diastratic and ___ varieties (b) prestige attaching to stigmatised forms = ___ (c) shifting your speech away from an interlocutor = ___ (d) an accent differs from a dialect at which level(s)? (e) the variety furthest from the educated standard = ___.</p><div class="answer"><b>A:</b> (a) diaphasic/functional (b) covert prestige (c) divergence (d) pronunciation only — dialects also differ in vocabulary and grammar (e) vernacular.</div></div>
   <div class="reveal"><p><b>Q:</b> Labov's NYC department-store logic: what did closeness to the rhotic prestige norm correlate with — and which group overshoots it?</p><div class="answer"><b>A:</b> Higher class index AND more formal speech style both push towards the standard. The overshooters (hypercorrection) are the LOWER middle class — linguistic insecurity made audible.</div></div>
   <div class="reveal"><p><b>Q:</b> Name the AAVE features: "He tired." / "Ain't nobody seen nothing."</p><div class="answer"><b>A:</b> "He tired" — copula omission/deletion. "Ain't nobody seen nothing" — multiple negation (plus negative inversion). Both systematic grammar, not 'errors' — non-standard ≠ substandard.</div></div>
+  <div class="reveal"><p><b>Q:</b> Variety type: (a) Bavarian German (b) legal jargon in a contract (c) teenage slang in a friend group (d) your formal register in an oral exam.</p><div class="answer"><b>A:</b> (a) diatopic — dialect (b) diaphasic/functional — register, plus diastratic elements (profession) (c) diastratic — sociolect (age group) (d) diaphasic — register/style. Same speaker, four varieties: communities are heterogeneous, speakers are repertoires.</div></div>
+  <div class="reveal"><p><b>Q:</b> A junior banker starts dropping her regional accent in client meetings but lays it on thick at her village pub. Name BOTH moves.</p><div class="answer"><b>A:</b> Convergence upwards (towards the overt-prestige standard) at work; convergence towards the local vernacular (chasing covert prestige, group belonging) at the pub. Accommodation runs in every direction — audience design in action.</div></div>
+  <div class="reveal"><p><b>Q:</b> Why did Labov interview staff in THREE department stores (Saks, Macy's, S. Klein)?</p><div class="answer"><b>A:</b> The stores stratified by class — so the casual "fourth floor" answers turned class AND style (casual vs. emphatic repetition) into measurable variables for post-vocalic /r/. Elegant design: sociolinguistic data without a single questionnaire.</div></div>
+  <div class="reveal"><p><b>Q:</b> "The standard is linguistically superior — that's why it's the standard." Dismantle this in two sentences.</p><div class="answer"><b>A:</b> The standard is simply the dialect that won socially and politically (print, court, capital) — it is of the SAME linguistic quality as any variety. Its prestige is overt and institutional, not structural; calling other varieties 'worse' confuses social evaluation with grammar.</div></div>
 </div>
 </div>
 
@@ -1414,6 +1609,7 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
   <p><b>Internal:</b> ease of articulation (assimilation: OE <i>wifman</i> → <i>wimman</i>), perceptual clarity (clipping stops at <i>ad</i>), phonological symmetry (voiced/voiceless pairs), <span class="term">analogy</span> (strong verbs → <i>-ed</i>: OE <i>halp</i> → helped; <i>eagan</i> → eyes), spelling pronunciation (<i>often</i> with /t/), <span class="term">reanalysis</span> (ME <i>a naddre</i> → an adder). <b>External:</b> language contact, separation of speakers, cultural/social change.</p>
   <h4>The family tree</h4>
   <p>English = <span class="term">(Proto-)Indo-European</span> → <span class="term">Germanic</span> → <span class="term">West Germanic</span> (with Frisian, German, Dutch, Yiddish, Afrikaans — NOT Danish/Swedish = North Germanic). Other IE branches: Celtic (Scots Gaelic, Welsh), Italic (Portuguese), Slavic (Polish). Finnish/Hungarian: non-Indo-European (Finno-Ugric).</p>
+  <p>Evidence you can hear: English kept Germanic /p, t, k/ where German ran through the <span class="term">Second (High German) Consonant Shift</span> — <i>pound/Pfund, ship/Schiff, ten/zehn, make/machen, water/Wasser</i>. Systematic sound correspondences like these are HOW the family tree gets reconstructed — and a free comparison paragraph in any exam. Method tip from Mair: reading <span class="term">parallel texts</span> (e.g. the same Bible verse in the King James and New English Bible) lets you work your way back through the history of English one feature at a time.</p>
   <h4>Periodisation — the four stages</h4>
   <table class="mini">
     <tr><th>Period</th><th>Key facts</th></tr>
@@ -1460,11 +1656,21 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
 </div>
 <div class="phase practice">Practice</div>
 <div class="card">
+  <div class="lvl l1">Level 1 · Match</div>
+  <div id="match-lu7"></div>
+  <div class="lvl l2">Level 2 · Classify the period</div>
+  <p class="hint">Tap to cycle, then check.</p>
+  <div id="sort-lu7"></div>
+  <div class="lvl" style="background:var(--accent)">Level 3 · Open drills</div>
   <p class="hint">Drill — historical toolkit:</p>
   <div class="reveal"><p><b>Q:</b> Branch of Indo-European (or not IE at all): Welsh · Swedish · Hungarian · Spanish · Czech.</p><div class="answer"><b>A:</b> Celtic · Germanic (North!) · non-Indo-European (Finno-Ugric, like Finnish) · Italic/Romance · Slavic.</div></div>
   <div class="reveal"><p><b>Q:</b> True or false: (a) Shakespeare could use "Came he home?" and "Did he come home?" side by side (b) The GVS turned ME long /iː/ into a diphthong (c) Multiple negation was already banned in Old English (d) Rhymes like <i>prove/love</i> are evidence for EModE pronunciation.</p><div class="answer"><b>A:</b> (a) TRUE — <i>do</i>-periphrasis was freely variable in EModE, obligatory only later (b) TRUE — that's why <i>time</i> has /aɪ/ (c) false — perfectly grammatical for centuries, outlawed by 18th-century codifiers (d) TRUE — poems are phonological fossils.</div></div>
   <div class="reveal"><p><b>Q:</b> The old past tense <i>holp</i> (of <i>help</i>) became <i>helped</i>. Which mechanism of change?</p><div class="answer"><b>A:</b> Analogy — the regular weak {-ed} pattern was extended to a former strong verb. The same force keeps regularising irregulars today (<i>dreamt</i> → <i>dreamed</i>).</div></div>
   <div class="reveal"><p><b>Q:</b> Why does English eat French at dinner (beef, pork, veal, mutton) but farm in Anglo-Saxon (ox, swine, calf, sheep)?</p><div class="answer"><b>A:</b> Post-1066 diglossia: Norman-French nobility named the cooked meat they consumed; English-speaking peasants named the animals they raised. Sociolinguistics fossilised in the lexicon.</div></div>
+  <div class="reveal"><p><b>Q:</b> Match the mechanism: (a) OE <i>wifman</i> → <i>wimman</i> (b) ME <i>a napron</i> → <i>an apron</i> (c) /t/ returning in <i>often</i> (d) <i>pea</i> from older <i>pease</i>.</p><div class="answer"><b>A:</b> (a) ease of articulation/assimilation (b) reanalysis (misplaced word boundary — adder's twin) (c) spelling pronunciation (d) reanalysis again: <i>pease</i> was singular, sounded plural, so speakers 'recovered' a singular <i>pea</i>.</div></div>
+  <div class="reveal"><p><b>Q:</b> Sort the loans by layer: <i>street · justice · kangaroo · bishop · duke · curry</i>.</p><div class="answer"><b>A:</b> Latin into (pre-)OE: street, bishop · French into ME: justice, duke · colonial-era expansion: kangaroo (Australia), curry (India). Loanwords are datable sediment — each contact era leaves its own stratum.</div></div>
+  <div class="reveal"><p><b>Q:</b> Assign the period by evidence: (a) "Hwæt! Wē Gār-Dena in geārdagum…" (b) "Whan that Aprill with his shoures soote…" (c) "Came he not home tonight?"</p><div class="answer"><b>A:</b> (a) Old English (full inflection, alien vocabulary — Beowulf) (b) Middle English (recognisable, French-flavoured — Chaucer) (c) Early Modern English (do-less question, otherwise transparent). Periodisation by FEATURES, not by feel.</div></div>
+  <div class="reveal"><p><b>Q:</b> The GVS in action: ME /iː/ in <i>tīm</i>, ME /uː/ in <i>hūs</i>, ME /eː/ in <i>gēs</i> — give the PDE outcomes.</p><div class="answer"><b>A:</b> /iː/ → /aɪ/ (time) and /uː/ → /aʊ/ (house) — the top vowels couldn't rise further, so they DIPHTHONGISED; /eː/ → /iː/ (geese) rose into the vacated slot. A chain shift: everyone moves up one seat.</div></div>
 </div>
 </div>
 
@@ -1482,25 +1688,74 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
     <tr><td class="term">EFL</td><td>Foreign language for international communication (Germany, Japan, China). <b>Norm-dependent</b> — on Inner Circle norms, not Outer!</td><td>Expanding Circle</td></tr>
   </table>
   <h4>BrE vs. AmE — the two undisputed global standards (Mair)</h4>
-  <p>Spelling: <i>centre/center, favour/favor</i> · vocabulary: <i>boot/trunk, state school/public school</i> (a British "public school" is private — enjoy) · phonology: <b>rhoticity</b> (post-vocalic /r/ silent in BrE, sounded in AmE), /t/-flapping in AmE.</p>
+  <p>Spelling: <i>centre/center, favour/favor</i> · vocabulary: <i>boot/trunk, state school/public school</i> (a British "public school" is private — enjoy) · phonology: <b>rhoticity</b> (post-vocalic /r/ silent in BrE, sounded in AmE), /t/-flapping in AmE · grammar: differences exist but are <b>statistical rather than absolute</b> — BrE <i>I haven't a clue</i> vs. shared <i>I don't have a clue</i>; both varieties understand both. In vocabulary the traffic is one-way: Americanisms keep replacing British forms (convergence).</p>
+  <p>Beyond the big two: <span class="term">English as a Lingua Franca (ELF)</span> — English used between non-native speakers (a German and a Japanese engineer negotiating in English) — is by SPEAKER COUNT the most common English of all, and it belongs to none of Kachru's circles. And dialects can be written culture too: Scots has a literary tradition of its own (Burns: "Scots wha hae…"). Data sources for variation, if you ever write a term paper: dialect atlases (Orton's Linguistic Atlas of England, Labov's Atlas of North American English) and audio archives (British Library Sounds, IDEA).</p>
   <h4>Dialectology terms</h4>
   <p><span class="term">Isogloss</span> — boundary line of one linguistic feature; many overlapping isoglosses = <span class="term">dialect boundary</span>. Southern US <i>y'all</i> = 2nd person plural. <span class="term">Northern Cities Shift</span> — ongoing vowel change in the <b>US Great Lakes cities</b> (Chicago, Detroit — NOT northern England, classic trap).</p>
 </div>
 <div class="phase practice">Practice</div>
 <div class="card">
+  <div class="lvl l1">Level 1 · Match</div>
+  <div id="match-lu8"></div>
+  <div class="lvl l2">Level 2 · Classify the Kachru circle</div>
+  <p class="hint">Tap to cycle, then check.</p>
+  <div id="sort-lu8"></div>
+  <div class="lvl" style="background:var(--accent)">Level 3 · Open drills</div>
   <p class="hint">Drill — World Englishes:</p>
   <div class="reveal"><p><b>Q:</b> Kachru: why does Nigerian English sit in the Outer Circle? (a) it is norm-dependent (b) it belongs to the New Englishes (c) Nigeria was settled in the first diaspora (d) most speakers learn it as an additional language.</p><div class="answer"><b>A:</b> (b) and (d). Outer Circle varieties are norm-DEVELOPING (not dependent), and colonial West Africa belongs to the SECOND diaspora.</div></div>
   <div class="reveal"><p><b>Q:</b> True/false: EFL speakers orient towards Inner Circle norms · ESL contexts are typically societally multilingual · isoglosses separate formal from informal registers · the Northern Cities Shift is happening in northern England.</p><div class="answer"><b>A:</b> True · true · false (isoglosses are REGIONAL feature boundaries) · false (US Great Lakes cities — Chicago, Detroit).</div></div>
   <div class="reveal"><p><b>Q:</b> Fill in: several co-existing standards make English a ___ language; postcolonial second-language varieties are collectively the ___ Englishes; a bundle of overlapping isoglosses forms a ___.</p><div class="answer"><b>A:</b> pluricentric · New · dialect boundary.</div></div>
+  <div class="reveal"><p><b>Q:</b> Kachru-sort: USA · Nigeria · Japan · Ireland · India · China — and name each circle's norm relation.</p><div class="answer"><b>A:</b> Inner (norm-providing): USA, Ireland · Outer (norm-developing): Nigeria, India · Expanding (norm-dependent): Japan, China. The circles map colonisation history, not competence.</div></div>
+  <div class="reveal"><p><b>Q:</b> BrE or AmE speaker? "I put my luggage in the boot, drove past the state school and posted a letter."</p><div class="answer"><b>A:</b> British three times over: boot (AmE trunk), state school (AmE public school — while a British 'public school' is private!), posted (AmE mailed). Vocabulary is the fastest tell; spelling and rhoticity confirm.</div></div>
+  <div class="reveal"><p><b>Q:</b> A speaker says /ˈbɛɾər/ for <i>better</i> and /kɑːr/ with a full /r/. Diagnose.</p><div class="answer"><b>A:</b> /t/-flapping + rhoticity = American English phonology. Standard southern BrE would have /ˈbɛtə/ and silent post-vocalic /r/. Two features, one confident diagnosis.</div></div>
+  <div class="reveal"><p><b>Q:</b> Distinguish: ENL, ESL, EFL — by function, diaspora and norm status, in one line each.</p><div class="answer"><b>A:</b> ENL: majority first language, first diaspora, norm-providing (USA). ESL: additional language for INTERNAL functions, second diaspora, norm-developing, societally multilingual (Nigeria). EFL: foreign language for INTERNATIONAL use, no diaspora, norm-dependent (Germany).</div></div>
 </div>
 </div>
 
 <div class="lu-panel" id="lu9">
 <div class="phase test">Test</div>
+<div class="card">
+  <h3>Exam-format simulator</h3>
+  <p class="hint">The LitCult self-assessments use four mechanics: type-the-term (fill-in), true/false, negative questions, fake distractors. Same exam, same level — drill them for linguistics here. Write your answer down BEFORE revealing.</p>
+  <div class="reveal"><p><b>Fill in:</b> The two inseparable sides of the linguistic sign are the ___ and the ___.</p><div class="answer">signifier (sound image) and signified (concept) — arbitrary, conventional, interdependent.</div></div>
+  <div class="reveal"><p><b>True or false:</b> "Langue" refers to concrete, individual speech events.</p><div class="answer">FALSE — that is parole. Langue is the abstract sign system in the mind.</div></div>
+  <div class="reveal"><p><b>Fill in:</b> ___ studies the physical production, transmission and perception of speech sounds; its meaning-based counterpart is ___.</p><div class="answer">Phonetics · phonology.</div></div>
+  <div class="reveal"><p><b>True or false:</b> Exchanging one allophone for another changes word meaning.</p><div class="answer">FALSE — that defines phonemes (minimal pair test). Allophones vary freely or by context, meaning stays.</div></div>
+  <div class="reveal"><p><b>Spot the intruder:</b> plosive — fricative — velar — nasal. Which term does not belong, and why?</p><div class="answer">velar — it names a PLACE of articulation; the other three are MANNERS. (Classic ExamWeb-style category smuggling.)</div></div>
+  <div class="reveal"><p><b>Fill in:</b> The phonetic realisational variants of one morpheme are called ___.</p><div class="answer">allomorphs — e.g. plural [s]/[z]/[ɪz].</div></div>
+  <div class="reveal"><p><b>True or false:</b> NATO is an alphabetism.</p><div class="answer">FALSE — pronounced as a word, it is an acronym. FBI, spelt letter by letter, is the alphabetism.</div></div>
+  <div class="reveal"><p><b>Fill in:</b> Constituents that can be replaced by a pro-form pass the ___ test.</p><div class="answer">substitution test (one of four phrase tests: substitution, movement, coordination, stand-alone).</div></div>
+  <div class="reveal"><p><b>True or false:</b> Passivisation is the standard test for identifying adverbials.</p><div class="answer">FALSE — it identifies OBJECTS (they become passive subjects); adverbials fail it.</div></div>
+  <div class="reveal"><p><b>Fill in:</b> One word-form carrying two or more unrelated meanings is called ___.</p><div class="answer">homonymy (mole) — related senses would be polysemy (beam).</div></div>
+  <div class="reveal"><p><b>True or false:</b> Total synonymy is widespread in English.</p><div class="answer">FALSE — near-nonexistent; pairs differ in connotation, register, region or collocation (buy/purchase).</div></div>
+  <div class="reveal"><p><b>Fill in:</b> The effect an utterance produces in the listener is its ___.</p><div class="answer">perlocution — intention = illocution, literal content = proposition.</div></div>
+  <div class="reveal"><p><b>Spot the intruder:</b> quality — quantity — clarity — relevance. Which is NOT one of Grice's maxims?</p><div class="answer">clarity — the fourth maxim is MANNER (avoid obscurity, be brief and orderly). Distractors love near-synonyms.</div></div>
+  <div class="reveal"><p><b>True or false:</b> "I hereby apologise" is a performative utterance.</p><div class="answer">TRUE — 1st person, present tense, passes the hereby-test: saying it IS doing it.</div></div>
+  <div class="reveal"><p><b>Fill in:</b> Prestige attaching to stigmatised non-standard speech is called ___ prestige.</p><div class="answer">covert — the standard carries overt prestige.</div></div>
+  <div class="reveal"><p><b>True or false:</b> An accent differs from the standard in pronunciation, vocabulary AND grammar.</p><div class="answer">FALSE — pronunciation only. The full triple defines a dialect.</div></div>
+  <div class="reveal"><p><b>Fill in:</b> The Early Modern English chain shift in which all ME long vowels were raised or diphthongised is the ___.</p><div class="answer">Great Vowel Shift — long vowels only, that trap never retires.</div></div>
+  <div class="reveal"><p><b>Spot the intruder:</b> Inner — Outer — Central — Expanding. Which is NOT one of Kachru's circles?</p><div class="answer">Central — the model has exactly three circles. (Same trick as "hyperdiegetic" in the film test: invented sibling terms.)</div></div>
+</div>
 <div class="card"><h3>Linguistics Test — 40 questions</h3><p class="hint">Every unit's key concepts, all the classic traps included — from Saussure's triangle to rhoticity.</p></div>
 <div id="quiz-lingu"></div>
 <div class="scorebar" id="score-lingu"></div>
 </div>
+</section>
+
+<!-- ============ GLOSSARY ============ -->
+<section id="page-gloss" class="page">
+  <h2 class="ptitle">Glossary</h2>
+  <p class="psub">Every technical term from both courses, in one-line definitions — searchable. Exam mode: read the definition, produce the term.</p>
+  <div class="card">
+    <input class="gsearch" id="gsearch" type="text" placeholder="Search terms and definitions…">
+    <span class="gcount" id="gcount"></span>
+    <div id="glist"></div>
+  </div>
+  <div class="card">
+    <h3>Take it with you</h3>
+    <p>The complete glossary as a printable PDF — every term below, grouped by area, for offline drilling on paper.</p>
+    <a class="action" style="display:inline-block;text-decoration:none" href="glossary.pdf" download>Download glossary.pdf</a>
+  </div>
 </section>
 
 <!-- ============ FINAL ============ -->
@@ -1537,7 +1792,7 @@ body.lin .subnav,body.lin .stepper{background:rgba(235,245,243,.45)}
 <script>
 /* ---------- navigation ---------- */
 const tabs=document.querySelectorAll('nav.tabs button');
-const navMap={home:'home',lit:'lit',poetry:'lit',drama:'lit',narrative:'lit',film:'lit',final:'lit',lingu:'lingu'};
+const navMap={home:'home',lit:'lit',poetry:'lit',drama:'lit',narrative:'lit',film:'lit',final:'lit',lingu:'lingu',gloss:'gloss'};
 function goTo(page){
   tabs.forEach(b=>b.classList.toggle('active',b.dataset.page===(navMap[page]||'home')));
   document.querySelectorAll('section.page').forEach(s=>s.classList.toggle('active',s.id==='page-'+page));
@@ -1647,7 +1902,17 @@ if(prolEl){
 }
 
 /* ---------- scansion trainer ---------- */
-const scanData={scan1:{syl:["Her","vi","gor","flows","like","tides","in","to","my","blood"],stress:[1,3,5,7,9]}};
+const scanData={
+scan1:{syl:["Her","vi","gor","flows","like","tides","in","to","my","blood"],stress:[1,3,5,7,9],
+ ok:"Perfect — five iambs (x /), so: <b>iambic pentameter</b>. Note 'in-TO' takes the metrical stress even though we'd barely stress it in speech — that's meter vs. rhythm.",
+ fail:"Not quite. Pattern: her VI-gor FLOWS like TIDES in-TO my BLOOD (x / x / x / x / x /). Green = right, red = wrong. Hit Reset and try again."},
+scan2:{syl:["I","love","this","cul","tured","hell","that","tests","my","youth"],stress:[1,3,5,7,9],
+ ok:"Clean iambic pentameter — the poem's thesis line marches in perfect step. The regularity IS the point: discipline in form, rebellion in content.",
+ fail:"Not quite. Pattern: i LOVE this CUL-tured HELL that TESTS my YOUTH (x / x / x / x / x /). Reset and retry."},
+scan3:{syl:["Steal","ing","my","breath","of","life,","I","will","con","fess"],stress:[0,3,5,7,9],
+ ok:"Sharp ear! The line OPENS with a trochee (STEAL-ing) — a <b>trochaic inversion</b> — before settling back into iambs. The stumble enacts the theft it describes.",
+ fail:"Trap line! It starts with a TROCHEE: STEAL-ing my BREATH of LIFE, i WILL con-FESS (/ x x / x / x / x /). Initial inversions are the most common metrical variation — exams love them."}
+};
 function buildScan(id){
   const c=document.getElementById(id),d=scanData[id];
   d.syl.forEach((s,i)=>{
@@ -1657,7 +1922,7 @@ function buildScan(id){
     c.appendChild(b);
   });
 }
-buildScan('scan1');
+buildScan('scan1');buildScan('scan2');buildScan('scan3');
 function checkScan(id){
   const c=document.getElementById(id),d=scanData[id];let ok=true;
   c.querySelectorAll('.syll').forEach(b=>{
@@ -1667,9 +1932,7 @@ function checkScan(id){
     if(should!==is)ok=false;
   });
   c.dataset.locked="1";
-  document.getElementById(id+'-msg').innerHTML=ok
-    ?"Perfect — five iambs (x /), so: <b>iambic pentameter</b>. Note 'in-TO' takes the metrical stress even though we'd barely stress it in speech — that's meter vs. rhythm."
-    :"Not quite. Pattern: her VI-gor FLOWS like TIDES in-TO my BLOOD (x / x / x / x / x /). Green = right, red = wrong. Hit Reset and try again.";
+  document.getElementById(id+'-msg').innerHTML=ok?d.ok:d.fail;
 }
 function resetScan(id){
   const c=document.getElementById(id);delete c.dataset.locked;
@@ -1677,6 +1940,59 @@ function resetScan(id){
   document.getElementById(id+'-msg').textContent='';
 }
 
+/* ---------- graded exercises: match + classify ---------- */
+function buildMatch(id,pairs){
+  const host=document.getElementById(id);if(!host)return;
+  const msg=document.createElement('div');msg.className='match-msg';
+  const grid=document.createElement('div');grid.className='match';
+  const right=pairs.map((p,i)=>i).sort(()=>Math.random()-.5);
+  let selL=null,done=0;
+  const rBtns=[];
+  pairs.forEach((p,i)=>{
+    const l=document.createElement('button');l.textContent=p[0];l.dataset.i=i;
+    l.addEventListener('click',()=>{if(l.classList.contains('done'))return;
+      grid.querySelectorAll('button.left').forEach(b=>b.classList.remove('sel'));
+      l.classList.add('sel');selL=l;});
+    l.classList.add('left');grid.appendChild(l);
+    const r=document.createElement('button');r.textContent=pairs[right[i]][1];r.dataset.i=right[i];
+    r.addEventListener('click',()=>{if(!selL||r.classList.contains('done'))return;
+      if(r.dataset.i===selL.dataset.i){
+        r.classList.add('done');selL.classList.add('done');selL.classList.remove('sel');selL=null;done++;
+        msg.textContent=done===pairs.length?'All matched — move on to Level 2.':done+' / '+pairs.length+' matched';
+      }else{
+        r.classList.add('err');setTimeout(()=>r.classList.remove('err'),450);
+      }});
+    rBtns.push(r);
+  });
+  rBtns.forEach(r=>grid.appendChild(r));
+  host.appendChild(grid);host.appendChild(msg);
+}
+function buildSort(id,cats,items){
+  const host=document.getElementById(id);if(!host)return;
+  const wrap=document.createElement('div');wrap.className='sortwrap';
+  items.forEach(it=>{
+    const c=document.createElement('span');c.className='chip';c.dataset.cat=it[1];c.dataset.cur='-1';
+    c.innerHTML='<b>'+it[0]+'</b><span class="cat">?</span>';
+    c.addEventListener('click',()=>{
+      c.classList.remove('c-ok','c-no');
+      const n=(parseInt(c.dataset.cur)+1)%cats.length;c.dataset.cur=n;
+      c.querySelector('.cat').textContent=cats[n];
+    });
+    wrap.appendChild(c);
+  });
+  const btn=document.createElement('button');btn.className='action';btn.textContent='Check';
+  const msg=document.createElement('p');msg.className='hint';
+  btn.addEventListener('click',()=>{
+    let ok=0;
+    wrap.querySelectorAll('.chip').forEach(c=>{
+      const good=cats[parseInt(c.dataset.cur)]===c.dataset.cat;
+      c.classList.toggle('c-ok',good);c.classList.toggle('c-no',!good);
+      if(good)ok++;
+    });
+    msg.textContent=ok+' / '+items.length+' correct'+(ok===items.length?' — Level 2 cleared.':' — tap the red ones to cycle onwards.');
+  });
+  host.appendChild(wrap);host.appendChild(btn);host.appendChild(msg);
+}
 /* ---------- flashcards ---------- */
 function buildCards(id,cards){
   const g=document.getElementById(id);if(!g)return;
@@ -1698,7 +2014,14 @@ buildCards('trope-cards',[
  ["An hundred years should go to praise / Thine eyes… But thirty thousand to the rest","Hyperbole","Marvell, 'To His Coy Mistress'","Deliberately absurd exaggeration in service of seduction-logic."],
  ["We die and rise the same","Paradox","Donne, 'The Canonization'","Self-contradictory on the surface (die = orgasm/death, rise = resurrection) yet true within the poem's logic."],
  ["The yellow fog that rubs its back upon the window-panes, / The yellow smoke that rubs its muzzle on the window-panes","Metaphor + anaphora + epiphora","Eliot, 'Prufrock'","Fog as cat (implicit metaphor); repeated clause openings (anaphora) AND endings (epiphora)."],
- ["Authors are partial to their wit, 'tis true, / But are not Critics to their judgment too?","Ellipsis","Pope","'Partial' is omitted in the second clause but understood: 'are not Critics [partial] to…'"]
+ ["Authors are partial to their wit, 'tis true, / But are not Critics to their judgment too?","Ellipsis","Pope","'Partial' is omitted in the second clause but understood: 'are not Critics [partial] to…'"],
+ ["The Crown announced new taxes today.","Metonymy","","The attribute (crown) stands for the institution (monarchy)."],
+ ["All hands on deck!","Synecdoche","","Part (hands) for whole (sailors) — metonymy's close relative."],
+ ["Art thou pale for weariness / Of climbing heaven and gazing on the earth","Personification","Shelley, 'To the Moon'","The moon is given human exhaustion and loneliness."],
+ ["The western wave was all a-flame","Metaphor","Coleridge, 'The Ancient Mariner'","The sea described as fire — implicit comparison, no 'like'."],
+ ["Grandpa passed away peacefully last night.","Euphemism","","The mild phrase softens 'died' — dysphemism would do the opposite ('kicked the bucket')."],
+ ["I wandered lonely as a cloud","Simile","Wordsworth","Explicit comparison marked by 'as'."],
+ ["The Child is father of the Man","Paradox","Wordsworth, 'My Heart Leaps Up'","Absurd on the surface, true underneath: childhood shapes the adult."]
 ]);
 buildCards('narr-cards',[
  ["Narrator absent from the story he tells; no existence in the storyworld","Heterodiegetic narrator","Genette","E.g. the narrator of Efuru. Can still comment and evaluate — absence ≠ neutrality."],
@@ -1708,7 +2031,14 @@ buildCards('narr-cards',[
  ["narrator > character — as many foci as the narrator chooses","Zero focalisation","Genette","≈ 'omniscient narration' in Anglo criticism. Outside views + inside minds."],
  ["narrator = character — the field restricted to one mind","Internal focalisation","Genette","Fixed (one focaliser), variable (changing), multiple (same event, different eyes)."],
  ["narrator < character — surface only, no access to minds","External focalisation","Genette","We see the shock on the face, never what caused it."],
- ["Past-tense telling of completed events — the classic case","Subsequent narration","Genette","vs. prior (predictive), simultaneous (present-tense 'live'), interpolated (diary/letters)."]
+ ["Past-tense telling of completed events — the classic case","Subsequent narration","Genette","vs. prior (predictive), simultaneous (present-tense 'live'), interpolated (diary/letters)."],
+ ["A narrator whose account the text itself teaches us to distrust","Unreliable narrator","","Poe's Tell-Tale heart-beat; signals: contradictions, obsession, self-justification, gaps."],
+ ["A story wrapped around another story that fills most of the text","Frame narrative","","Heart of Darkness, Wuthering Heights — the frame narrator is level 1, the teller inside is level 2."],
+ ["The 'you' a narrator addresses inside the text","Narratee","","'as you may define it' (Nervous Conditions), 'Call me Ishmael' — the built-in listener, NOT the real reader."],
+ ["WHAT is told vs. HOW it is mediated","Story vs. discourse","","The master distinction: action/characters/setting vs. narrator/focalisation/time."],
+ ["Paths, portals, containers","Spatial analysis concepts","","Routes (the Great River), transitions (the compound gate), inside/outside (rooms, nations)."],
+ ["The older narrating voice vs. its younger self living the events","Narrating I vs. experiencing I","","Nervous Conditions: the adult who 'shall not apologise' narrates the girl who suffered — the gap between them carries the meaning."],
+ ["Setting used to generate mood: darkness = threat, sunlight = hope","Atmosphere","","Space contributes meaning through its relation to events — never describe setting without asking what it DOES."]
 ]);
 buildCards('film-cards',[
  ["Everything visible on screen, arranged before filming begins","Mise-en-scène","","Setting, set, props, performance, blocking, costume, make-up, lighting."],
@@ -1718,7 +2048,13 @@ buildCards('film-cards',[
  ["Character looks offscreen → cut → what they see","Eyeline match","Continuity editing","Stitches looker and looked-at into one coherent space."],
  ["Cutting between two actions to suggest they happen at the same time","Crosscutting","","The bomb ticks / the hero runs. Simultaneity + suspense."],
  ["Frame pivots side to side; the camera itself doesn't move","Pan","","Camera moves = tracking shot · lens adjusts = zoom."],
- ["Score, voice-over, themes no character can hear","Extradiegetic sound","","Inside the storyworld (dialogue, room noise, diegetic music) = intradiegetic."]
+ ["Score, voice-over, themes no character can hear","Extradiegetic sound","","Inside the storyworld (dialogue, room noise, diegetic music) = intradiegetic."],
+ ["One shot superimposed over the next during a transition","Dissolve","","Fade goes through black; a wipe pushes the old shot off with a travelling line."],
+ ["(Extreme) long shot that opens a sequence and sets the spatial context","Establishing shot","","Its sibling mid-scene: the re-establishing shot, after cut-ins have fragmented the space."],
+ ["Detail shot cut into a scene for clarity","Insert","Continuity editing","The crumpled letter, the ticking clock — information the wide shot can't deliver."],
+ ["Camera recreates what a character sees","Subjective point of view","","The 'objective' camera is the alternative — but even it is shaped by convention (male gaze)."],
+ ["Deliberate breaks in space/time continuity for aesthetic or psychological effect","Disjunctive editing","","The counter-model to invisible Hollywood continuity."],
+ ["Light from a source visible in the scene vs. light sculpted from outside","Natural vs. directional lighting","Mise-en-scène","A lamp in frame vs. a face carved out of darkness — both are choices, neither is neutral."]
 ]);
 buildCards('drama-cards',[
  ["A character alone on stage speaks; nobody in the play can hear","Soliloquy","","High subjectivity AND honesty — reliable access to the mind. Monologue = others CAN hear, not necessarily reliable."],
@@ -1728,8 +2064,374 @@ buildCards('drama-cards',[
  ["Context delivered OUTSIDE the action, e.g. in a prologue","Isolated exposition","","Integrated exposition reveals context within the unfolding play."],
  ["Action · place · time","The three unities","Neoclassical doctrine","The open form violates them — ask: to what effect?"],
  ["The error of judgment that triggers the tragic fall","Hamartia","Aristotle","Followed by anagnorisis (recognition); the audience's pity and fear discharge as catharsis."],
- ["The invisible boundary between stage and audience","Fourth wall","","A picture-frame-stage concept — Shakespeare's apron stage, open on three sides, barely had one."]
+ ["The invisible boundary between stage and audience","Fourth wall","","A picture-frame-stage concept — Shakespeare's apron stage, open on three sides, barely had one."],
+ ["The protagonist's moment of tragic recognition","Anagnorisis","Aristotle","Seeing the error — after which the fall (loss, suffering, death) becomes unstoppable."],
+ ["The audience's purging of pity and fear","Catharsis","Aristotle","Tragedy arouses the emotions in order to discharge them — the genre's payoff."],
+ ["Trusted listener who lets a character reveal their inner life on stage","Confidant(e)","","Friar Laurence for Romeo AND Juliet — drama's substitute for a narrator."],
+ ["Exposition — complication — climax — reversal — catastrophe","The five-act structure","","R&J runs it like a textbook: feud → marriage → Tybalt → potion → tomb."],
+ ["Describing the scene in words instead of building it","Word scenery","Elizabethan stagecraft","'In fair Verona, where we lay our scene' — the set exists in language."],
+ ["Serious conflict plus light-hearted elements in one play","Tragicomedy","","One of comedy's subgenres alongside romantic and satiric comedy and the comedy of manners."],
+ ["Small early single-play printings vs. the great 1623 collection","Quartos vs. First Folio","","R&J's Q1 (1597) is a 'bad quarto' — textual transmission matters for what we read today."],
+ ["Narrative elements invade the stage: a narrator figure addresses us directly","Epic drama","","Wilder's stage manager; Brecht's theatre — against the illusion of the fourth wall."]
 ]);
+
+/* ---------- glossary ---------- */
+const GLOSS=[
+["Meter","Pattern of stressed and unstressed syllables, defined by kind and number of feet","Poetry"],
+["Rhythm","Meter plus its linguistic and stylistic realisation in the verse","Poetry"],
+["Iamb","Foot x / (be-LOW)","Poetry"],
+["Trochee","Foot / x (GAR-den)","Poetry"],
+["Spondee","Foot / / (HEART-BREAK)","Poetry"],
+["Dactyl","Foot / x x (MER-ri-ly)","Poetry"],
+["Anapest","Foot x x / (in-ter-VENE)","Poetry"],
+["Pentameter","Line of five feet; iambic pentameter is the English staple","Poetry"],
+["Blank verse","Unrhymed iambic pentameter","Poetry"],
+["Alexandrine","Iambic hexameter line","Poetry"],
+["Free verse","Poetry without meter, rhyme or fixed stanza","Poetry"],
+["End-stopped line","Syntax pauses where the line ends","Poetry"],
+["Enjambment","Sentence runs over the line break (run-on line)","Poetry"],
+["Caesura","Metrical break inside a line","Poetry"],
+["End-rhyme","Rhyme at line endings","Poetry"],
+["Internal rhyme","Rhyme inside a line","Poetry"],
+["Eye-rhyme","Looks alike, sounds different (far/war)","Poetry"],
+["Half-rhyme","Similar sound, no full rhyme (jeer/there)","Poetry"],
+["Masculine rhyme","One-syllable rhyme, final syllable stressed","Poetry"],
+["Feminine rhyme","Two or more syllables, unstressed ending","Poetry"],
+["Identical rhyme","The same word rhymed with itself","Poetry"],
+["Alternate rhyme","Scheme abab (cross rhyme)","Poetry"],
+["Enclosing rhyme","Scheme abba (embracing rhyme)","Poetry"],
+["Chain rhyme","Scheme aba bcb (interlocking)","Poetry"],
+["Tail rhyme","Scheme aab ccb","Poetry"],
+["Couplet","Two rhyming lines; heroic couplet = in iambic pentameter","Poetry"],
+["Quatrain","Four-line stanza","Poetry"],
+["Tercet","Three-line stanza","Poetry"],
+["Sestet","Six-line unit; the Petrarchan sonnet's second part","Poetry"],
+["Octave","Eight-line unit; the Petrarchan sonnet's first part","Poetry"],
+["Shakespearean sonnet","Three quatrains plus couplet, abab cdcd efef gg","Poetry"],
+["Petrarchan sonnet","Octave plus sestet, volta at line 9","Poetry"],
+["Villanelle","19 lines, five tercets plus quatrain, two rhymes, two alternating refrains","Poetry"],
+["Ballad","Narrative poem in song-like stanzas","Poetry"],
+["Ode","Elevated poem of praise or meditation","Poetry"],
+["Elegy","Poem of mourning","Poetry"],
+["Volta","The rhetorical turn of a sonnet","Poetry"],
+["Simile","Explicit comparison using like or as","Poetry"],
+["Metaphor","Implicit comparison: one thing described as another","Poetry"],
+["Conceit","Extended, elaborate metaphor sustained through a passage or poem","Poetry"],
+["Metonymy","Attribute stands for the thing (the Crown)","Poetry"],
+["Synecdoche","Part stands for the whole (all hands)","Poetry"],
+["Symbol","Concrete thing standing for an abstract idea beyond itself","Poetry"],
+["Personification","Human traits given to the non-human","Poetry"],
+["Apostrophe","Direct address to an absent, abstract or non-answering addressee","Poetry"],
+["Oxymoron","Contradictory words fused (cultured hell)","Poetry"],
+["Paradox","Self-contradictory statement containing truth","Poetry"],
+["Hyperbole","Exaggeration for emphasis","Poetry"],
+["Euphemism","Mild term for a harsh reality; opposite: dysphemism","Poetry"],
+["Anaphora","Repetition at the start of successive clauses","Poetry"],
+["Epiphora","Repetition at the end of successive clauses (epistrophe)","Poetry"],
+["Ellipsis (rhetoric)","Omission of words recoverable from context","Poetry"],
+["Pun","Play on a word's double meaning","Poetry"],
+["Allegory","Story readable on a surface and an under-the-surface level","Poetry"],
+["Speaker / lyric I","The constructed voice of a poem; never simply the poet","Poetry"],
+["Dramatic text","The play as verbal sign-system only","Drama"],
+["Theatrical performance","The play realised through many sign systems on stage","Drama"],
+["Internal communication","Character to character, inside the play","Drama"],
+["External communication","Text: author to reader; performance: production to audience","Drama"],
+["Discrepant awareness","Audience and characters know different things","Drama"],
+["Dramatic irony","The audience knows more than the characters","Drama"],
+["Isolated exposition","Context given outside the action (prologue)","Drama"],
+["Integrated exposition","Context revealed inside the unfolding action","Drama"],
+["Dialogue","Speech between characters; verbal action driving the plot","Drama"],
+["Monologue","Long speech others can hear; subjective, not automatically reliable","Drama"],
+["Soliloquy","Speech alone on stage; honest and reliable","Drama"],
+["Aside","Line the other characters on stage cannot hear","Drama"],
+["Dramatis personae","The cast of characters of a play","Drama"],
+["Foil","Contrast figure sharpening a protagonist's profile","Drama"],
+["Confidant(e)","Trusted listener enabling self-revelation on stage","Drama"],
+["Constellation","Structural web of relations between all characters","Drama"],
+["Configuration","The set of characters on stage in a given scene","Drama"],
+["Explicit characterisation","What is said about a character (by self or others)","Drama"],
+["Implicit characterisation","Shown through appearance, body language, entrances, voice","Drama"],
+["Five-act structure","Exposition, complication, climax, reversal, catastrophe","Drama"],
+["Three unities","Neoclassical demand: unity of action, place and time","Drama"],
+["Open form","Drama violating the three unities","Drama"],
+["Word scenery","Setting evoked through language instead of set design","Drama"],
+["Apron stage","Elizabethan stage surrounded by spectators on three sides","Drama"],
+["Picture-frame stage","Modern indoor stage behind a proscenium","Drama"],
+["Fourth wall","Imaginary boundary between stage and audience","Drama"],
+["Quarto","Early single-play printing; Q1 of R&J (1597) is a bad quarto","Drama"],
+["First Folio","The 1623 collected edition of Shakespeare's plays","Drama"],
+["Tragedy","From prosperity to adversity; noble hero, flaw, fall","Drama"],
+["Comedy","From adversity to prosperity; ordinary people, mirror of society","Drama"],
+["Hamartia","The hero's error of judgment","Drama"],
+["Hubris","Overweening pride as tragic flaw","Drama"],
+["Anagnorisis","The hero's tragic recognition","Drama"],
+["Catharsis","The audience's purging of pity and fear","Drama"],
+["Tragicomedy","Serious conflict mixed with light-hearted elements","Drama"],
+["Comedy of manners","Wit-driven comedy of social sophistication","Drama"],
+["Epic drama","Narrative elements invade the stage (narrator figure)","Drama"],
+["Story","WHAT is told: events, characters, setting","Narrative"],
+["Discourse","HOW it is told: the mediation of the story","Narrative"],
+["Narrativity","What makes a text a narrative: story-based, discourse-based, or experientiality","Narrative"],
+["Experientiality","Fludernik: narrativity as represented lived experience","Narrative"],
+["Narrator","The fictive voice that tells; never the real author","Narrative"],
+["Narratee","The addressee built into the text","Narrative"],
+["Heterodiegetic narrator","Absent from the story he tells","Narrative"],
+["Homodiegetic narrator","Present as a character in the story told","Narrative"],
+["Autodiegetic narrator","Homodiegetic narrator who is the protagonist","Narrative"],
+["Extradiegetic level","First level: the narrating act itself","Narrative"],
+["Intradiegetic level","Everything narrated: characters and events","Narrative"],
+["Metadiegetic level","A story told by an intradiegetic character","Narrative"],
+["Frame narrative","A story wrapped around an embedded main story","Narrative"],
+["Focalisation","Restriction of narrative information: who perceives","Narrative"],
+["Zero focalisation","Narrator knows and says more than any character","Narrative"],
+["Internal focalisation","Restricted to one character's perception (fixed, variable, multiple)","Narrative"],
+["External focalisation","Surface only; no access to minds","Narrative"],
+["Authorial narrative situation","Stanzel: omniscient, omnipresent, commenting narrator","Narrative"],
+["Figural narrative situation","Stanzel: events filtered through a reflector character","Narrative"],
+["First-person narrative situation","Stanzel: narrator inside the narrated world","Narrative"],
+["Reflector character","Consciousness through which figural narration is filtered","Narrative"],
+["Unreliable narrator","A narrating voice the text teaches us to distrust","Narrative"],
+["Subsequent narration","Telling after the events (classic past tense)","Narrative"],
+["Prior narration","Predictive telling before the events","Narrative"],
+["Simultaneous narration","Telling while events happen (present tense)","Narrative"],
+["Interpolated narration","Telling between the moments of action (diary, letters)","Narrative"],
+["Narrating vs experiencing I","Older telling self vs younger living self","Narrative"],
+["Setting","Fictional places giving the storyworld its topology","Narrative"],
+["Path / portal / container","Spatial concepts: routes, transitions, inside-outside","Narrative"],
+["Atmosphere","Mood generated by the depiction of space","Narrative"],
+["Mise-en-scene","Everything visible, arranged before filming","Film"],
+["Set","Constructed setting, often on a soundstage","Film"],
+["Prop","Object functioning in the scene","Film"],
+["Blocking","Arrangement and movement of actors in space","Film"],
+["Character actor","Actor associated with a recurring type","Film"],
+["Star","Actor carrying aura and audience recognition","Film"],
+["Natural lighting","Light from a source within the scene","Film"],
+["Directional lighting","Light shaped from outside to sculpt the image","Film"],
+["Cinematography","The art and technique of film photography","Film"],
+["Shot","Continuous point of view without a cut","Film"],
+["Subjective POV","Camera recreates a character's perception","Film"],
+["Male gaze","Cultural convention shaping the supposedly neutral camera","Film"],
+["Framing","What the rectangular frame includes and excludes","Film"],
+["Offscreen space","The world implied beyond the frame","Film"],
+["Establishing shot","Opening long shot that sets spatial context","Film"],
+["Close-up","Face or detail fills the frame","Film"],
+["Medium shot","Human figure from the waist up","Film"],
+["Long shot","Full figure to landscape distance","Film"],
+["Pan","Frame swivels; camera position fixed","Film"],
+["Tracking shot","Camera itself travels through space","Film"],
+["Zoom","Lens adjusts focal length; no camera movement","Film"],
+["Cut","Direct join between two shots","Film"],
+["Fade","Image darkens to black (out) or emerges from it (in)","Film"],
+["Dissolve","One shot superimposed over the next","Film"],
+["Wipe","A moving line replaces one shot with another","Film"],
+["Continuity editing","Invisible Hollywood style creating seamless space and time","Film"],
+["Disjunctive editing","Deliberate breaks of continuity for effect","Film"],
+["180-degree rule","Keep the camera on one side of the axis of action","Film"],
+["Shot-reverse-shot","Alternating angles across a conversation","Film"],
+["Eyeline match","Look offscreen, cut to what is seen","Film"],
+["Insert","Detail shot cut into a scene","Film"],
+["Crosscutting","Alternating actions to suggest simultaneity","Film"],
+["Flashback / flashforward","Shots of past or future interrupting the present","Film"],
+["Pace","Editing rhythm: length of takes before each cut","Film"],
+["Intradiegetic sound","Sound from within the storyworld","Film"],
+["Extradiegetic sound","Score and voice-over outside the storyworld","Film"],
+["Sound bridge","Sound carrying across a cut or diegesis border","Film"],
+["Genre conventions","Recurring settings, types and iconography defining a film genre","Film"],
+["Period drama","Genre staging the national past: estates, costume, literary sources","Film"],
+["Linguistics","The scientific study of language structure and use","Linguistics-Basics"],
+["Sign (Saussure)","Arbitrary union of signifier and signified","Linguistics-Basics"],
+["Signifier","The sound image of the sign","Linguistics-Basics"],
+["Signified","The concept of the sign","Linguistics-Basics"],
+["Arbitrariness","No natural bond between form and meaning","Linguistics-Basics"],
+["Onomatopoeia","Marginal motivated signs imitating sounds","Linguistics-Basics"],
+["Semiotic triangle","Symbol, thought, referent (Ogden and Richards)","Linguistics-Basics"],
+["Langue","The shared sign system in the mind","Linguistics-Basics"],
+["Parole","Concrete individual language use","Linguistics-Basics"],
+["Langage","The inborn human language capacity","Linguistics-Basics"],
+["Competence / performance","Chomsky's knowledge vs use distinction","Linguistics-Basics"],
+["Synchronic","Language at one point in time","Linguistics-Basics"],
+["Diachronic","Language across time","Linguistics-Basics"],
+["Descriptive","Recording what speakers do","Linguistics-Basics"],
+["Prescriptive","Decreeing what speakers should do","Linguistics-Basics"],
+["Phonetics","Physical study of speech sounds: articulatory, acoustic, auditory","Linguistics-Phonology"],
+["Phonology","System of meaningful sound contrasts of a language","Linguistics-Phonology"],
+["Phone","Any concrete speech sound [ ]","Linguistics-Phonology"],
+["Phoneme","Smallest meaning-distinguishing unit / /","Linguistics-Phonology"],
+["Allophone","Contextual or free variant of a phoneme","Linguistics-Phonology"],
+["Minimal pair","Word pair differing in exactly one sound","Linguistics-Phonology"],
+["Complementary distribution","Variants bound each to its own context","Linguistics-Phonology"],
+["Place of articulation","Where the airstream is shaped (bilabial to glottal)","Linguistics-Phonology"],
+["Manner of articulation","How: plosive, fricative, affricate, nasal, lateral, approximant","Linguistics-Phonology"],
+["Voicing","Vocal cord vibration distinguishing sound pairs","Linguistics-Phonology"],
+["Syllable","Onset plus rhyme (nucleus plus coda)","Linguistics-Phonology"],
+["Phonotactics","Rules for permissible sound combinations","Linguistics-Phonology"],
+["Maximum onset principle","Assign consonants to the following onset where legal","Linguistics-Phonology"],
+["Word stress","Fixed prominence distinguishing words (REcord/reCORD)","Linguistics-Phonology"],
+["Vowel reduction","Unstressed vowels drift to schwa","Linguistics-Phonology"],
+["Weak forms","Reduced grammatical words in connected speech","Linguistics-Phonology"],
+["Assimilation","Neighbouring sounds becoming more alike","Linguistics-Phonology"],
+["Intonation","Pitch movement over utterances; tones carry meaning","Linguistics-Phonology"],
+["Tonic syllable","The syllable carrying the tone movement","Linguistics-Phonology"],
+["Final devoicing","German Auslautverhaertung; source of learner errors","Linguistics-Phonology"],
+["Morpheme","Smallest meaningful unit","Linguistics-Morphology"],
+["Free morpheme","Stands alone: lexical or grammatical","Linguistics-Morphology"],
+["Bound morpheme","Only attached: derivational or inflectional","Linguistics-Morphology"],
+["Allomorph","Phonetic variant of one morpheme","Linguistics-Morphology"],
+["Base / stem","What derivation / inflection attaches to","Linguistics-Morphology"],
+["Productivity","How freely an affix creates new words","Linguistics-Morphology"],
+["Compounding","Two free morphemes; head on the right","Linguistics-Morphology"],
+["Endocentric compound","A kind of its head (apple pie)","Linguistics-Morphology"],
+["Exocentric compound","Head unexpressed (paleface)","Linguistics-Morphology"],
+["Copulative compound","Both parts apply (bittersweet)","Linguistics-Morphology"],
+["Appositional compound","Two descriptions, one referent (actor-director)","Linguistics-Morphology"],
+["Derivation","Free plus bound derivational morpheme","Linguistics-Morphology"],
+["Conversion","New word class without formal change (zero-derivation)","Linguistics-Morphology"],
+["Clipping","Deleting material (gym)","Linguistics-Morphology"],
+["Blending","Fusing beginnings and ends (motel)","Linguistics-Morphology"],
+["Acronym","Initials pronounced as a word (NATO)","Linguistics-Morphology"],
+["Alphabetism","Initials spelt letter by letter (FBI)","Linguistics-Morphology"],
+["Back-formation","Removing a supposed affix (edit from editor)","Linguistics-Morphology"],
+["Phrase","Words united around a head (NP, VP, PP, AdjP, AdvP)","Linguistics-Syntax"],
+["Constituent","Any unit functioning as a block in structure","Linguistics-Syntax"],
+["Phrase tests","Substitution, movement, coordination, stand-alone","Linguistics-Syntax"],
+["Structural ambiguity","One string, two bracketings, two meanings","Linguistics-Syntax"],
+["Valency","The verb dictates its obligatory slots","Linguistics-Syntax"],
+["Subject / object / complement / adverbial","Grammatical functions, independent of form","Linguistics-Syntax"],
+["Seven clause patterns","SP, SPO, SPCS, SPA, SPOO, SPOCO, SPOA","Linguistics-Syntax"],
+["Passivisation test","Objects become passive subjects; adverbials do not","Linguistics-Syntax"],
+["Clause types","Relative, adverbial, nominal subordinate clauses","Linguistics-Syntax"],
+["Sentence types","Simple, compound, complex","Linguistics-Syntax"],
+["Synthetic language","Grammar packed into inflection (Latin) or agglutination (Turkish)","Linguistics-Syntax"],
+["Analytic language","Grammar via word order and function words","Linguistics-Syntax"],
+["Autosemantic / synsemantic","Content words vs function words","Linguistics-Syntax"],
+["Semantics","Study of conventional, de-contextualised meaning","Linguistics-Semantics"],
+["Lexeme","Abstract dictionary word covering all its forms","Linguistics-Semantics"],
+["Lemma","The headword of a dictionary entry","Linguistics-Semantics"],
+["Lexicology / lexicography","Studying the vocabulary / writing dictionaries","Linguistics-Semantics"],
+["Compositionality","Complex meaning as sum of parts (Frege); idioms resist it","Linguistics-Semantics"],
+["Idiom","Expression whose meaning exceeds its parts","Linguistics-Semantics"],
+["Componential analysis","Meaning as feature bundles [+human][-adult]","Linguistics-Semantics"],
+["Prototype","Best exemplar organising a fuzzy category","Linguistics-Semantics"],
+["Reference / sense","Word-world relation vs word-defining properties","Linguistics-Semantics"],
+["Extension / intension","Class of referents vs set of defining features","Linguistics-Semantics"],
+["Denotation / connotation","Objective core vs emotional layer","Linguistics-Semantics"],
+["Polysemy","One form, related senses (beam)","Linguistics-Semantics"],
+["Homonymy","One form, unrelated meanings (mole)","Linguistics-Semantics"],
+["Synonymy","Same sense; total synonymy near-nonexistent","Linguistics-Semantics"],
+["Antonymy","Complementary, gradable, or relational opposites","Linguistics-Semantics"],
+["Hyperonym / hyponym","Superordinate vs subordinate term (dog / terrier)","Linguistics-Semantics"],
+["Holonym / meronym","Whole vs part (car / windscreen)","Linguistics-Semantics"],
+["Lexical field","Set of lexemes covering one domain","Linguistics-Semantics"],
+["Collocation","Habitual word partnership (do homework)","Linguistics-Semantics"],
+["Pragmatics","Meaning of utterances in context","Linguistics-Pragmatics"],
+["Utterance","Concrete realisation of a sentence in situation","Linguistics-Pragmatics"],
+["Organon model","Buehler: expression, representation, appeal","Linguistics-Pragmatics"],
+["Jakobson's functions","Emotive, conative, referential, phatic, metalinguistic, poetic","Linguistics-Pragmatics"],
+["Speech act","Doing things with words (Austin, Searle)","Linguistics-Pragmatics"],
+["Phonetic / phatic / rhetic act","Producing sounds / ordered words / meaningful use","Linguistics-Pragmatics"],
+["Proposition","The literal content of an utterance","Linguistics-Pragmatics"],
+["Illocution","The speaker's intention in uttering","Linguistics-Pragmatics"],
+["Perlocution","The effect achieved in the listener","Linguistics-Pragmatics"],
+["Representative","Speech act claiming truth","Linguistics-Pragmatics"],
+["Directive","Speech act getting the hearer to act","Linguistics-Pragmatics"],
+["Commissive","Speaker commits to future action","Linguistics-Pragmatics"],
+["Expressive","Speaker displays an attitude","Linguistics-Pragmatics"],
+["Declaration","The utterance changes the world","Linguistics-Pragmatics"],
+["Indirect speech act","Form and function diverge (Can you pass the salt?)","Linguistics-Pragmatics"],
+["Performative","Verb that does the act in saying it (hereby-test)","Linguistics-Pragmatics"],
+["Deixis","Expressions anchored in context: person, place, time","Linguistics-Pragmatics"],
+["Cooperative principle","Grice: assume purposeful, rule-guided conversation","Linguistics-Pragmatics"],
+["Maxims","Quality, quantity, relevance, manner","Linguistics-Pragmatics"],
+["Conversational implicature","Inferred meaning generated by flouting; cancellable","Linguistics-Pragmatics"],
+["Conventional implicature","Meaning glued to a word itself (but, even)","Linguistics-Pragmatics"],
+["Theme / rheme","Given information vs new information","Linguistics-Pragmatics"],
+["End focus / end weight","New and heavy material gravitates to clause end","Linguistics-Pragmatics"],
+["Discourse marker","Signal structuring speech units","Linguistics-Pragmatics"],
+["Sociolinguistics","Language as a social phenomenon","Linguistics-Socio"],
+["Diatopic / diastratic / diaphasic","Regional / social / situational variation","Linguistics-Socio"],
+["Dialect","Variety differing in pronunciation, vocabulary and grammar","Linguistics-Socio"],
+["Accent","Variety differing in pronunciation only","Linguistics-Socio"],
+["Sociolect","Variety of a social group (jargon, genderlect)","Linguistics-Socio"],
+["Register","Variety fitted to the situation","Linguistics-Socio"],
+["Standard variety","The socially victorious dialect; overt prestige","Linguistics-Socio"],
+["Covert prestige","Value attached to stigmatised varieties","Linguistics-Socio"],
+["Vernacular","Variety furthest from the educated standard","Linguistics-Socio"],
+["Accommodation","Convergence towards or divergence from interlocutors","Linguistics-Socio"],
+["Labov's NYC study","Class and formality correlate with prestige /r/","Linguistics-Socio"],
+["Hypercorrection","Lower middle class overshooting the norm","Linguistics-Socio"],
+["AAVE","Systematic variety: copula deletion, multiple negation","Linguistics-Socio"],
+["Apparent time","Age differences read as change in progress","Linguistics-Socio"],
+["Internal change","Ease of articulation, symmetry, analogy, reanalysis","Linguistics-History"],
+["External change","Contact, separation, cultural and social change","Linguistics-History"],
+["Analogy","Regular patterns extended to irregular forms","Linguistics-History"],
+["Reanalysis","Misparsed boundaries create new forms (an adder)","Linguistics-History"],
+["Spelling pronunciation","Pronunciation follows the written form (often)","Linguistics-History"],
+["Indo-European","The reconstructed ancestor family of English","Linguistics-History"],
+["West Germanic","English's branch, with Frisian, Dutch, German","Linguistics-History"],
+["Second consonant shift","High German shift: pound/Pfund, ship/Schiff","Linguistics-History"],
+["Old English","c. 500-1100; synthetic, four dialects, Beowulf","Linguistics-History"],
+["Middle English","c. 1100-1500; inflection loss, French influx, Chaucer","Linguistics-History"],
+["Early Modern English","c. 1500-1750; GVS, printing, codification, Shakespeare","Linguistics-History"],
+["Great Vowel Shift","All ME long vowels raised or diphthongised","Linguistics-History"],
+["Do-periphrasis","Optional in EModE, obligatory later","Linguistics-History"],
+["Danelaw","Norse settlement zone; everyday Norse loans","Linguistics-History"],
+["Synthetic to analytic","English's long drift from endings to word order","Linguistics-History"],
+["Pluricentric","A language with several interacting standards","Linguistics-World"],
+["ENL / ESL / EFL","Native, second and foreign language Englishes","Linguistics-World"],
+["ELF","English as lingua franca between non-natives","Linguistics-World"],
+["Kachru's circles","Inner (norm-providing), Outer (developing), Expanding (dependent)","Linguistics-World"],
+["New Englishes","Postcolonial second-language varieties","Linguistics-World"],
+["Diaspora (first/second)","Settler colonies vs exploitation colonies","Linguistics-World"],
+["Rhoticity","Post-vocalic /r/ sounded (AmE) or silent (BrE)","Linguistics-World"],
+["T-flapping","AmE better with a flapped [d]-like t","Linguistics-World"],
+["Isogloss","Boundary line of a single feature","Linguistics-World"],
+["Dialect boundary","Bundle of overlapping isoglosses","Linguistics-World"],
+["Northern Cities Shift","Ongoing US Great Lakes vowel rotation","Linguistics-World"],
+["Scots","Dialect with its own literary tradition (Burns)","Linguistics-World"]
+];
+function renderGloss(filter){
+  const list=document.getElementById('glist');if(!list)return;
+  const f=(filter||'').toLowerCase();
+  const hits=GLOSS.filter(g=>!f||g[0].toLowerCase().includes(f)||g[1].toLowerCase().includes(f));
+  let html='',cat='';
+  hits.forEach(g=>{
+    if(g[2]!==cat){cat=g[2];html+='<div class="gcat">'+cat.replace('Linguistics-','Linguistics · ')+'</div>';}
+    html+='<div class="gitem"><b>'+g[0]+'</b> — '+g[1]+'</div>';
+  });
+  list.innerHTML=html||'<p class="hint">No matches.</p>';
+  const c=document.getElementById('gcount');if(c)c.textContent=hits.length+' / '+GLOSS.length+' terms';
+}
+renderGloss('');
+const gs=document.getElementById('gsearch');
+if(gs)gs.addEventListener('input',()=>renderGloss(gs.value));
+
+/* ---------- graded exercise data ---------- */
+buildMatch('match-poetry',[["Iamb","x / (be-LOW)"],["Trochee","/ x (GAR-den)"],["Anapest","x x / (in-ter-VENE)"],["Dactyl","/ x x (MER-ri-ly)"],["Volta","the rhetorical turn"],["Enjambment","syntax runs over the line break"]]);
+buildSort('sort-poetry',["iamb","trochee","spondee"],[["below","iamb"],["garden","trochee"],["heartbreak","spondee"],["avoid","iamb"],["tiger","trochee"],["daybreak","spondee"]]);
+buildMatch('match-drama',[["Soliloquy","alone on stage — honest, reliable"],["Aside","present characters cannot hear it"],["Dramatic irony","audience knows more than the characters"],["Foil","contrast figure sharpening a protagonist"],["Hamartia","error of judgment"],["Catharsis","purging of pity and fear"]]);
+buildSort('sort-drama',["soliloquy","aside","monologue"],[["balcony self-talk, believed unheard","soliloquy"],["muttered so only WE hear it","aside"],["speech to the assembled court","monologue"],["alone on stage, confessing a plan","soliloquy"],["secret line past the ally on stage","aside"],["general's address to his troops","monologue"]]);
+buildMatch('match-narrative',[["Heterodiegetic","absent from the story told"],["Autodiegetic","tells their own story"],["Metadiegetic","story within the story"],["Zero focalisation","narrator > character"],["External focalisation","narrator < character"],["Interpolated","telling between the moments (diary)"]]);
+buildSort('sort-narrative',["zero","internal","external"],[["all minds open + narrator's comments","zero"],["one character's thoughts only","internal"],["surfaces only, no minds","external"],["Efuru's secret plan to leave","internal"],["two men paddling in silence","external"],["Nwabata's past + narrator's evaluations","zero"]]);
+buildMatch('match-film',[["Pan","frame swivels, camera stays put"],["Tracking shot","camera itself travels"],["Crosscutting","two actions, same time"],["Eyeline match","look → cut → object of the look"],["Dissolve","shots superimposed in transition"],["Blocking","arrangement of actors in space"]]);
+buildSort('sort-film',["intradiegetic","extradiegetic"],[["dialogue","intradiegetic"],["orchestral score","extradiegetic"],["voice-over","extradiegetic"],["radio playing in the scene","intradiegetic"],["footsteps","intradiegetic"],["recurring character theme","extradiegetic"]]);
+buildMatch('match-lu0',[["Langue","the sign system in the mind"],["Parole","language in actual use"],["Signifier","the sound image"],["Signified","the concept"],["Synchronic","one point in time"],["Prescriptive","how one SHOULD speak"]]);
+buildSort('sort-lu0',["{ }","[ ]","/ /","< >"],[["morpheme","{ }"],["phone","[ ]"],["phoneme","/ /"],["grapheme","< >"],["plural -s","{ }"],["aspirated t","[ ]"]]);
+buildMatch('match-lu1',[["/p/","voiceless bilabial plosive"],["/z/","voiced alveolar fricative"],["/ŋ/","velar nasal"],["/tʃ/","affricate"],["/j/","palatal semivowel"],["/l/","lateral"]]);
+buildSort('sort-lu1',["plosive","fricative","nasal"],[["/b/","plosive"],["/f/","fricative"],["/m/","nasal"],["/g/","plosive"],["/ð/","fricative"],["/n/","nasal"]]);
+buildMatch('match-lu2',[["Blend","motel"],["Clipping","gym < gymnasium"],["Alphabetism","FBI"],["Acronym","NATO"],["Back-formation","edit < editor"],["Conversion","to bottle"]]);
+buildSort('sort-lu2',["[s]","[z]","[ɪz]"],[["books","[s]"],["dogs","[z]"],["boxes","[ɪz]"],["cliffs","[s]"],["keys","[z]"],["churches","[ɪz]"]]);
+buildMatch('match-lu3',[["SP","The baby cried."],["SPO","She reads novels."],["SPCS","He is a doctor."],["SPA","She lives in Rome."],["SPOO","I sent her flowers."],["SPOCO","They call him king."]]);
+buildSort('sort-lu3',["S","Od","A"],[["the dog — The dog barked","S"],["a letter — She wrote a letter","Od"],["yesterday","A"],["in the garden","A"],["my friend — My friend called","S"],["him — I saw him","Od"]]);
+buildMatch('match-lu4',[["Polysemy","beam: of light / of wood"],["Homonymy","mole: animal / spy"],["Hyponymy","terrier → dog"],["Meronymy","wheel → car"],["Connotation","the emotional layer"],["Collocation","do homework, not *make"]]);
+buildSort('sort-lu4',["complementary","gradable","relational"],[["dead / alive","complementary"],["hot / cold","gradable"],["buy / sell","relational"],["single / married","complementary"],["tall / short","gradable"],["lend / borrow","relational"]]);
+buildMatch('match-lu5',[["Illocution","the speaker's intention"],["Perlocution","the effect on the listener"],["Phatic act","words in grammatical order"],["Rheme","the new information"],["Deixis","context anchors (here, now, I)"],["Performative","verbs that pass the hereby-test"]]);
+buildSort('sort-lu5',["representative","directive","commissive","expressive","declaration"],[["It's raining.","representative"],["Shut the door!","directive"],["I'll be there at six.","commissive"],["I'm so sorry.","expressive"],["I hereby resign.","declaration"],["Congratulations!","expressive"]]);
+buildMatch('match-lu6',[["Diatopic","regional variation"],["Diastratic","social-group variation"],["Diaphasic","situational variation"],["Covert prestige","value of stigmatised forms"],["Divergence","speaking AWAY from the interlocutor"],["Vernacular","furthest from the standard"]]);
+buildSort('sort-lu6',["dialect","sociolect","register"],[["Bavarian","dialect"],["youth slang","sociolect"],["contract legalese","register"],["Geordie","dialect"],["doctors' jargon","sociolect"],["oral-exam formality","register"]]);
+buildMatch('match-lu7',[["449","Angles, Saxons and Jutes arrive"],["1066","Norman Conquest"],["Danelaw","Norse settlement area"],["Great Vowel Shift","ME long vowels raised or diphthongised"],["Analogy","holp → helped"],["do-periphrasis","optional in EModE, obligatory later"]]);
+buildSort('sort-lu7',["OE","ME","EModE"],[["3 genders, 4–5 cases","OE"],["11,000 French loans","ME"],["Great Vowel Shift","EModE"],["Beowulf","OE"],["Chaucer","ME"],["Shakespeare","EModE"]]);
+buildMatch('match-lu8',[["ENL","norm-providing"],["ESL","norm-developing"],["EFL","norm-dependent"],["Pluricentric","several co-existing standards"],["Isogloss","boundary of one feature"],["y'all","Southern US 2nd person plural"]]);
+buildSort('sort-lu8',["Inner","Outer","Expanding"],[["USA","Inner"],["Nigeria","Outer"],["Japan","Expanding"],["Ireland","Inner"],["India","Outer"],["China","Expanding"]]);
 
 /* ---------- quizzes ---------- */
 const quizzes={
